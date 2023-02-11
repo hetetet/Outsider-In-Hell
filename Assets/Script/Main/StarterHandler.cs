@@ -7,7 +7,7 @@ using DG.Tweening;
 using Yarn.Unity;
 public class StarterHandler : MonoBehaviour
 {
-    public static bool startAgain = true;
+    public static bool startAgain = false;
     [SerializeField] TextMeshProUGUI howMuchHold;
     [SerializeField] Image GameLogo;
     [SerializeField] DialogueRunner dialogueRunner;
@@ -38,7 +38,7 @@ public class StarterHandler : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     IEnumerator StartMainGame()
