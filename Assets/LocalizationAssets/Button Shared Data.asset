@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Button Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Button
+  m_TableCollectionNameGuidString: b2618ae7049c6ba41b86f10c2e37b706
+  m_Entries:
+  - m_Id: 8703225856
+    m_Key: gamestart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33869049856
+    m_Key: loadgame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50415579136
+    m_Key: goout
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1489759729922048
+    m_Key: newkey
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6928368537759907893
+  references:
+    version: 2
+    RefIds:
+    - rid: 6928368537759907893
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1674446155626

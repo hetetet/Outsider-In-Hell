@@ -1,0 +1,9 @@
+﻿title: NoObject
+tags:
+---
+<<setColor UIEffect 1 1 1 0>>
+<<Fade UIEffect 0.5 0.5>>
+<<set_sprite CharImg Soyeon 3>>
+소연: 여기는 아무것도 없어. #line:p1_n1
+<<Fade UIEffect 0 0.5>>
+===

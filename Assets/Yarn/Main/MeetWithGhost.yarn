@@ -1,0 +1,67 @@
+﻿title: MeetWithGhost
+tags:
+---
+<<set_sprite CharImg Soyeon 0>>
+소연: 아... 잠깐 기절했...#line:m_1
+<<set_sprite CharImg Soyeon 1>>
+소연: 뭐야, 여기 어디야?#line:m_2
+<<set_sprite CharImg SnakeyNeck 0>>
+뱀목귀신: 도착했나?#line:m_3
+<<set_sprite CharImg Soyeon 2>>
+소연: 히...히익?#line:m_4
+<<show_scene StarterHandler>>
+<<set_sprite CharImg SnakeyNeck 0>>
+뱀목귀신: 예전에도 이렇게 꿈에서 만난 적 있지 않나?#line:m_5
+뱀목귀신: 너의 악랄한 조별과제 무임승차에 감명받아서 지옥대학 초청강사로 데려가려 했었지. #line:m_6
+뱀목귀신: 그런데 너는 날 보자마자 기겁하며 사과를 하더니 도망가더군...#line:m_7
+<<set_sprite CharImg Soyeon 3>>
+소연: 아... 그때 그 귀신...!!#line:m_8
+<<set_sprite CharImg SnakeyNeck 0>>
+뱀목귀신: 특히 조별모임 빠지려고 <br>오촌당숙이 돌아가셨다는 거짓말을 할 때 기립박수를 쳤다.#line:m_9
+<<set_sprite CharImg Soyeon 4>>
+소연: 진심으로 반성하고 있습니다...#line:m_10
+<<set_sprite CharImg SnakeyNeck 0>>
+뱀목귀신: 그런데 너는 다른 조별과제 빌런들과 달리<br>굉장히 특이한 행보를 보이고 있더군.#line:m_11
+뱀목귀신: 네 행적을 보니<br>그 한 번의 악랄한 무임승차를 제외하면<br>항상 성실하게 조별과제에 참여했더라고.#line:m_12
+뱀목귀신: 심지어 아까는 열이 39도인데도<br>다른 조원 대신 물리 실험보고서까지 써서 냈더라?#line:m_13
+<<set_sprite CharImg Soyeon 0>>
+소연: 안 그래도 중간고사 망쳤는데<br>보고서까지 제출 못 하면 너무 끔찍하잖아요...#line:m_14
+<<set_sprite CharImg SnakeyNeck 0>>
+뱀목귀신: 어쨌든 그런 너를 소재로<br>인간의 반성과 성찰에 관한 졸업논문을 쓰고 싶었는데<br>마침 니가 고열로 시름시름 앓길래 쓰러뜨려서 데려왔다.#line:m_15
+<<set_sprite CharImg Soyeon 0>>
+소연: 존나 치사하네...#line:m_16
+<<set_sprite CharImg SnakeyNeck 0>>
+뱀목귀신: 널 지옥에 가두고 관찰을 좀 해야 되겠다.#line:m_17
+<<set_sprite CharImg Soyeon 1>>
+소연: 관찰 끝나면 현실로 돌아갈 수는 있는 거에요?#line:m_18
+<<set_sprite CharImg SnakeyNeck 0>>
+뱀목귀신: 그건 나도 잘...#line:m_19
+<<set_sprite CharImg Soyeon 1>>
+소연: 저를 아주 치사한 방식으로 치사하게 만들 셈이군요...#line:m_20
+<<set_sprite CharImg SnakeyNeck 0>>
+뱀목귀신: ??#line:m_21
+<<set_sprite CharImg Soyeon 4>>
+소연: 아 치사가 비열하다는 뜻이랑 죽음에 이른다는 뜻이 있으니까..#line:m_22
+<<set_sprite CharImg SnakeyNeck 2>>
+뱀목귀신: ...#line:m_23
+<<set_sprite CharImg SnakeyNeck 1>>
+뱀목귀신: 쨌든 나 좀 도와주라. 나 졸업해야 돼.#line:m_24
+<<set_sprite CharImg Soyeon 5>>
+소연: 아니 갑자기 이런 부탁을 하시면...#line:m_25
+<<set_sprite CharImg SnakeyNeck 0>>
+뱀목귀신: 그땐 네 컨디션이 괜찮아서 도망갈 수 있었겠지만<br>이번에는 안 될걸?#line:m_26
+뱀목귀신: 마침 네 부모님도 며칠간 제주도 가셨던데<br>그 동안이라도 좀 도와주라.#line:m_27
+<<set_sprite CharImg Soyeon 0>>
+소연: 하 씨... 왜 하필 이럴때...#line:m_28
+<<set_sprite CharImg SnakeyNeck 1>>
+뱀목귀신: 불쌍한 대학원생 돕는 셈 치고, 어?#line:m_29
+<<set_sprite CharImg Soyeon 1>>
+소연: 좆까고 있네, <br>언니가 곧 퇴근할 테니까 그때 119에 신고하던가 하겠죠.#line:m_30
+<<set_sprite CharImg SnakeyNeck 0>>
+뱀목귀신: 너희 언니 요즘 야근 자주하지 않니?#line:m_31
+뱀목귀신: 그럼 밤까지만이라도 도와라.#line:m_32
+<<set_sprite CharImg Soyeon 2>>
+소연: 안돼요! 싫어요! 도와주세요!#line:m_33
+<<set_sprite CharImg SnakeyNeck 2>>
+뱀목귀신: 어딜 도망가려고...!#line:m_34
+===

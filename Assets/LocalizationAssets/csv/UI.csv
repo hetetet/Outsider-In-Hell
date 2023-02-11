@@ -1,0 +1,20 @@
+﻿Key,Id,Korean(ko),English(en)
+settings,11702153216,설정,Settings
+"mainmenu		",83001126912,메인 화면,Main Menu
+"exit	",2.30E+11,종료,Exit
+bgm,,배경음악,Music
+soundeffect,,효과음,Sound Effects
+language,,언어,Language
+cussfilter,,욕설 필터,Swear Filter
+reverse,,반대로 검열,Reverse
+normal,,정상 검열,Normal
+nofilter,,검열하지 않음,No Filtering
+yes,,예,Yes
+no,,아니오,No
+backpack,,가방,Backpack
+mission,,미션,Mission
+help,,도움말,Help
+whenleft,,왼쪽으로 쓰러질 땐 오른쪽 방향키,Press right arrow when fainting to left.
+whenright,,오른쪽으로 쓰러질 땐 왼쪽 방향키,Press left arrow when fainting to right.
+gomain,,메인 화면으로 가시겠습니까?,Do you want to go to main menu?
+goexit,,종료하시겠습니까?,Do you want to quit this game?

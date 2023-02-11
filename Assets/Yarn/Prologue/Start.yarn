@@ -1,0 +1,26 @@
+title: Start
+tags: intro
+position: -220,-38
+---
+<<set_sprite CharImg Soyeon 0>>
+소연: ...아니 어떻게 사람 체온이 39.8도냐???? #line:p1_1
+<<charjump CharImg>>
+소연: 나 진짜 죽는거 아니야?? #line:p1_2
+<<set_sprite CharImg Soyeon 1>>
+소연: 거기다가 일반물리실험 보고서 다 쓰니까<br>다른 과목에서 조별과제 새로 나오는 거 실화냐고... #line:p1_3
+소연: 그러고 보니 오늘 수업에서 새 조별과제 조원 정해졌다던데... #line:p1_4 
+소연: 다들 나 빼고 얼굴은 서로 확인했겠지? #line:p1_5
+<<set_sprite CharImg Soyeon 2>>
+소연: 사실 조별과제 조원들하고 이야기하는 거 상당히 기빨리는 일인데<br>합법적으로 수업 빠진 건 개꿀이죠? #line:p1_6 
+<<set_sprite CharImg Soyeon 3>>
+소연: 솔직히 이 시국에 아픈 몸을 이끌고 밖에 나갈 수는 없잖아... #line:p1_7 
+소연: 잠깐만... 이거 진짜로 '그 병' 아니냐? #line:p1_8
+<<set_sprite CharImg Soyeon 2>>
+소연: 양성 나오면 며칠 좀 앓다가 격리 풀릴때까지 놀면 존나 게이득 아님? #line:p1_9
+소연: 진료확인서 떼는 김에 검사도 해야겠다. #line:p1_10
+<<set_sprite CharImg Soyeon 3>>
+소연: 하... 공짜휴가는 좋지만 코는 쑤시기 싫은데... #line:p1_11
+소연: 조금 있으면 병원 문 닫을테니까 일단 빨리 나가야겠다. #line:p1_12
+소연: 실험보고서 쓴다고 시간을 너무 많이 지체했어... #line:p1_13
+===
+

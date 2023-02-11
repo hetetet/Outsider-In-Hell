@@ -1,0 +1,21 @@
+﻿title: FindObject
+tags:
+---
+<<setColor UIEffect 1 1 1 0>>
+<<Fade UIEffect 0.5 0.5>>
+<<declare $found_obj="">>
+<<set_sprite CharImg Soyeon 2>>
+<<if $found_obj is "jacket">>
+소연: 이제 과잠 안 걸치고 나가면 추울 때도 됐지. #line:p1_f1
+<<endif>>
+<<if $found_obj is "pants">>
+소연: 아무리 내가 안 꾸미는 아싸 새끼라지만 잠옷바지 입고 병원가겠냐? #line:p1_f2
+<<endif>>
+<<if $found_obj is "phone">>
+소연: 연락이 올 데가 있나 모르겠지만... 혹시 모르니까. #line:p1_f3
+<<endif>>
+<<if $found_obj is "wallet">>
+소연: 병원비 결제하려면 지갑 들고가야지. #line:p1_f4
+<<endif>>
+<<Fade UIEffect 0 0.5>>
+===

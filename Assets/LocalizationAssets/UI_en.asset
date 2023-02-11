@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: aff21a487d4aaf045b48879a625120a2, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 11702153216
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83001126912
+    m_Localized: Main Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 230070202368
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054630191104
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054634385408
+    m_Localized: Sound Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054634385409
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054634385410
+    m_Localized: Swear Filter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054634385411
+    m_Localized: Reverse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054634385412
+    m_Localized: Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054634385413
+    m_Localized: No Filtering
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054634385414
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054634385415
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7395816288256
+    m_Localized: Backpack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7395816288257
+    m_Localized: Mission
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7395816288258
+    m_Localized: Help
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69963016613888
+    m_Localized: Press right arrow when fainting to left.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69963041779712
+    m_Localized: Press left arrow when fainting to right.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336164972179456
+    m_Localized: Do you want to go to main menu?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337213644648448
+    m_Localized: Do you want to quit this game?
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
