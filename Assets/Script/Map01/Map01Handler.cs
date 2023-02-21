@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class Map01Handler : MonoBehaviour
 {
     private GameObject Player;
     private Transform FromStarterToHere;
+    [SerializeField] DialogueRunner dialogueRunner;
     private void Awake()
     {
         Player = GameObject.Find("Soyeon");
@@ -14,6 +16,10 @@ public class Map01Handler : MonoBehaviour
     void Start()
     {
         Debug.Log("entered map01");
+        PlayerBehavior.Instance.DisableMove();
+        dialogueRunner.StartDialogue("MainMap01Enter");
+        dialogueRunner.onDialogueComplete.AddListener(PlayerBehavior.Instance.EnableMove);
+
         Player.transform.position = FromStarterToHere.position;
     }
 

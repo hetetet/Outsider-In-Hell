@@ -90,4 +90,16 @@ public class PlayerBehavior : MonoBehaviour
             isJumping = false;
         }
     }
+
+    public void EnableMove()
+    {
+        canmove = true;
+    }
+
+    public void DisableMove()
+    {
+        anim.SetBool("isWalking", false);
+        anim.SetBool("isJumping", false);
+        canmove = false;
+    }
 }
