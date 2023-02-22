@@ -25,11 +25,12 @@ public class PlayerBehavior : MonoBehaviour
         else if (Instance != this)
             Destroy(gameObject);
         DontDestroyOnLoad(this);
+        rigid = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
     void Start()
     {
-        rigid = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+
     }
 
     private void FixedUpdate()

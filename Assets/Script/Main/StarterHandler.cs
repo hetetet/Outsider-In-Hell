@@ -84,6 +84,7 @@ public class StarterHandler : MonoBehaviour
     [YarnCommand("show_scene")]
     public void showScene()
     {
+        PlayerBehavior.Instance.DisableMove();
         Debug.Log("show scene");
         TopUI.SetActive(true);
         HPbar.SetActive(true);
@@ -101,5 +102,4 @@ public class StarterHandler : MonoBehaviour
         };
         UIEffect.Instance.Fade(0, 1);
     }
-
 }

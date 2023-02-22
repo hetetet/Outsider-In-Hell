@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerBehaviorOnStart : MonoBehaviour
 {
     public float maxspeed = 3;
-    public static bool isRanaway = false;
-    public bool isChasing = false;
+    private bool isChasing = false;
 
     public bool isWalking = false;
     [SerializeField] Mission ranaway;
@@ -24,12 +23,13 @@ public class PlayerBehaviorOnStart : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        PlayerBehavior.canmove = false;
+        rigid_snek = snek.GetComponent<Rigidbody2D>();
+        anim_snek = snek.GetComponent<Animator>();
     }
     void Start()
     {
-        PlayerBehavior.canmove = false;
-        rigid_snek =snek.GetComponent<Rigidbody2D>();
-        anim_snek= snek.GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class PlayerBehaviorOnStart : MonoBehaviour
             rigid_snek.AddForce(Vector2.right, ForceMode2D.Impulse);
             if (rigid_snek.velocity.x > maxspeed)
             {
-                Debug.Log("no faster than maxspeed");
+                Debug.Log("snakeyneck: no faster than maxspeed");
                 rigid_snek.velocity = new Vector2(maxspeed, 0);
             }
 
@@ -75,7 +75,6 @@ public class PlayerBehaviorOnStart : MonoBehaviour
 
     IEnumerator GameOver()
     {
-        isRanaway = false;
         isChasing = false;
         rigid_snek.velocity = Vector2.zero;
         UIEffect.Instance.enableCanvas(999);
@@ -89,7 +88,6 @@ public class PlayerBehaviorOnStart : MonoBehaviour
 
     public void startChasing()
     {
-        isRanaway = true;
         isChasing = true;
         PlayerBehavior.canmove = true;
         Debug.Log("snakeyneck is chasing");

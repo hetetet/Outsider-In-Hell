@@ -65,6 +65,7 @@ public class MissionAlarm : MonoBehaviour
     public void hide_mission()
     {
         Debug.Log("hide mission");
+        missionShown = false;
         Mission.rectTransform.LeanMoveLocal(new Vector2(0, -110), 0.3f).setEaseInQuad()
         .setOnComplete(() => {
             UIEffect.Instance.Fade(0, 0.25f);
@@ -72,7 +73,7 @@ public class MissionAlarm : MonoBehaviour
             {
                 afterAlarmGone();
                 afterAlarmGone = () => { };
-                missionShown = false;
+
                 return;
             });           
         });
