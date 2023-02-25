@@ -90,6 +90,11 @@ public class PlayerBehavior : MonoBehaviour
             anim.SetBool("isJumping", false);
             isJumping = false;
         }
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("적과 닿았습니다");
+        }
     }
 
     public void EnableMove()

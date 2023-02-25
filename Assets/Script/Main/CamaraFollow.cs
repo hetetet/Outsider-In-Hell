@@ -28,10 +28,10 @@ public class CamaraFollow : MonoBehaviour
     }
     void LateUpdate()
     {
-        if (target == null)
-            target = GameObject.Find("Soyeon").transform;
         try
         {
+            if (target == null)
+            target = GameObject.Find("Soyeon").transform;
             transform.position = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y, -10f), target.position, Time.deltaTime * speed);
             float lx = size.x * 0.5f - width;
             float clampX = Mathf.Clamp(transform.position.x, -lx + center.x, lx + center.x);

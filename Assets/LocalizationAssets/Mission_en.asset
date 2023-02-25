@@ -31,6 +31,10 @@ MonoBehaviour:
     m_Localized: Uses the arrows keys to move and run away from SnakeyNeck.
     m_Metadata:
       m_Items: []
+  - m_Id: 11963996664016896
+    m_Localized: Press the left and right arrow keys repeatedly for zerotwo dodging.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

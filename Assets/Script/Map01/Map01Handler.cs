@@ -7,6 +7,7 @@ public class Map01Handler : MonoBehaviour
 {
     private GameObject Player;
     private Transform FromStarterToHere;
+    [SerializeField] Mission DoZeroTwo;
     [SerializeField] DialogueRunner dialogueRunner;
     private void Awake()
     {
@@ -18,8 +19,12 @@ public class Map01Handler : MonoBehaviour
         Debug.Log("entered map01");
         PlayerBehavior.Instance.DisableMove();
         dialogueRunner.StartDialogue("MainMap01Enter");
-        dialogueRunner.onDialogueComplete.AddListener(PlayerBehavior.Instance.EnableMove);
-
+        dialogueRunner.onDialogueComplete.AddListener(() =>
+        {
+            PlayerBehavior.Instance.EnableMove();
+            MissionAlarm.Instance.show_mission(DoZeroTwo);
+        });
+        
         Player.transform.position = FromStarterToHere.position;
     }
 

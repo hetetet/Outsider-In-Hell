@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class PlayerBehaviorOnStart : MonoBehaviour
 {
     public float maxspeed = 3;
-    private bool isChasing = false;
+    [SerializeField] private bool isChasing = false;
 
     public bool isWalking = false;
     [SerializeField] Mission ranaway;
 
-    [SerializeField] GameObject snek;
+    GameObject snek;
     Rigidbody2D rigid_snek;
     Animator anim_snek;
 
@@ -23,6 +23,7 @@ public class PlayerBehaviorOnStart : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        snek = GameObject.Find("SnakeyNeck");
         PlayerBehavior.canmove = false;
         rigid_snek = snek.GetComponent<Rigidbody2D>();
         anim_snek = snek.GetComponent<Animator>();
@@ -42,15 +43,17 @@ public class PlayerBehaviorOnStart : MonoBehaviour
     {
         float h = Input.GetAxisRaw("Horizontal");
 
+        //소연이가 dondestroyobject가 된 이후로 ischasing이 정상적으로 바뀌지 않는 오류 발생.
+        //씬 이동 뒤에 awake, start 실행안됨
         if (isChasing)
-        {           
+        {
+            Debug.Log("addforce to rigid_snek");
             rigid_snek.AddForce(Vector2.right, ForceMode2D.Impulse);
             if (rigid_snek.velocity.x > maxspeed)
             {
                 Debug.Log("snakeyneck: no faster than maxspeed");
                 rigid_snek.velocity = new Vector2(maxspeed, 0);
             }
-
         }
     }
 
@@ -69,13 +72,14 @@ public class PlayerBehaviorOnStart : MonoBehaviour
         if (collision.gameObject.name == "SnakeyNeck" && isChasing)
         {
             StarterHandler.startAgain = true;
+            isChasing = false;
+            Debug.Log("ischasing become false");
             StartCoroutine(GameOver());
         }
     }
 
     IEnumerator GameOver()
     {
-        isChasing = false;
         rigid_snek.velocity = Vector2.zero;
         UIEffect.Instance.enableCanvas(999);
         UIEffect.Instance.setColor(0, 0, 0, 0);
@@ -97,6 +101,7 @@ public class PlayerBehaviorOnStart : MonoBehaviour
     public void doBump()
     {
         isChasing = false;
+        Debug.Log("ischasing become false");
         Destroy(rigid_snek);
         SoundManager.Instance.playEffectSound(bump);
         anim_snek.SetTrigger("Bump");

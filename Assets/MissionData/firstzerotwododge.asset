@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f747d337c32485c4db2c3eb498deb14d, type: 3}
+  m_Name: firstzerotwododge
+  m_EditorClassIdentifier: 
+  key: mis04
+  missionName: "MISSION: \uC88C\uC6B0 \uBC29\uD5A5\uD0A4\uB97C \uC5F0\uD0C0\uD558\uC5EC
+    \uC81C\uB85C\uD22C \uD68C\uD53C\uB97C \uC2DC\uC804\uD574 \uBCF4\uC138\uC694."

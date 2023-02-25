@@ -40,6 +40,7 @@ public class MissionAlarm : MonoBehaviour
     [YarnCommand("show_mission")]
     public void show_mission(Mission mission)
     {
+        PlayerBehavior.canmove = false;
         whenAlarmShown();
         whenAlarmShown = () => { };
 
@@ -73,7 +74,7 @@ public class MissionAlarm : MonoBehaviour
             {
                 afterAlarmGone();
                 afterAlarmGone = () => { };
-
+                PlayerBehavior.canmove = true;
                 return;
             });           
         });
