@@ -102,8 +102,8 @@ MonoBehaviour:
   - {fileID: 2950275727023083571}
   - {fileID: 2426700589930568021}
   m_Bounds:
-    m_Center: {x: 0.23653054, y: 0.091409, z: 0}
-    m_Extent: {x: 0.34009516, y: 0.3242758, z: 0}
+    m_Center: {x: 0.2365303, y: 0.091409, z: 0}
+    m_Extent: {x: 0.3400954, y: 0.3242758, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -385,8 +385,8 @@ MonoBehaviour:
   - {fileID: 5866340678854718784}
   - {fileID: 3117367173850754910}
   m_Bounds:
-    m_Center: {x: 0.092491515, y: -0.016724795, z: 0}
-    m_Extent: {x: 0.1881591, y: 0.46912554, z: 0}
+    m_Center: {x: 0.0924917, y: -0.016724795, z: 0}
+    m_Extent: {x: 0.18815891, y: 0.46912554, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -551,8 +551,8 @@ MonoBehaviour:
   - {fileID: 3901407765147637027}
   - {fileID: 1609899340876606011}
   m_Bounds:
-    m_Center: {x: 0.08343181, y: 0.05313596, z: 0}
-    m_Extent: {x: 0.36843094, y: 0.404944, z: 0}
+    m_Center: {x: 0.08343181, y: 0.0531359, z: 0}
+    m_Extent: {x: 0.36843094, y: 0.40494406, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -717,8 +717,8 @@ MonoBehaviour:
   - {fileID: 399962161842471036}
   - {fileID: 3494496856168798470}
   m_Bounds:
-    m_Center: {x: -0.12620309, y: 0.058709353, z: 0}
-    m_Extent: {x: 0.25504535, y: 0.3569595, z: 0}
+    m_Center: {x: -0.12620261, y: 0.058709234, z: 0}
+    m_Extent: {x: 0.25504535, y: 0.3569596, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1271,7 +1271,7 @@ MonoBehaviour:
   - {fileID: 7208373552149653297}
   - {fileID: 7558073916933921371}
   m_Bounds:
-    m_Center: {x: 0.27467102, y: 0.008299947, z: 0}
+    m_Center: {x: 0.2746715, y: 0.008299857, z: 0}
     m_Extent: {x: 0.43293586, y: 0.44593006, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1384,7 +1384,7 @@ MonoBehaviour:
   - {fileID: 348619307948920407}
   - {fileID: 8697440687514818132}
   m_Bounds:
-    m_Center: {x: 0.0069020092, y: -0.06897956, z: 0}
+    m_Center: {x: 0.006902486, y: -0.06897962, z: 0}
     m_Extent: {x: 0.262959, y: 0.8560201, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1400,6 +1400,7 @@ GameObject:
   - component: {fileID: 5481359614035571686}
   - component: {fileID: 6574804158959513915}
   - component: {fileID: 6574804158959513914}
+  - component: {fileID: 3219772732059910191}
   - component: {fileID: 6574804158959513912}
   m_Layer: 0
   m_Name: SnakeyNeck
@@ -1478,6 +1479,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.554969, y: 1.7788043}
   m_EdgeRadius: 0
+--- !u!114 &3219772732059910191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6690565998590323589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9af305adff459064c8b1af7c9f8f6e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bump: {fileID: 8300000, guid: 1082208da77d54549a35d5a832b266a4, type: 3}
 --- !u!95 &6574804158959513912
 Animator:
   serializedVersion: 4
@@ -1605,8 +1619,8 @@ MonoBehaviour:
   - {fileID: 3117367173850754910}
   - {fileID: 8697440687514818132}
   m_Bounds:
-    m_Center: {x: 0.039966613, y: -0.004964471, z: 0}
-    m_Extent: {x: 0.3480125, y: 0.7299652, z: 0}
+    m_Center: {x: 0.03996709, y: -0.00496459, z: 0}
+    m_Extent: {x: 0.3480125, y: 0.7299651, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0

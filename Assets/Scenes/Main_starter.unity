@@ -1832,6 +1832,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeyNeck
       objectReference: {fileID: 0}
+    - target: {fileID: 6690565998590323589, guid: c241707cb36ecde49b8ec6e8285db231, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6574804159516691860, guid: c241707cb36ecde49b8ec6e8285db231, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c241707cb36ecde49b8ec6e8285db231, type: 3}

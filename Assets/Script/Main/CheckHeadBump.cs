@@ -7,7 +7,8 @@ public class CheckHeadBump : MonoBehaviour
     
     void Start()
     {
-        Debug.Log("CheckHeadBump start");
+        Debug.Log("CheckHeadBump start ::"+this.gameObject.name+", "+this.gameObject.transform.position.ToString());
+        Debug.DrawRay(this.gameObject.transform.position,Vector3.forward);
     }
 
     // Update is called once per frame
