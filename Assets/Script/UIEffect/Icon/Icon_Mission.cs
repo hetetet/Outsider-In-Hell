@@ -76,6 +76,7 @@ public class Icon_Mission : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void deleteMission(Mission mission)
     {
         Missions.Remove(mission);
+        showMission();
     }
 
     public void showMission()
@@ -92,7 +93,7 @@ public class Icon_Mission : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             string localizedMissonName= LocalizationSettings.StringDatabase.GetLocalizedString("Mission", mission.key);
             MissionTMP.text = localizedMissonName;
 
-            LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)Elements.transform);
+            //LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)Elements.transform);
         }       
     }
 

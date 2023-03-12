@@ -42,12 +42,10 @@ public class BgTilt : MonoBehaviour
         else if (Input.GetKey(KeyCode.RightArrow) && !isfainted && TimeTMP.gameObject.activeSelf)
             bgRigid.AddTorque(10 * Time.fixedDeltaTime, ForceMode2D.Impulse);
 
-        if (isTilting && elapsedTime % 60 == 0)
-        {
-            int[] dir = { -1, 1 };
-            int dirindex = Random.Range(0, 2);
-            bgRigid.AddTorque(100 * dir[dirindex] * Time.fixedDeltaTime, ForceMode2D.Impulse); //100 * dir[dirindex]         
-        }
+        //if (isTilting && elapsedTime % 60 == 0)
+        //{
+     
+        //}
     }
 
     // Update is called once per frame
@@ -91,15 +89,23 @@ public class BgTilt : MonoBehaviour
         blurMat.SetFloat("_isBlurring", 1);
         TimeTMP.gameObject.SetActive(true);
         isTilting=true;
+        StartCoroutine(tilt());
         StartCoroutine(countTime());
     }
-
     IEnumerator countTime()
-    {        
+    {
         yield return new WaitForSeconds(0.01f);
         elapsedTime += 1;
-        TimeTMP.text = (elapsedTime/100).ToString("D2")+":"+ (elapsedTime % 100).ToString("D2");
+        TimeTMP.text = (elapsedTime / 100).ToString("D2") + ":" + (elapsedTime % 100).ToString("D2");
         StartCoroutine(countTime());
+    }
+    IEnumerator tilt()
+    {
+        int[] dir = { -1, 1 };
+        int dirindex = Random.Range(0, 2);
+        bgRigid.AddTorque(100 * dir[dirindex] * Time.fixedDeltaTime, ForceMode2D.Impulse); 
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(tilt());
     }
 
     IEnumerator visionScatter()

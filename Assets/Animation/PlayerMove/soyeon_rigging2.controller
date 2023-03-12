@@ -80,6 +80,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 2150472360940040930}
     m_Position: {x: 615, y: 265, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -5808901740664385595}
+    m_Position: {x: 650, y: 330, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 2798590231665427001}
@@ -91,6 +94,32 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 780, y: 300, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -2789018219960286267}
+--- !u!1102 &-5808901740664385595
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: zerotwo_dodge
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 8243968277059864e8ea0981343ab9ad, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &-2789018219960286267
 AnimatorState:
   serializedVersion: 6

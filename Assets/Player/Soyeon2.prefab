@@ -951,7 +951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ae93fb156fc6d4c828c64571fc3edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ConstrainRotation: 1
+  m_ConstrainRotation: 0
   m_SolveFromDefaultPose: 1
   m_Weight: 1
   m_Chain:
@@ -1015,7 +1015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ae93fb156fc6d4c828c64571fc3edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ConstrainRotation: 1
+  m_ConstrainRotation: 0
   m_SolveFromDefaultPose: 1
   m_Weight: 1
   m_Chain:
@@ -1321,11 +1321,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxspeed: 3
-  isChasing: 0
   isWalking: 0
   ranaway: {fileID: 11400000, guid: 377f75a8e92dc11468a566634b5f25d1, type: 2}
-  snek: {fileID: 0}
-  bump: {fileID: 8300000, guid: 1082208da77d54549a35d5a832b266a4, type: 3}
 --- !u!114 &7727393693526710638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,7 +1335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c849d1d86f3b9a47a5571271902d15e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPower: 12
 --- !u!1 &7954236419412533172
 GameObject:
   m_ObjectHideFlags: 0

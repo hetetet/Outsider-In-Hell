@@ -42,8 +42,7 @@ public class SnakeyneckBehavior : MonoBehaviour
 
     public void doBump()
     {
-        //Destroy(rigid_snek);
-        rigid_snek.velocity = Vector2.zero;
+        Destroy(rigid_snek);
         anim_snek.SetTrigger("Bump");
         SoundManager.Instance.playEffectSound(bump);
     }

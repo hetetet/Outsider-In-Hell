@@ -79,4 +79,9 @@ public class MissionAlarm : MonoBehaviour
             });           
         });
     }
+
+    public void clear_mission()
+    {
+
+    }
 }
