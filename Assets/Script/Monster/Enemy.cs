@@ -2,26 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy1BehaviourScript : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     Rigidbody2D rigid;
     Animator anim;
+    [SerializeField] SingleMobSpawner singleSpawner;
     int dir = 0;
-    private void Awake()
+    protected virtual void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
-    void Start()
+    private void Start()
     {
         Invoke("think", 3);
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         rigid.velocity=new Vector2(dir,rigid.velocity.y);
 
-        Vector2 frontvec=new Vector2(rigid.position.x+dir,rigid.position.y);
+        Vector2 frontvec=new Vector2(rigid.position.x + dir*(float)(transform.localScale.x/2), rigid.position.y);
         Debug.DrawRay(frontvec, Vector3.down, new Color(0, 1, 0));
         RaycastHit2D rayHit=Physics2D.Raycast(frontvec, Vector3.down, 1, LayerMask.GetMask("Platform"));
         if (rayHit.collider == null)

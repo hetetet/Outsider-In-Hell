@@ -27,10 +27,6 @@ public class PlayerBehaviorOnStart : MonoBehaviour
     private void FixedUpdate()
     {
         float h = Input.GetAxisRaw("Horizontal");
-
-        //소연이가 dondestroyobject가 된 이후로 ischasing이 정상적으로 바뀌지 않는 오류 발생.
-        //씬 이동 뒤에 awake, start 실행안됨 ->이건아닌듯...
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
