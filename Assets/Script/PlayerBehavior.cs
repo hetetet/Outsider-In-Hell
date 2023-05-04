@@ -60,10 +60,10 @@ public class PlayerBehavior : MonoBehaviour
     {
         if (canmove)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.A))
                 transform.localScale = new Vector3(-0.5f, 0.5f, 1);
 
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KeyCode.D))
                 transform.localScale = new Vector3(0.5f, 0.5f, 1);
 
             if (Input.GetButtonUp("Horizontal"))
@@ -73,8 +73,9 @@ public class PlayerBehavior : MonoBehaviour
                 rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.5f, rigid.velocity.y);
             }
 
-            if (Input.GetButtonUp("Jump") && !isJumping)
+            if (Input.GetButtonDown("Jump") && !isJumping)
             {
+                Debug.Log("jump!");
                 anim.SetTrigger("DoJump");
                 isJumping = true;
                 anim.SetBool("isJumping", true);
