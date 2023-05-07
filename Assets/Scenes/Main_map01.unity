@@ -28588,6 +28588,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2281769004256557494, guid: f3e044c2caaee0e438065908b5d48277, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3994639502344680816, guid: f3e044c2caaee0e438065908b5d48277, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -28636,6 +28640,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SingleMobSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 7772457251999132841, guid: f3e044c2caaee0e438065908b5d48277, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 9134782491390097230, guid: 9157fa9c7f9ed8241af279cc6cfe39bc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3e044c2caaee0e438065908b5d48277, type: 3}
 --- !u!1001 &5146795340226421346

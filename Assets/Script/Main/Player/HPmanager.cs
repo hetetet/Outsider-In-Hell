@@ -35,4 +35,10 @@ public class HPmanager : MonoBehaviour
         show.Insert(0, ExtraHP.DOColor(col, 1));
         show.Insert(2, ExtraHP.DOColor(new Color(col.r, col.g, col.b, 0), 1));
     }
+
+    public void showHpBar(int hp)
+    {
+        HPfill.transform.DOScaleX(((float)hp / (float)PlayerBehavior.maxHP) * HPfill.transform.localScale.x, 0.5f);
+        Debug.Log("hpfill length: " + (((float)hp / (float)PlayerBehavior.maxHP) * HPfill.transform.localScale.x).ToString());
+    }
 }

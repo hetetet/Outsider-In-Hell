@@ -22,11 +22,13 @@ public class HellbyBehavior : Enemy
     {
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            Debug.Log("Hellby가 플레이어와 닿았습니다");
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+ 
+    //        new WaitForSeconds(1);
+    //        Debug.Log("Hellby가 플레이어와 닿았습니다");
+    //    }
+    //}
 }

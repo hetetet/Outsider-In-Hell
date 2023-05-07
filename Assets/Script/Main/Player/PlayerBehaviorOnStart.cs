@@ -11,9 +11,6 @@ public class PlayerBehaviorOnStart : MonoBehaviour
     public bool isWalking = false;
     [SerializeField] Mission ranaway;
 
-
-
-
     public static PlayerBehaviorOnStart Instance;
 
 
@@ -72,5 +69,10 @@ public class PlayerBehaviorOnStart : MonoBehaviour
     {
         isChasing = false;
         SnakeyneckBehavior.Instance.doBump();
+    }
+
+    public void Die()
+    {
+        Debug.Log("플레이어가 죽었습니다...");
     }
 }
