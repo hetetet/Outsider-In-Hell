@@ -172,7 +172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f6fc557579af2f479834ad850d9380a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleSpawner: {fileID: 0}
   hp: 30
 --- !u!50 &9134782491390097231
 Rigidbody2D:

@@ -37,8 +37,9 @@ public class HPmanager : MonoBehaviour
     }
 
     public void showHpBar(int hp)
-    {
-        HPfill.transform.DOScaleX(((float)hp / (float)PlayerBehavior.maxHP) * HPfill.transform.localScale.x, 0.5f);
-        Debug.Log("hpfill length: " + (((float)hp / (float)PlayerBehavior.maxHP) * HPfill.transform.localScale.x).ToString());
+    {       
+        HPfill.transform.DOScaleX(((float)hp / (float)PlayerBehavior.maxHP), 0.5f);
+        Debug.Log("hp: " + hp.ToString() + ", HPfill.transform.localScale.x: " + HPfill.transform.localScale.x.ToString());
+        hpValue.text= hp.ToString() + "/" + PlayerBehavior.maxHP.ToString();
     }
 }

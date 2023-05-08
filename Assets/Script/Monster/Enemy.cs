@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rigid;
     Animator anim;
     SingleMobSpawner singleSpawner;
+    SpriteRenderer spriteRenderer;
     int dir = 0;
     private int maxhp = 30;
     public int hp = 30;
@@ -14,6 +15,7 @@ public class Enemy : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         singleSpawner=gameObject.transform.parent.GetComponent<SingleMobSpawner>();
     }
     private void Start()
@@ -25,12 +27,14 @@ public class Enemy : MonoBehaviour
     {
         rigid.velocity=new Vector2(dir,rigid.velocity.y);
 
-        Vector2 originvec=new Vector2(rigid.position.x + dir*(float)(transform.localScale.x/2), rigid.position.y);
+        Vector2 originvec=new Vector2(rigid.position.x + dir*(float)(Mathf.Abs(transform.localScale.x)/2), rigid.position.y);
         Debug.DrawRay(originvec, Vector3.down, new Color(0, 1, 0));
         RaycastHit2D rayHit=Physics2D.Raycast(originvec, Vector3.down, 1, LayerMask.GetMask("Platform"));
         if (rayHit.collider == null)
         {
             dir = dir * (-1);
+            Debug.Log("rayhit.collider is null, dir: " + dir.ToString());
+            transform.localScale = new Vector3(-dir*Mathf.Abs(gameObject.transform.localScale.x), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
             CancelInvoke();
             Invoke("think", 3);
         }
@@ -43,7 +47,10 @@ public class Enemy : MonoBehaviour
     void think()
     {
         dir = Random.Range(-1, 2);
+
         Debug.Log("dir" + dir.ToString());
+        transform.localScale = new Vector3(-dir * Mathf.Abs(gameObject.transform.localScale.x), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+
         Invoke("think", 3);
         if (dir == 0)
             anim.SetBool("isWalking", false);
@@ -54,7 +61,11 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
-            attack();
+        {
+            int isLeft = (collision.gameObject.transform.position.x - gameObject.transform.position.x) > 0 ? -1 : 1; //enemy가 플레이어보다 오른쪽에 있?
+            attack(isLeft);
+        }
+
     }
 
     public void damaged(int damage)
@@ -64,7 +75,8 @@ public class Enemy : MonoBehaviour
 
     IEnumerator coDamaged(int damage)
     {
-        hp -= damage;
+        gameObject.layer = 8;//noDamage;
+        hp -= damage;   
         if (hp <= 0)
         {
             Debug.Log("쥬거써...ㅠ");
@@ -74,22 +86,21 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             Debug.Log("0.5초 지남");
             hp = maxhp;
-            //singleSpawner.CoRevive();
-            StartCoroutine(singleSpawner.revive());
+            singleSpawner.CoRevive();
             Destroy(gameObject);
         }
         anim.SetTrigger("damaged");
         Debug.Log("데미지를 입었습니다.");
         SpriteRenderer sr=gameObject.GetComponent<SpriteRenderer>();
-        sr.color = new Color(255,255,255,0.5f);
-        gameObject.layer = 8;//noDamage;
+        sr.color = new Color(255,255,255,0.5f);       
         yield return new WaitForSeconds(1);
         sr.color = Color.white;
         gameObject.layer = 7;//enemy;
     }
 
-    public void attack()
+    public void attack(int isLeft)
     {
+        transform.localScale = new Vector3(isLeft * Mathf.Abs(gameObject.transform.localScale.x), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
         anim.SetTrigger("attack");
         new WaitForSeconds(1);
         Debug.Log("플레이어와 닿았습니다");
@@ -99,6 +110,8 @@ public class Enemy : MonoBehaviour
     {
         if(collision.gameObject.tag == "Fist")
         {
+            int dir=(collision.gameObject.transform.position.x-gameObject.transform.position.x) > 0? 1:-1; //enemy가 플레이어보다 오른쪽에 있?
+            transform.localScale = new Vector3(-dir * Mathf.Abs(gameObject.transform.localScale.x), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
             damaged(3); //3
         }
     }

@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class HellbyBehavior : Enemy
 {
+
     private void Awake()
     {
         base.Awake();
+        //hp = 15;
     }
     void Start()
     {

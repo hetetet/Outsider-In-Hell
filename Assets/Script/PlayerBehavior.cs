@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class PlayerBehavior : MonoBehaviour
 {
@@ -27,7 +26,7 @@ public class PlayerBehavior : MonoBehaviour
     private KeyCode prevDodgeKey = KeyCode.B;
     private float lastPressedTime=0.0f;
     private bool isDodging = false;
-    [SerializeField] TextMeshProUGUI Dodge;
+
     //attack
     RaycastHit2D rayHit;
 
@@ -82,7 +81,6 @@ public class PlayerBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Dodge.text=dodgeState.ToString();
         if (canmove)
         {
             DetectDir();
@@ -136,6 +134,7 @@ public class PlayerBehavior : MonoBehaviour
             {
                 Debug.Log("제로투 회피 시작");
                 isDodging = true;
+                gameObject.layer = 8;//nodamage
                 anim.SetBool("isDodging", true);
             }
 
@@ -145,6 +144,7 @@ public class PlayerBehavior : MonoBehaviour
                 if (isDodging)
                 {
                     isDodging = false;
+                    gameObject.layer = 0;//nodamage
                     anim.SetBool("isDodging", false);
                 }
 
@@ -168,13 +168,15 @@ public class PlayerBehavior : MonoBehaviour
             currentHP -= 5;
             HPmanager.Instance.showHpBar(currentHP);
             gameObject.layer = 8;//noDamage layer
-            setColor(new Color(255, 255, 255, 0.5f));
+            setColor(new Color(1, 0.5f, 0.5f));
+            canmove = false;
             Invoke("offDamaged", 1);
         }
     }
 
     public void offDamaged()
     {
+        canmove = true;
         gameObject.layer = 0;//default
         setColor(Color.white);
     }
