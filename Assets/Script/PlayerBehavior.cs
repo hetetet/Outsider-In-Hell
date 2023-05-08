@@ -163,9 +163,10 @@ public class PlayerBehavior : MonoBehaviour
         if (collision.gameObject.tag == "Enemy") //나중에는 적 종류따라 데미지량을 달리 할 예정
         {
             Debug.Log("적과 닿았습니다");
-            rigid.AddForce(new Vector2(-rigid.transform.localScale.x * 8, 1), ForceMode2D.Impulse);
+            int damage = 5;
+            rigid.AddForce(new Vector2(-gameObject.transform.localScale.x * damage*3, 3), ForceMode2D.Impulse);
             anim.SetTrigger("Damaged");
-            currentHP -= 5;
+            currentHP -= damage;
             HPmanager.Instance.showHpBar(currentHP);
             gameObject.layer = 8;//noDamage layer
             setColor(new Color(1, 0.5f, 0.5f));

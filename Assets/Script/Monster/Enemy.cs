@@ -33,8 +33,8 @@ public class Enemy : MonoBehaviour
         if (rayHit.collider == null)
         {
             dir = dir * (-1);
-            Debug.Log("rayhit.collider is null, dir: " + dir.ToString());
-            transform.localScale = new Vector3(-dir*Mathf.Abs(gameObject.transform.localScale.x), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+            if(dir!=0)
+                transform.localScale = new Vector3(-dir*Mathf.Abs(gameObject.transform.localScale.x), gameObject.transform.localScale.y, 0);
             CancelInvoke();
             Invoke("think", 3);
         }
@@ -49,7 +49,8 @@ public class Enemy : MonoBehaviour
         dir = Random.Range(-1, 2);
 
         Debug.Log("dir" + dir.ToString());
-        transform.localScale = new Vector3(-dir * Mathf.Abs(gameObject.transform.localScale.x), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+        if(dir!=0)
+            transform.localScale = new Vector3(-dir * Mathf.Abs(gameObject.transform.localScale.x), gameObject.transform.localScale.y, 0);
 
         Invoke("think", 3);
         if (dir == 0)
@@ -75,6 +76,8 @@ public class Enemy : MonoBehaviour
 
     IEnumerator coDamaged(int damage)
     {
+        dir = 0;
+        CancelInvoke();
         gameObject.layer = 8;//noDamage;
         hp -= damage;   
         if (hp <= 0)
@@ -96,11 +99,12 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(1);
         sr.color = Color.white;
         gameObject.layer = 7;//enemy;
+        think();
     }
 
     public void attack(int isLeft)
     {
-        transform.localScale = new Vector3(isLeft * Mathf.Abs(gameObject.transform.localScale.x), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+        transform.localScale = new Vector3(isLeft * Mathf.Abs(gameObject.transform.localScale.x), gameObject.transform.localScale.y, 0);
         anim.SetTrigger("attack");
         new WaitForSeconds(1);
         Debug.Log("플레이어와 닿았습니다");
@@ -111,7 +115,8 @@ public class Enemy : MonoBehaviour
         if(collision.gameObject.tag == "Fist")
         {
             int dir=(collision.gameObject.transform.position.x-gameObject.transform.position.x) > 0? 1:-1; //enemy가 플레이어보다 오른쪽에 있?
-            transform.localScale = new Vector3(-dir * Mathf.Abs(gameObject.transform.localScale.x), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+            transform.localScale = new Vector3(-dir * Mathf.Abs(gameObject.transform.localScale.x), gameObject.transform.localScale.y, 0);
+            rigid.AddForce(new Vector2(dir * gameObject.transform.localScale.x * 15, 3), ForceMode2D.Impulse);
             damaged(3); //3
         }
     }
