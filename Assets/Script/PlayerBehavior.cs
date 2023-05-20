@@ -127,12 +127,10 @@ public class PlayerBehavior : MonoBehaviour
 
                 prevDodgeKey = KeyCode.D;
                 lastPressedTime = Time.time;
-                Debug.Log("Dodge state: " + dodgeState.ToString());
             }
 
             if (dodgeState == 2 && !isDodging)
             {
-                Debug.Log("제로투 회피 시작");
                 isDodging = true;
                 gameObject.layer = 8;//nodamage
                 anim.SetBool("isDodging", true);
