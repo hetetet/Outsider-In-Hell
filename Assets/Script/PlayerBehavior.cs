@@ -27,6 +27,7 @@ public class PlayerBehavior : MonoBehaviour
     private float lastPressedTime=0.0f;
     private bool isDodging = false;
     private bool onLadder = false;
+    private bool isClimbing = false;
 
     //attack
     RaycastHit2D rayHit;
@@ -77,6 +78,13 @@ public class PlayerBehavior : MonoBehaviour
             rigid.velocity = new Vector2(maxspeed, rigid.velocity.y);
         if (rigid.velocity.x < maxspeed * (-1))
             rigid.velocity = new Vector2(maxspeed * (-1), rigid.velocity.y);
+
+        //Climbing
+        if (isClimbing)
+        {            
+            rigid.velocity = new Vector2(rigid.velocity.x, Input.GetAxis("Vertical"));
+            Debug.Log("velocity: " + rigid.velocity.ToString());
+        }
     }
 
     // Update is called once per frame
@@ -104,9 +112,17 @@ public class PlayerBehavior : MonoBehaviour
             }
 
             //Climb
-            if (Input.GetButton("Jump") && onLadder)
+            if (Input.GetButtonDown("Vertical") && onLadder)
             {
-                rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Force);
+                Debug.Log("isClimbing true");
+                isClimbing = true;                
+                anim.SetBool("isClimbing",true);
+            }              
+            else if (Input.GetButtonUp("Vertical") && onLadder)
+            {
+                Debug.Log("isClimbing false");
+                isClimbing = false;
+                anim.SetBool("isClimbing", false);
             }
 
             //Attack
@@ -238,7 +254,10 @@ public class PlayerBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ladder")
         {
+            Debug.Log("onladder true");
+            //gameObject.layer = 9;//ladder layer
             onLadder = true;
+            rigid.gravityScale = 0f;
         }
     }
 
@@ -246,7 +265,12 @@ public class PlayerBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ladder")
         {
+            Debug.Log("onladder false");
+            //gameObject.layer = 0;//default layer
             onLadder = false;
+            isClimbing = false;
+            anim.SetBool("isClimbing", false);
+            rigid.gravityScale = 2f;
         }
     }
 }
