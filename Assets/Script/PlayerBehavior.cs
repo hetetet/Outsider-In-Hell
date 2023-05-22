@@ -26,6 +26,7 @@ public class PlayerBehavior : MonoBehaviour
     private KeyCode prevDodgeKey = KeyCode.B;
     private float lastPressedTime=0.0f;
     private bool isDodging = false;
+    private bool onLadder = false;
 
     //attack
     RaycastHit2D rayHit;
@@ -84,6 +85,8 @@ public class PlayerBehavior : MonoBehaviour
         if (canmove)
         {
             DetectDir();
+
+            //Walk
             if (Input.GetButtonUp("Horizontal"))
             {
                 anim.SetBool("isWalking", false);
@@ -91,12 +94,19 @@ public class PlayerBehavior : MonoBehaviour
                 rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.5f, rigid.velocity.y);
             }
 
-            if (Input.GetButtonDown("Jump") && !isJumping)
+            //Jump
+            if (Input.GetButtonDown("Jump") && !isJumping && !onLadder)
             {
                 anim.SetTrigger("DoJump");
                 isJumping = true;
                 anim.SetBool("isJumping", true);
                 rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            }
+
+            //Climb
+            if (Input.GetButton("Jump") && onLadder)
+            {
+                rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Force);
             }
 
             //Attack
@@ -142,10 +152,9 @@ public class PlayerBehavior : MonoBehaviour
                 if (isDodging)
                 {
                     isDodging = false;
-                    gameObject.layer = 0;//nodamage
+                    gameObject.layer = 0;//default
                     anim.SetBool("isDodging", false);
                 }
-
             }
         }
     }
@@ -196,16 +205,13 @@ public class PlayerBehavior : MonoBehaviour
     {
         if (isDodging)
             return;
-
             
-
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKey(KeyCode.A))
             transform.localScale = new Vector3(-0.5f, 0.5f, 1);
             
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKey(KeyCode.D))
             transform.localScale = new Vector3(0.5f, 0.5f, 1);                   
     }
-
 
 
     IEnumerator BasicAttack()
@@ -225,6 +231,22 @@ public class PlayerBehavior : MonoBehaviour
         foreach(SpriteRenderer sprite in sprites)
         {
             sprite.color=color;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ladder")
+        {
+            onLadder = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ladder")
+        {
+            onLadder = false;
         }
     }
 }
