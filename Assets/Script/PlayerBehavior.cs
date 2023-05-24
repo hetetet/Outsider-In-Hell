@@ -6,6 +6,7 @@ public class PlayerBehavior : MonoBehaviour
 {
     public static PlayerBehavior Instance;
     [SerializeField] Collider2D FistArea;
+    public float SIZE=0.4f;
     //movement
     private float maxspeed=3;
     private float jumpPower=12;
@@ -83,7 +84,6 @@ public class PlayerBehavior : MonoBehaviour
         if (isClimbing)
         {            
             rigid.velocity = new Vector2(rigid.velocity.x, Input.GetAxis("Vertical"));
-            Debug.Log("velocity: " + rigid.velocity.ToString());
         }
     }
 
@@ -99,6 +99,8 @@ public class PlayerBehavior : MonoBehaviour
             {
                 anim.SetBool("isWalking", false);
                 isWalking = false;
+                isClimbing = false;
+                isClimbing = false;
                 rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.5f, rigid.velocity.y);
             }
 
@@ -223,10 +225,10 @@ public class PlayerBehavior : MonoBehaviour
             return;
             
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKey(KeyCode.A))
-            transform.localScale = new Vector3(-0.5f, 0.5f, 1);
+            transform.localScale = new Vector3(-SIZE, SIZE, 1);
             
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKey(KeyCode.D))
-            transform.localScale = new Vector3(0.5f, 0.5f, 1);                   
+            transform.localScale = new Vector3(SIZE, SIZE, 1);                   
     }
 
 
@@ -257,6 +259,7 @@ public class PlayerBehavior : MonoBehaviour
             Debug.Log("onladder true");
             //gameObject.layer = 9;//ladder layer
             onLadder = true;
+            rigid.drag = 20f;
             rigid.gravityScale = 0f;
         }
     }
@@ -270,6 +273,7 @@ public class PlayerBehavior : MonoBehaviour
             onLadder = false;
             isClimbing = false;
             anim.SetBool("isClimbing", false);
+            rigid.drag = 2f;
             rigid.gravityScale = 2f;
         }
     }

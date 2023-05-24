@@ -10,6 +10,7 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
   sourceScripts:
   - {fileID: 6391573757903218779, guid: 8c04fc07ebcf58a42a43fcd5902d388d, type: 3}
+  - {fileID: 6391573757903218779, guid: 454efd7f53abe0e44b4f0b6eadd54a32, type: 3}
   compileErrors: []
   serializedDeclarations: []
   defaultLanguage: ko-KR
