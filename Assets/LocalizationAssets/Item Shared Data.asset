@@ -31,6 +31,10 @@ MonoBehaviour:
     m_Key: wallet
     m_Metadata:
       m_Items: []
+  - m_Id: 43801396143112192
+    m_Key: monmask
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -57,7 +57,7 @@ public class MissionAlarm : MonoBehaviour
 
         Mission.rectTransform.LeanMoveLocal(new Vector2(0, -110), 0.3f).setEaseOutQuad()
         .setOnComplete(() => {
-            Debug.Log(Mission.rectTransform.anchoredPosition.x.ToString() + ", " + Mission.rectTransform.anchoredPosition.y.ToString());
+            //Debug.Log(Mission.rectTransform.anchoredPosition.x.ToString() + ", " + Mission.rectTransform.anchoredPosition.y.ToString());
             Mission.rectTransform.LeanMoveLocal(new Vector2(0, -100), 0.3f).setEaseInQuad();
             missionShown = true;
             return;

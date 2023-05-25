@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class BackpackManager : MonoBehaviour
 {
     public static BackpackManager Instance;
-    public List<Item> Items=new List<Item> ();
+    public static List<Item> Items = new List<Item>();
     void Awake()
     {
         Instance = this;
     }
 
-    public void add(Item item)
+    public static void add(Item item)
     {
         for(int i = 0; i < Items.Count; i++)
         {
@@ -21,11 +22,13 @@ public class BackpackManager : MonoBehaviour
                 return;
             }
         }
+        item.number = 1;
         Items.Add(item);
+        Icon_Backpack.Instance.setNewMark();
         return;
     }
 
-    public void Remove(Item item)
+    public static void Remove(Item item)
     {
         for (int i = 0; i < Items.Count; i++)
         {
@@ -37,7 +40,13 @@ public class BackpackManager : MonoBehaviour
                 return;
             }
         }
+        item.number = 0;
         Items.Remove(item);
         return;
+    }
+
+    public void AddByName(string itemname)
+    {
+
     }
 }

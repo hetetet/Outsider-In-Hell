@@ -5,35 +5,33 @@ using Yarn.Unity;
 
 public class NpcBehavior : MonoBehaviour
 {
-    [SerializeField] DialogueRunner dialogueRunner;
+    [SerializeField] DialogueRunner dr;
+    Animator anim;
+    SpriteRenderer sr;
+    public DialogueRunner Dr { get { return dr; } protected set { dr = value; } }
+    public Animator Anim { get { return anim; } protected set { anim = value; } }
+    public SpriteRenderer Sr { get { return sr; } protected set { sr = value; } }
     [SerializeField] string currentDialogName;
     private bool meetPlayer;
     
-
-
     // Update is called once per frame
-    void Update()
+   protected virtual void Update()
     {
-        if (meetPlayer && Input.GetKeyDown(KeyCode.Q) && !dialogueRunner.IsDialogueRunning)
+        if (meetPlayer && Input.GetKeyDown(KeyCode.Q) && !dr.IsDialogueRunning)
         {
             Debug.Log("start Dialog");
-            dialogueRunner.StartDialogue(currentDialogName);
-            dialogueRunner.onDialogueComplete.RemoveAllListeners();
+            dr.StartDialogue(currentDialogName);
+            dr.onDialogueComplete.RemoveAllListeners();
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
             meetPlayer = true;
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    protected virtual void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
             meetPlayer = false;

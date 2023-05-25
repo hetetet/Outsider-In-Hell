@@ -14,7 +14,7 @@ public class ItemPickup : MonoBehaviour
 
     public void Pickup()
     {
-        Icon_Backpack.Instance.add(item);
+        BackpackManager.add(item);
         Destroy(gameObject);
     }
 }

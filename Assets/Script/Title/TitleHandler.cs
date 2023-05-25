@@ -22,7 +22,7 @@ public class TitleHandler : MonoBehaviour
 
         GameManager.isSettingDisabled = false;
         Icon_Mission.Missions.Clear();
-        Icon_Backpack.Items.Clear();
+        BackpackManager.Items.Clear();
 
         GameManager.setCursorToArrow();
         UIEffect.Instance.enableCanvas(999);

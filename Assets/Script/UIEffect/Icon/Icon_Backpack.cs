@@ -13,7 +13,7 @@ public class Icon_Backpack : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] public GameObject ItemArea;
     [SerializeField] Button Exit;
     public static Icon_Backpack Instance;
-    public static List<Item> Items = new List<Item>();
+    //public static List<Item> Items = new List<Item>();
     [SerializeField] Transform Elements;
     [SerializeField] GameObject InventoryItem; //prefab
     [SerializeField] Image NewMark;
@@ -97,37 +97,9 @@ public class Icon_Backpack : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             ItemArea.transform.DOScale(new Vector2(1, 1), 0.1f).SetEase(Ease.InQuad);
         });       
     }
-    public void add(Item item)
+    public void setNewMark()
     {
         NewMark.gameObject.SetActive(true);
-        for (int i = 0; i < Items.Count; i++)
-        {
-            if (Items[i].itemName == item.itemName)
-            {
-                Items[i].number++;
-                return;
-            }
-        }
-        item.number = 1;
-        Items.Add(item);        
-        return;
-    }
-
-    public void Remove(Item item)
-    {
-        for (int i = 0; i < Items.Count; i++)
-        {
-            if (Items[i].itemName == item.itemName)
-            {
-                Items[i].number--;
-                if (Items[i].number == 0)
-                    Items.RemoveAt(i);
-                return;
-            }
-        }
-        item.number = 0;
-        Items.Remove(item);
-        return;
     }
 
     public void ListItems()
@@ -136,19 +108,22 @@ public class Icon_Backpack : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         {
             Destroy(item.gameObject);
         }
-        foreach(var item in Items)
+        foreach(var item in BackpackManager.Items)
         {
             GameObject obj = Instantiate(InventoryItem, Elements);
             var itemIcon=obj.transform.Find("ItemIcon").GetComponent<Image>();
             var itemName=obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
             var itemNum = obj.transform.Find("ItemNum").GetComponent<TextMeshProUGUI>();
+            Button itemBtn = obj.transform.GetComponent<Button>();
 
-            Debug.Log(itemName.text);
             string localizedItemName= LocalizationSettings.StringDatabase.GetLocalizedString("Item", item.key);
             itemName.text = localizedItemName;
             itemNum.text = item.number.ToString();
             itemIcon.sprite = item.picture;
+            itemBtn.onClick.AddListener(()=> {
+                Debug.Log("itemName: " + item.name + ", itemType:" + item.type + ", itemCount" + item.number);
 
+            });
         }
     }
 

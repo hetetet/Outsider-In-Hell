@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a7c4e5afe7d0c4a9206e0eea1e2d3f, type: 3}
   m_Name: jacket
   m_EditorClassIdentifier: 
-  type: 1
+  type: 0
   key: varjacket
   itemName: "\uACFC\uC7A0"
   number: 1

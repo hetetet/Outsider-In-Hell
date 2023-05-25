@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class Item : ScriptableObject
 {
-    public int type; //0: 일반 아이템 1: 의상 2: 무기
+    public int type; 
+    //0: 일반 아이템
+    //1x: 의상
+    //    10: 가면
+    //2: 무기
     public string key;
     public string itemName;
     public int number=1;

@@ -42,7 +42,7 @@ public class ItemHandler : MonoBehaviour
     }
     public IEnumerator showFoundItem(Item item, Image itemImg)
     {
-        Icon_Backpack.Instance.add(item);
+        BackpackManager.add(item);
         itemImg.sprite = item.picture;
         variableStorage.SetValue("$found_obj", item.name);
         myDialogueRunner.StartDialogue("FindObject");
@@ -51,7 +51,7 @@ public class ItemHandler : MonoBehaviour
         itemImg.transform.LeanScale(Vector2.zero, 0.5f).setEaseInBack().setOnComplete(() =>
         {
             ItemHandler.Instance.setCanClickItem(true);
-            if (Icon_Backpack.Items.Count==4) //아이템 4개 모두 찾았을 경우
+            if (BackpackManager.Items.Count==4) //아이템 4개 모두 찾았을 경우
             {
                 getOutBtn.transform.LeanMoveLocal(new Vector2(0, -10), 0.3f).setEaseOutQuad().setOnComplete(() =>
                 {

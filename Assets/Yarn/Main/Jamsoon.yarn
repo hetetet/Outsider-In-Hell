@@ -17,7 +17,7 @@ tags:
 <<set_sprite CharImg Jamsoon 0>>
 잼순: 언니도 꿈 꾸다가 여기 온 거야?
 <<set_sprite CharImg Soyeon 0>>
-소연: 아니... 고열에 시달리다가 병원을 가려고 방문을 나서다가 쓰러졌는데 여기더라고.
+소연: 아니...<br>열이 너무 많이 나서 병원을 가려고 방문을 나서다가 쓰러졌는데 지옥이더라고.
 <<set_sprite CharImg Jamsoon 0>>
 잼순: 그럼 언니 죽은거야?
 <<set_sprite CharImg Jamsoon 1>>
@@ -31,7 +31,7 @@ tags:
 //대화를 두번째로 시작한다면 여기부터 
 <<set_state Jamsoon 0>>
 <<set_sprite CharImg Jamsoon 2>>
-잼순: 돌려보내줘! 내일 급식에 돈까스 나온단 말이야! 먹고 죽어야 된다고...
+잼순: 돌려보내줘! 내일 급식에 돈까스 나온단 말이야!<br>먹고 죽어야 된다고...
 ->소연: 막상 내일 되어보니 급식실 사정으로 생선까스로 대체될수도 있잖아?
     <<set_sprite CharImg Jamsoon 1>>
     잼순: 생선까스도 그렇게 맛없진 않은데...
@@ -73,23 +73,27 @@ tags:
     잼순: 어차피 나는 내 방에 하나 더 가지고 있거든?
     <<set_sprite CharImg Jamsoon 6>>
     <<set_state Jamsoon 3>>
+    <<give_mask Jamsoon>>
     잼순: 이거는 언니 줄게!
     <<set_sprite CharImg Soyeon 10>>
     소연: 어... 고마워...!
     <<set_sprite CharImg Jamsoon 4>>
-    잼순: 이거 쓰면 괴물들이 언니도 괴물인 줄 알아가지고, 언니 공격 안할지도 몰라!
+    잼순: 이거 쓰면 괴물들이 언니도 괴물인 줄 알아가지고,<br>언니 공격 안할지도 몰라!
+    <<set_sprite CharImg Soyeon 10>>
     소연: 효과가 있을지는 모르겠다만, 여튼 고마워! 잘 쓸게!
     <<set_sprite CharImg Jamsoon 5>>
     <<set_state Jamsoon 2>>
+    <<show_particle Jamsoon>>
     잼순: ...어?
     잼순: 엄마가 밥먹으라고 부른다!
      <<set_sprite CharImg Soyeon 5>>
     소연: 나한테는 아무 소리도 안 들리는데?
-    <<set_sprite CharImg Soyeon 4>>
+    <<set_sprite CharImg Jamsoon 4>>
     잼순: 나한테만 들리는 건가 봐.
     <<set_sprite CharImg Jamsoon 7>>
     <<set_state Jamsoon 4>>
     잼순: 나 갈게! 가면 잘 써!
+    잼순: 열나는 것도 꼭 나아서 일어나야 돼!
     <<set_sprite CharImg Soyeon 6>>
     소연: ...이렇게 빨리 가는 거야?
     소연: 잘 가.

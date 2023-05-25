@@ -34,6 +34,10 @@ MonoBehaviour:
     m_Localized: Wallet
     m_Metadata:
       m_Items: []
+  - m_Id: 43801396143112192
+    m_Localized: Monster mask
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
