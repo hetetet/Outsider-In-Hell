@@ -94,6 +94,14 @@ MonoBehaviour:
     m_Localized: Do you want to quit this game?
     m_Metadata:
       m_Items: []
+  - m_Id: 44565136316743680
+    m_Localized: Wear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44565136371269632
+    m_Localized: Equip
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -44,9 +44,4 @@ public class BackpackManager : MonoBehaviour
         Items.Remove(item);
         return;
     }
-
-    public void AddByName(string itemname)
-    {
-
-    }
 }

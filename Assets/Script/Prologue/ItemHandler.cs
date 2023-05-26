@@ -19,8 +19,6 @@ public class ItemHandler : MonoBehaviour
 
     public static ItemHandler Instance;
 
-    
-
     public void setCanClickItem(bool canclick)
     {
         Debug.Log("set canclick to " + canclick.ToString());
@@ -50,14 +48,14 @@ public class ItemHandler : MonoBehaviour
         yield return new WaitForSeconds(1.8f);
         itemImg.transform.LeanScale(Vector2.zero, 0.5f).setEaseInBack().setOnComplete(() =>
         {
-            ItemHandler.Instance.setCanClickItem(true);
+            Instance.setCanClickItem(true);
             if (BackpackManager.Items.Count==4) //아이템 4개 모두 찾았을 경우
             {
                 getOutBtn.transform.LeanMoveLocal(new Vector2(0, -10), 0.3f).setEaseOutQuad().setOnComplete(() =>
                 {
                     Icon_Mission.Instance.deleteMission(deleteMission);
                     getOutBtn.transform.LeanMoveLocal(new Vector2(0, 0), 0.3f).setEaseInQuad();
-                    ItemHandler.Instance.setCanClickItem(false);
+                    Instance.setCanClickItem(false);
                 });
             }
         });

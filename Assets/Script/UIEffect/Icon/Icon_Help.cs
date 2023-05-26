@@ -79,7 +79,7 @@ public class Icon_Help : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         {
             Time.timeScale = 0;
         };
-        UIEffect.Instance.enableCanvas(10);
+        UIEffect.Instance.enableCanvas(20);
         UIEffect.Instance.setColor(1, 1, 1, 0);
         UIEffect.Instance.Fade(0.5f, 0.4f);
         HelpArea.transform.DOScale(new Vector2(1.1f, 1.1f), 0.25f).SetEase(Ease.OutQuad).OnComplete(() =>

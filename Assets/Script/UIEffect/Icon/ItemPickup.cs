@@ -7,8 +7,7 @@ public class ItemPickup : MonoBehaviour
     [SerializeField] Item item;
 
     private void OnMouseUp()
-    {
-        
+    {        
         Pickup();
     }
 

@@ -135,7 +135,7 @@ public class TitleSetting : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         {
             Time.timeScale = 0;
         };
-        UIEffect.Instance.enableCanvas(10);
+        UIEffect.Instance.enableCanvas(20);
         UIEffect.Instance.setColor(1, 1, 1, 0);
         UIEffect.Instance.Fade(0.5f, 0.2f);
     }

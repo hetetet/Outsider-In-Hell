@@ -10,6 +10,7 @@ using UnityEngine.Localization.Settings;
 public class Icon_Backpack : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler
 {
     Image img;
+    [SerializeField] Canvas TopUiCanvas;
     [SerializeField] public GameObject ItemArea;
     [SerializeField] Button Exit;
     public static Icon_Backpack Instance;
@@ -17,7 +18,11 @@ public class Icon_Backpack : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] Transform Elements;
     [SerializeField] GameObject InventoryItem; //prefab
     [SerializeField] Image NewMark;
+    [SerializeField] GameObject UseBtn;
     bool isDisabled=false;
+    bool isAskToUse = false;
+
+    Item Mask=null;
 
     void Awake()
     {
@@ -89,7 +94,7 @@ public class Icon_Backpack : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         {
             Time.timeScale = 0;
         };
-        UIEffect.Instance.enableCanvas(10);
+        UIEffect.Instance.enableCanvas(20);
         UIEffect.Instance.setColor(1, 1, 1, 0);
         UIEffect.Instance.Fade(0.5f, 0.4f);
         ItemArea.transform.DOScale(new Vector2(1.1f, 1.1f), 0.25f).SetEase(Ease.OutQuad).OnComplete(() =>
@@ -114,18 +119,57 @@ public class Icon_Backpack : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             var itemIcon=obj.transform.Find("ItemIcon").GetComponent<Image>();
             var itemName=obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
             var itemNum = obj.transform.Find("ItemNum").GetComponent<TextMeshProUGUI>();
+            var isUsing=obj.transform.Find("IsUsing").GetComponent<Image>();
             Button itemBtn = obj.transform.GetComponent<Button>();
 
             string localizedItemName= LocalizationSettings.StringDatabase.GetLocalizedString("Item", item.key);
             itemName.text = localizedItemName;
             itemNum.text = item.number.ToString();
             itemIcon.sprite = item.picture;
+            isUsing.gameObject.SetActive(item.isUsing);
             itemBtn.onClick.AddListener(()=> {
                 Debug.Log("itemName: " + item.name + ", itemType:" + item.type + ", itemCount" + item.number);
 
+                if (item.type == 0)
+                    return;
+                else if (10 <= item.type && item.type <= 19)
+                {
+                    if (item.type == 11)//마스크
+                    {
+                        //아무것도 안 쓴 경우
+                        //이미 해당 가면을 쓴 경우
+                        //이미 다른 가면을 쓴 경우: 다른 가면의 인벤토리에서 착용 표시를 삭제하는 과정을 진행해야 하는데 그게 지금 너무 어려움...
+                        int childnum= PlayerBehavior.Instance.MaskArea.transform.childCount;                       
+                        if (childnum==1)
+                        {
+                            Transform PrevMask = PlayerBehavior.Instance.MaskArea.transform.GetChild(0);
+                            Mask.isUsing = false;
+                            Destroy(PrevMask.gameObject);
+                            if (PrevMask.name == item.name)
+                            {
+                                item.isUsing = false;
+                                isUsing.gameObject.SetActive(false);
+                                Mask = null;
+                                return;
+                            }
+                        }
+                        isUsing.gameObject.SetActive(true);
+                        item.isUsing = true;
+                        Mask = item;
+                        var NewMask=Instantiate(item.itemobj, PlayerBehavior.Instance.MaskArea);
+                        NewMask.name = item.name;
+                    }
+                       
+                }
+                else if (20 <= item.type && item.type <= 29)
+                {
+
+                }
             });
         }
     }
+
+
 
     public void DisableIcon()
     {

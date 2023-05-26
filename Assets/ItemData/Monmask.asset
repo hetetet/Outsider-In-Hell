@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a7c4e5afe7d0c4a9206e0eea1e2d3f, type: 3}
   m_Name: Monmask
   m_EditorClassIdentifier: 
-  type: 10
+  type: 11
   key: monmask
   itemName: "\uC7BC\uC21C\uC774\uC758 \uAD34\uBB3C \uAC00\uBA74"
   number: 1
-  picture: {fileID: 21300000, guid: 83b884237ba5cbb458e7a7ee617584bf, type: 3}
+  isUsing: 0
+  picture: {fileID: 21300000, guid: 41ac4cd968d253247a4206bde9f660ae, type: 3}
+  itemobj: {fileID: 2406703734534323249, guid: d4aee5639a5fb0f428dfe96c0c939620, type: 3}

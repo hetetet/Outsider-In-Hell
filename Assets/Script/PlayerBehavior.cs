@@ -6,10 +6,12 @@ public class PlayerBehavior : MonoBehaviour
 {
     public static PlayerBehavior Instance;
     [SerializeField] Collider2D FistArea;
+    public Transform MaskArea;
     public float SIZE=0.4f;
     //movement
     private float maxspeed=3;
     private float jumpPower=12;
+    public float attackPower = 3;
     public static bool canmove = true;
     private bool isJumping = false;
     private bool isWalking = false;
@@ -179,7 +181,7 @@ public class PlayerBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Land" && collision.relativeVelocity.y > 0)
+        if ((collision.gameObject.tag == "Land" || collision.gameObject.tag == "Ladder") && collision.relativeVelocity.y > 0)
         {
             anim.SetBool("isJumping", false);
             isJumping = false;
