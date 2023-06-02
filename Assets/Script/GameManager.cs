@@ -8,6 +8,7 @@ using TMPro;
 using Yarn.Unity;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
     TextLineProvider textLineProvider;
     YarnProject yarnProject;
     [SerializeField] TMP_Dropdown langDropDown_;
+    [SerializeField] GameObject Player;
 
     private void Awake()
     {
@@ -296,8 +298,33 @@ public class GameManager : MonoBehaviour
         Debug.Log("Save game data");
     }
 
+    public void DeleteData()
+    {
+        Debug.Log("Delete game data");
+        PlayerPrefs.DeleteAll();
+    }
+
     public bool isSetAreaActive()
     {
         return SettingCanvas.gameObject.activeSelf;
+    }
+
+    public void Revive()
+    {
+        StartCoroutine("coRevive");
+    }
+
+    IEnumerator coRevive()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log("revive");        
+        SceneManager.LoadScene("Main_map01");
+        UIEffect.Instance.Fade(0, 1);
+        yield return new WaitForSeconds(0.5f);
+        var NewPlayer=Instantiate(Player);
+        NewPlayer.gameObject.name = "Soyeon";
+        NewPlayer.transform.position = GameObject.Find("FromStartToHere").transform.position;
+        NewPlayer.transform.localScale = new Vector3(-NewPlayer.transform.localScale.x, NewPlayer.transform.localScale.y, NewPlayer.transform.localScale.z);
+        PlayerBehavior.Instance.EnableMove();
     }
 }

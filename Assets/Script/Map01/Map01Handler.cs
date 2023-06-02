@@ -6,26 +6,37 @@ using Yarn.Unity;
 public class Map01Handler : MonoBehaviour
 {
     private GameObject Player;
-    private Transform FromStarterToHere;
+    [SerializeField] private Transform FromStarterToHere;
+    [SerializeField] private Transform FromHellunivToHere;
     [SerializeField] Mission DoZeroTwo;
     [SerializeField] DialogueRunner dialogueRunner;
     private void Awake()
     {
         Player = GameObject.Find("Soyeon");
-        FromStarterToHere = GameObject.Find("FromStartToHere").transform;
+
     }
     void Start()
     {
+        int dialog_start = PlayerPrefs.GetInt("dialog_map01", 0);
         Debug.Log("entered map01");
-        PlayerBehavior.Instance.DisableMove();
-        dialogueRunner.StartDialogue("MainMap01Enter");
-        dialogueRunner.onDialogueComplete.AddListener(() =>
+        if (dialog_start == 0)
         {
-            PlayerBehavior.Instance.EnableMove();
-            MissionAlarm.Instance.show_mission(DoZeroTwo);
-        });
+            PlayerBehavior.Instance.DisableMove();
+            dialogueRunner.StartDialogue("MainMap01Enter");
+            dialogueRunner.onDialogueComplete.AddListener(() =>
+            {
+                PlayerBehavior.Instance.EnableMove();
+                MissionAlarm.Instance.show_mission(DoZeroTwo);
+            });
+            PlayerPrefs.SetInt("dialog_map01", 1);
+        }
         
-        Player.transform.position = FromStarterToHere.position;
+        //이전 씬에 따른 현재 씬 위치 조정
+        if (PortalBehavior.prevScenename == "HellUniv")
+            Player.transform.position = FromHellunivToHere.position;
+        else
+            Player.transform.position= FromStarterToHere.position;
+        PortalBehavior.prevScenename = "Main_map01";
     }
 
     // Update is called once per frame

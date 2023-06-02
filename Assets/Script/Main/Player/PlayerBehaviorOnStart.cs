@@ -40,22 +40,11 @@ public class PlayerBehaviorOnStart : MonoBehaviour
     {
         if (collision.gameObject.name == "SnakeyNeck" && isChasing)
         {
-            collision.otherRigidbody.velocity = Vector2.zero;
-            StarterHandler.startAgain = true;
+            Icon_Mission.Instance.deleteMission(ranaway);
             isChasing = false;
-            StartCoroutine(GameOver());
-        }
-    }
 
-    IEnumerator GameOver()
-    {
-        UIEffect.Instance.enableCanvas(999);
-        UIEffect.Instance.setColor(0, 0, 0, 0);
-        UIEffect.Instance.Fade(1, 1);
-        
-        yield return new WaitForSeconds(1.5f);
-        Icon_Mission.Instance.deleteMission(ranaway);
-        SceneManager.LoadScene("Main_starter");
+            PlayerBehavior.Instance.GameOver();
+        }
     }
 
     public void startChasing()

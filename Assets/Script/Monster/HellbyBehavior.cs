@@ -8,10 +8,13 @@ public class HellbyBehavior : Enemy
     private void Awake()
     {
         base.Awake();
-        //hp = 15;
     }
     void Start()
     {
+        AttackPower = 100;
+        Maxhp = 15;
+        Hp = Maxhp;
+        
         Invoke("think", 3);
     }
     private void FixedUpdate()

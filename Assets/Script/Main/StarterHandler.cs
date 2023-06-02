@@ -32,6 +32,7 @@ public class StarterHandler : MonoBehaviour
 
         TopUI.SetActive(false);
         HPbar.SetActive(false);
+        PortalBehavior.prevScenename = "Starter";
         
         StartCoroutine(StartMainGame());
     }

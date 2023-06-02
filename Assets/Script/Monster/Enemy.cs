@@ -9,8 +9,12 @@ public class Enemy : MonoBehaviour
     SingleMobSpawner singleSpawner;
     SpriteRenderer spriteRenderer;
     int dir = 0;
-    private int maxhp = 30;
-    public int hp = 30;
+    int attackPower;
+    private int maxhp;
+    public int hp;  
+    public int AttackPower{get; protected set;}
+    public int Maxhp { get; protected set;}
+    public int Hp { get; protected set; }
     protected virtual void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -30,7 +34,7 @@ public class Enemy : MonoBehaviour
         Vector2 originvec=new Vector2(rigid.position.x + dir*(float)(Mathf.Abs(transform.localScale.x)/2), rigid.position.y);
         Debug.DrawRay(originvec, Vector3.down, new Color(0, 1, 0));
         RaycastHit2D rayHit=Physics2D.Raycast(originvec, Vector3.down, 1, LayerMask.GetMask("Platform"));
-        if (rayHit.collider == null)
+        if (rayHit.collider==null || (rayHit.collider!=null && rayHit.collider.tag != "Land"))
         {
             dir = dir * (-1);
             if(dir!=0)
@@ -71,7 +75,7 @@ public class Enemy : MonoBehaviour
 
     public void damaged(int damage)
     {
-        StartCoroutine("coDamaged",damage);
+        StartCoroutine("coDamaged", damage);
     }
 
     IEnumerator coDamaged(int damage)
@@ -79,8 +83,8 @@ public class Enemy : MonoBehaviour
         dir = 0;
         CancelInvoke();
         gameObject.layer = 8;//noDamage;
-        hp -= damage;   
-        if (hp <= 0)
+        Hp -= damage;   
+        if (Hp <= 0)
         {
             Debug.Log("쥬거써...ㅠ");
             //죽는 애니메이션
@@ -88,7 +92,7 @@ public class Enemy : MonoBehaviour
             //애니메이션 재생시간동안 딜레이
             yield return new WaitForSeconds(0.5f);
             Debug.Log("0.5초 지남");
-            hp = maxhp;
+            Hp = Maxhp;
             singleSpawner.CoRevive();
             Destroy(gameObject);
         }
@@ -107,7 +111,8 @@ public class Enemy : MonoBehaviour
         transform.localScale = new Vector3(isLeft * Mathf.Abs(gameObject.transform.localScale.x), gameObject.transform.localScale.y, 0);
         anim.SetTrigger("attack");
         new WaitForSeconds(1);
-        Debug.Log("플레이어와 닿았습니다");
+        Debug.Log("플레이어와 닿았습니다, attackPower: "+ AttackPower.ToString()+", Hp: "+Hp.ToString());
+        PlayerBehavior.Instance.OnDamaged(AttackPower);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

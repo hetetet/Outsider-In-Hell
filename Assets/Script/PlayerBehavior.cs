@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehavior : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PlayerBehavior : MonoBehaviour
     public static bool canmove = true;
     private bool isJumping = false;
     private bool isWalking = false;
+    private bool isDead=false;
 
     Rigidbody2D rigid;
     Animator anim;
@@ -52,6 +54,9 @@ public class PlayerBehavior : MonoBehaviour
     }
     void Start()
     {
+        isDead = false;
+        currentHP = maxHP;
+        HPmanager.Instance.showHpBar(maxHP);
         FistArea.gameObject.SetActive(false);
     }
 
@@ -177,32 +182,24 @@ public class PlayerBehavior : MonoBehaviour
                 }
             }
         }
+        if(currentHP==0 && !isDead)
+            GameOver();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnDamaged(int damage)
     {
-        if ((collision.gameObject.tag == "Land" || collision.gameObject.tag == "Ladder") && collision.relativeVelocity.y > 0)
-        {
-            anim.SetBool("isJumping", false);
-            isJumping = false;
-        }
-
-        if (collision.gameObject.tag == "Enemy") //나중에는 적 종류따라 데미지량을 달리 할 예정
-        {
-            Debug.Log("적과 닿았습니다");
-            int damage = 5;
-            rigid.AddForce(new Vector2(-gameObject.transform.localScale.x * damage*3, 3), ForceMode2D.Impulse);
-            anim.SetTrigger("Damaged");
-            currentHP -= damage;
-            HPmanager.Instance.showHpBar(currentHP);
-            gameObject.layer = 8;//noDamage layer
-            setColor(new Color(1, 0.5f, 0.5f));
-            canmove = false;
-            Invoke("offDamaged", 1);
-        }
+        Debug.Log("적과 닿았습니다, -gameObject.transform.localScale.x: "+ (-gameObject.transform.localScale.x).ToString());
+        rigid.AddForce(new Vector2(-gameObject.transform.localScale.x * damage * 6, 3), ForceMode2D.Impulse);
+        anim.SetTrigger("Damaged");
+        currentHP -= damage;
+        HPmanager.Instance.showHpBar(currentHP);
+        gameObject.layer = 8;//noDamage layer
+        setColor(new Color(1, 0.5f, 0.5f));
+        canmove = false;
+        Invoke("OffDamaged", 1);
     }
 
-    public void offDamaged()
+    public void OffDamaged()
     {
         canmove = true;
         gameObject.layer = 0;//default
@@ -254,6 +251,20 @@ public class PlayerBehavior : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if ((collision.gameObject.tag == "Land" || collision.gameObject.tag == "Ladder") && collision.relativeVelocity.y > 0)
+        {
+            anim.SetBool("isJumping", false);
+            isJumping = false;
+        }
+
+        if (collision.gameObject.tag == "Enemy") //나중에는 적 종류따라 데미지량을 달리 할 예정
+        {
+            
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ladder")
@@ -263,6 +274,12 @@ public class PlayerBehavior : MonoBehaviour
             onLadder = true;
             rigid.drag = 20f;
             rigid.gravityScale = 0f;
+        }else if (collision.gameObject.tag == "Lava") //나중에는 적 종류따라 데미지량을 달리 할 예정
+        {
+            Debug.Log("용암에 빠졌습니다");
+            currentHP = 0;
+            HPmanager.Instance.showHpBar(0);
+            GameOver();
         }
     }
 
@@ -278,5 +295,25 @@ public class PlayerBehavior : MonoBehaviour
             rigid.drag = 2f;
             rigid.gravityScale = 2f;
         }
+    }
+    public void GameOver()
+    {
+        StartCoroutine("CoGameOver");
+    }
+
+    IEnumerator CoGameOver()
+    {
+        isDead = true;
+        canmove = false;
+        anim.SetTrigger("Die");
+        UIEffect.Instance.enableCanvas(999);
+        UIEffect.Instance.setColor(0, 0, 0, 0);
+        UIEffect.Instance.Fade(1, 1);
+
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Main_map01");//SceneManager.GetActiveScene().name
+        //정보 불러오는 -3000드
+        GameManager.Instance.Revive();
+        Destroy(gameObject);  
     }
 }

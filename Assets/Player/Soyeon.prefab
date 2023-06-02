@@ -1257,7 +1257,7 @@ GameObject:
   - component: {fileID: 7727393693526710638}
   m_Layer: 0
   m_Name: Soyeon
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1271,7 +1271,7 @@ Transform:
   m_GameObject: {fileID: 7843854658750775151}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1, y: -2, z: 0}
-  m_LocalScale: {x: -0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: -0.43, y: 0.43, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2759086949033418080}
@@ -1304,7 +1304,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 2
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: 6d0fb12676795c24ab65e2013e70d327, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1419,6 +1419,7 @@ MonoBehaviour:
   FistArea: {fileID: 5586022453617802187}
   MaskArea: {fileID: 6200829970278365355}
   SIZE: 0.43
+  attackPower: 3
 --- !u!1 &7954236419412533172
 GameObject:
   m_ObjectHideFlags: 0

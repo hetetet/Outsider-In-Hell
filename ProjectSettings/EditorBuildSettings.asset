@@ -23,6 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main_map01.unity
     guid: a9d099f898287af48aefd2713215236d
+  - enabled: 1
+    path: Assets/Scenes/HellUniv.unity
+    guid: 4f1b8c40f4371eb41bde8df43c530246
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: aaf502e9fc5da554d997b8dcb8fde7ee, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 62e7bf9a5bd64bc4cb36cd84d72bb282, type: 2}

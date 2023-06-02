@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TitleHandler : MonoBehaviour
 {
     [SerializeField] private Button startButton;
-    [SerializeField] private Button LoadButton;
+    [SerializeField] private Button DeleteButton;
     [SerializeField] private Button SettingButton;
 
     void Awake()
@@ -17,7 +17,7 @@ public class TitleHandler : MonoBehaviour
     private void Start()
     {
         startButton.onClick.AddListener(startGame);
-        LoadButton.onClick.AddListener(loadGame);
+        DeleteButton.onClick.AddListener(DeleteGame);
         SettingButton.onClick.AddListener(GameManager.Instance.ShowSettings);
 
         GameManager.isSettingDisabled = false;
@@ -36,8 +36,9 @@ public class TitleHandler : MonoBehaviour
         UIEffect.Instance.Fade(1, 2, "Prologue");       
     }
 
-    public void loadGame()
+    public void DeleteGame()
     {
-        Debug.Log("Load gay");
+        Debug.Log("Delete gay");
+        GameManager.Instance.DeleteData();
     }
 }

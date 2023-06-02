@@ -19,10 +19,13 @@ public class Icon_Backpack : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] GameObject InventoryItem; //prefab
     [SerializeField] Image NewMark;
     [SerializeField] GameObject UseBtn;
+    [SerializeField] Sprite[] UsingMark; //0: mask 1: necklace 2: weapon
     bool isDisabled=false;
     bool isAskToUse = false;
 
     Item Mask=null;
+    Item Necklace=null;
+    Item Weapon = null;
 
     void Awake()
     {
@@ -126,7 +129,25 @@ public class Icon_Backpack : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             itemName.text = localizedItemName;
             itemNum.text = item.number.ToString();
             itemIcon.sprite = item.picture;
-            isUsing.gameObject.SetActive(item.isUsing);
+
+            //현재 착용중인 가면, 목장식, 아이템 표시
+            if (Mask!=null && Mask.name == item.name) 
+            {
+                isUsing.gameObject.SetActive(true);
+                isUsing.sprite = UsingMark[0];
+            }else if (Necklace != null && Necklace.name == item.name)
+            {
+                isUsing.gameObject.SetActive(true);
+                isUsing.sprite = UsingMark[1];
+            }
+            else if (Weapon != null && Weapon.name == item.name)
+            {
+                isUsing.gameObject.SetActive(true);
+                isUsing.sprite = UsingMark[2];
+            }
+            else
+                isUsing.gameObject.SetActive(false);
+
             itemBtn.onClick.AddListener(()=> {
                 Debug.Log("itemName: " + item.name + ", itemType:" + item.type + ", itemCount" + item.number);
 
@@ -137,29 +158,23 @@ public class Icon_Backpack : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                     if (item.type == 11)//마스크
                     {
                         //아무것도 안 쓴 경우
-                        //이미 해당 가면을 쓴 경우
-                        //이미 다른 가면을 쓴 경우: 다른 가면의 인벤토리에서 착용 표시를 삭제하는 과정을 진행해야 하는데 그게 지금 너무 어려움...
-                        int childnum= PlayerBehavior.Instance.MaskArea.transform.childCount;                       
-                        if (childnum==1)
+                        //이미 해당 가면을 쓴 경우                     
+                        if (Mask!=null)
                         {
                             Transform PrevMask = PlayerBehavior.Instance.MaskArea.transform.GetChild(0);
-                            Mask.isUsing = false;
                             Destroy(PrevMask.gameObject);
                             if (PrevMask.name == item.name)
                             {
-                                item.isUsing = false;
-                                isUsing.gameObject.SetActive(false);
                                 Mask = null;
+                                ListItems();
                                 return;
                             }
-                        }
-                        isUsing.gameObject.SetActive(true);
-                        item.isUsing = true;
+                        }                       
                         Mask = item;
                         var NewMask=Instantiate(item.itemobj, PlayerBehavior.Instance.MaskArea);
                         NewMask.name = item.name;
-                    }
-                       
+                        ListItems();
+                    }                      
                 }
                 else if (20 <= item.type && item.type <= 29)
                 {
@@ -169,7 +184,10 @@ public class Icon_Backpack : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
     }
 
+    public void OnClickItem()
+    {
 
+    }
 
     public void DisableIcon()
     {

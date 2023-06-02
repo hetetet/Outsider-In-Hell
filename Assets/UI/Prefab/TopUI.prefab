@@ -700,7 +700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2802742434603313859
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1919,7 +1919,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.000015258789, y: -0.000030517578}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2024,7 +2024,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 21
   m_TargetDisplay: 0
 --- !u!114 &2802742436285406701
 MonoBehaviour:
@@ -2128,7 +2128,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.06275177}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2802742436296131182
 CanvasRenderer:
@@ -3211,6 +3211,22 @@ PrefabInstance:
       propertyPath: TopUiCanvas
       value: 
       objectReference: {fileID: 2802742436285406702}
+    - target: {fileID: 1790794968875648598, guid: e625f93e12575dd4585b709837cab1d2, type: 3}
+      propertyPath: UsingMark.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790794968875648598, guid: e625f93e12575dd4585b709837cab1d2, type: 3}
+      propertyPath: UsingMark.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 28bb500a0173a414996f49c15e0df402, type: 3}
+    - target: {fileID: 1790794968875648598, guid: e625f93e12575dd4585b709837cab1d2, type: 3}
+      propertyPath: UsingMark.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: bffc9b85dde662349a763ea69524372e, type: 3}
+    - target: {fileID: 1790794968875648598, guid: e625f93e12575dd4585b709837cab1d2, type: 3}
+      propertyPath: UsingMark.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: a87a90067996b994d9ec7c2e80fa5c4e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e625f93e12575dd4585b709837cab1d2, type: 3}
 --- !u!224 &8574127398246326037 stripped

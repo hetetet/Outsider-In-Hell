@@ -15,5 +15,7 @@ MonoBehaviour:
   type: 0
   key: varjacket
   itemName: "\uACFC\uC7A0"
-  number: 1
+  number: 0
+  isUsing: 0
   picture: {fileID: 21300000, guid: 6776171ea341b6842ab990f5048b6327, type: 3}
+  itemobj: {fileID: 0}
