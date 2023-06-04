@@ -18,21 +18,25 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 1769656594432
-    m_Localized: 'MISSION: Get jacket, pants, wallet and phone and go out.'
+  - m_Id: 47326152708108291
+    m_Localized: 'MISSION: Find the invitee of hell tour list and hand it to Cheolsu.'
     m_Metadata:
       m_Items: []
-  - m_Id: 1769690148864
+  - m_Id: 47326152708108290
+    m_Localized: Press the left and right arrow keys repeatedly for zerotwo dodging.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47326152708108289
+    m_Localized: Uses the arrows keys to move and run away from SnakeyNeck.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47326152708108288
     m_Localized: "MISSION: Well\u2026 disaster comes from the mouth. Hold out longer,
       it will give you luck."
     m_Metadata:
       m_Items: []
-  - m_Id: 701820401922048
-    m_Localized: Uses the arrows keys to move and run away from SnakeyNeck.
-    m_Metadata:
-      m_Items: []
-  - m_Id: 11963996664016896
-    m_Localized: Press the left and right arrow keys repeatedly for zerotwo dodging.
+  - m_Id: 47326152703913984
+    m_Localized: 'MISSION: Get jacket, pants, wallet and phone and go out.'
     m_Metadata:
       m_Items: []
   references:

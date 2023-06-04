@@ -12,12 +12,12 @@ public class NpcBehavior : MonoBehaviour
     public Animator Anim { get { return anim; } protected set { anim = value; } }
     public SpriteRenderer Sr { get { return sr; } protected set { sr = value; } }
     [SerializeField] string currentDialogName;
+    public string CurrentDialogName { get { return CurrentDialogName; } protected set { CurrentDialogName = value; } }
     private bool meetPlayer;
-    
-    // Update is called once per frame
+
     // 대화의 진행 정도, 사라졌는지
    protected virtual void Update()
-    {
+   {
         
         if (meetPlayer && Input.GetKeyDown(KeyCode.Q) && !dr.IsDialogueRunning)
         {

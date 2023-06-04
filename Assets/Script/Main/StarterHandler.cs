@@ -103,4 +103,6 @@ public class StarterHandler : MonoBehaviour
         };
         UIEffect.Instance.Fade(0, 1);
     }
+
+
 }

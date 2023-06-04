@@ -70,7 +70,6 @@ public class Enemy : MonoBehaviour
             int isLeft = (collision.gameObject.transform.position.x - gameObject.transform.position.x) > 0 ? -1 : 1; //enemy가 플레이어보다 오른쪽에 있?
             attack(isLeft);
         }
-
     }
 
     public void damaged(int damage)

@@ -11,7 +11,7 @@ public class HellbyBehavior : Enemy
     }
     void Start()
     {
-        AttackPower = 100;
+        AttackPower = 3;
         Maxhp = 15;
         Hp = Maxhp;
         

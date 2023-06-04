@@ -7,6 +7,7 @@ public class SnakeyneckBehavior : MonoBehaviour
     GameObject snek;
     Rigidbody2D rigid_snek;
     Animator anim_snek;
+    [SerializeField] Mission ranaway;
     float maxspeed = 3;
     public static SnakeyneckBehavior Instance;
 
@@ -42,6 +43,7 @@ public class SnakeyneckBehavior : MonoBehaviour
 
     public void doBump()
     {
+        Icon_Mission.Instance.deleteMission(ranaway);
         Destroy(rigid_snek);
         anim_snek.SetTrigger("Bump");
         SoundManager.Instance.playEffectSound(bump);

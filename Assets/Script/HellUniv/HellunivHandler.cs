@@ -15,6 +15,8 @@ public class HellunivHandler : MonoBehaviour
         //이전 씬에 따른 현재 씬 위치 조정
         if (PortalBehavior.prevScenename == "Main_map01")
             Player.transform.position = FromMap01toHere.position;
+        else
+            Player.transform.position = FromMap01toHere.position;
 
         PortalBehavior.prevScenename = "HellUniv";
     }

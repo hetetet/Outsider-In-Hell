@@ -182,7 +182,7 @@ public class PlayerBehavior : MonoBehaviour
                 }
             }
         }
-        if(currentHP==0 && !isDead)
+        if(currentHP<=0 && !isDead)
             GameOver();
     }
 
@@ -192,6 +192,8 @@ public class PlayerBehavior : MonoBehaviour
         rigid.AddForce(new Vector2(-gameObject.transform.localScale.x * damage * 6, 3), ForceMode2D.Impulse);
         anim.SetTrigger("Damaged");
         currentHP -= damage;
+        if(currentHP < 0)
+            currentHP = 0;
         HPmanager.Instance.showHpBar(currentHP);
         gameObject.layer = 8;//noDamage layer
         setColor(new Color(1, 0.5f, 0.5f));

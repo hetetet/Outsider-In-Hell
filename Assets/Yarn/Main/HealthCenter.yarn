@@ -1,0 +1,23 @@
+﻿title: HealthCenter
+tags:
+---
+<<declare $hasmonmask=false as bool>>
+<<declare $isfullhealth=false as bool>>
+
+<<if $hasmonmask is false>>
+<<set_sprite CharImg Nurse 0>>
+건강센터 직원: 보아하니 인간이신 거 같은데, 죄송하지만 여기는 지옥대학 학생들만 이용할 수 있습니다. 
+
+<<else>>
+
+<<if $isfullhealth is false>>
+<<set_sprite CharImg Nurse 1>>
+건강센터 직원: 안녕하세요! 체력이 좀 깎이신 것 같은데 바로 채워 드릴게요!
+<<fill_health>>
+<<else>>
+<<set_sprite CharImg Nurse 1>>
+건강센터 직원: 체력이 만땅이라 굳이 안 채워드려도 될 것 같아요!
+<<endif>>
+건강센터 직원: 지옥대학 학생 맞으신가요? 아 뭐... 맞겠죠?
+<<endif>>
+===
