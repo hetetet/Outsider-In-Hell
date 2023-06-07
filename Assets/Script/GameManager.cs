@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
     YarnProject yarnProject;
     [SerializeField] TMP_Dropdown langDropDown_;
     [SerializeField] GameObject Player;
+    [SerializeField] GameObject TopUI;
+    [SerializeField] GameObject HpBar;
 
     private void Awake()
     {

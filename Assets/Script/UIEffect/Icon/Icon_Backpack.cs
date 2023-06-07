@@ -23,9 +23,9 @@ public class Icon_Backpack : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     bool isDisabled=false;
     bool isAskToUse = false;
 
-    public Item Mask=null;
-    public Item Necklace =null;
-    public Item Weapon = null;
+    public static Item Mask=null;
+    public static Item Necklace =null;
+    public static Item Weapon = null;
 
     void Awake()
     {

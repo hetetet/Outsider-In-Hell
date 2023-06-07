@@ -18,10 +18,10 @@ public class HealthCenter : MonoBehaviour
     {
         if(meetplayer && (Input.GetKeyUp(KeyCode.LeftShift) || (Input.GetKeyUp(KeyCode.RightShift))))
         {
-            if(Icon_Backpack.Instance.Mask != null)
-                Debug.Log("Icon_Backpack.Instance.Mask.name: " + Icon_Backpack.Instance.Mask.name);
+            if(Icon_Backpack.Mask != null)
+                Debug.Log("Icon_Backpack.Instance.Mask.name: " + Icon_Backpack.Mask.name);
             variableStorage.SetValue("$isfullhealth", PlayerBehavior.currentHP == PlayerBehavior.maxHP);
-            variableStorage.SetValue("$hasmonmask", (Icon_Backpack.Instance.Mask != null && Icon_Backpack.Instance.Mask.name == "Monmask"));
+            variableStorage.SetValue("$hasmonmask", (Icon_Backpack.Mask != null && Icon_Backpack.Mask.name == "Monmask"));
             dialogueRunner.onDialogueComplete.RemoveAllListeners();
             dialogueRunner.StartDialogue("HealthCenter");
             
