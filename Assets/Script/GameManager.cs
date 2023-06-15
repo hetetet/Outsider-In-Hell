@@ -296,6 +296,22 @@ public class GameManager : MonoBehaviour
     public void SaveData()
     {
         Debug.Log("Save game data");
+        PlayerPrefs.SetString("CurrentScene", SceneManager.GetActiveScene().name);
+        //hp
+        PlayerPrefs.SetInt("Hp", PlayerBehavior.currentHP);
+        //maxhp
+        PlayerPrefs.SetInt("MaxHp", PlayerBehavior.maxHP);
+        //items
+        string itemarr = "";
+        foreach(Item item in BackpackManager.Items)
+            itemarr += item.name + "_" + item.number.ToString() + "#";        
+        PlayerPrefs.SetString("Items", itemarr);
+        //missions
+        string missionarr = "";
+        foreach(Mission mission in Icon_Mission.Missions)
+            missionarr += mission.name + "#";
+        PlayerPrefs.SetString("Missions", missionarr);
+        Debug.Log("missionarr: " + missionarr + ", itemarr: " + itemarr);
     }
 
     public void DeleteData()
