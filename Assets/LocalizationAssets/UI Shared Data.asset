@@ -20,7 +20,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 83001126912
-    m_Key: "mainmenu\t\t"
+    m_Key: deletedat
     m_Metadata:
       m_Items: []
   - m_Id: 230070202368
@@ -97,6 +97,22 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 44565136371269632
     m_Key: equip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55412164827463680
+    m_Key: deletedata
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55412164827463681
+    m_Key: askdeletedata
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55412164827463682
+    m_Key: datadeleted
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55412649147940864
+    m_Key: New Entry
     m_Metadata:
       m_Items: []
   m_Metadata:

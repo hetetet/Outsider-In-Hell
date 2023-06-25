@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 using DG.Tweening;
 using TMPro;
 using Yarn.Unity;
-using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
@@ -51,6 +50,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Dropdown langDropDown_;
     [SerializeField] GameObject Player;
 
+
     private void Awake()
     {
         if(Instance==null)
@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+
         SettingCanvas = transform.Find("SettingCanvas").GetComponent<Canvas>();
         Quitcanvas = transform.Find("QuitCanvas").GetComponent<Canvas>();
         img = GetComponent<Image>();
@@ -87,6 +88,8 @@ public class GameManager : MonoBehaviour
 
         None = CussToggleGroup.transform.Find("None").GetComponent<Toggle>();
         None.onValueChanged.AddListener(delegate { changeFilterMode(); });
+
+
 
         if (LanguageCode == "ko")
         {
@@ -314,11 +317,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("missionarr: " + missionarr + ", itemarr: " + itemarr);
     }
 
-    public void DeleteData()
-    {
-        Debug.Log("Delete game data");
-        PlayerPrefs.DeleteAll();
-    }
 
     public bool isSetAreaActive()
     {

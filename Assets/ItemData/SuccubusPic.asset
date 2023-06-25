@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a7c4e5afe7d0c4a9206e0eea1e2d3f, type: 3}
+  m_Name: SuccubusPic
+  m_EditorClassIdentifier: 
+  type: 3
+  key: succubuspic
+  itemName: "\uC11C\uD050\uBC84\uC2A4\uC0AC\uC9C4"
+  number: 0
+  isUsing: 0
+  picture: {fileID: 21300000, guid: 8742523e351f4ad49b4176390412f585, type: 3}
+  itemobj: {fileID: 0}

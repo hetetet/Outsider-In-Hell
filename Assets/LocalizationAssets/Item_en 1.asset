@@ -38,6 +38,10 @@ MonoBehaviour:
     m_Localized: Monster mask
     m_Metadata:
       m_Items: []
+  - m_Id: 55388706542370816
+    m_Localized: Pic of Succubus
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

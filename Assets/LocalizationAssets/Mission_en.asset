@@ -23,11 +23,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 47326152708108290
-    m_Localized: Press the left and right arrow keys repeatedly for zerotwo dodging.
+    m_Localized: Press the A and D repeatedly for zerotwo dodging.
     m_Metadata:
       m_Items: []
   - m_Id: 47326152708108289
-    m_Localized: Uses the arrows keys to move and run away from SnakeyNeck.
+    m_Localized: Uses A or D to move and run away from SnakeyNeck.
     m_Metadata:
       m_Items: []
   - m_Id: 47326152708108288
@@ -37,6 +37,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 47326152703913984
     m_Localized: 'MISSION: Get jacket, pants, wallet and phone and go out.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55410408101953536
+    m_Localized: 'MISSION: Find the cool guy and take him to Succubus.'
     m_Metadata:
       m_Items: []
   references:

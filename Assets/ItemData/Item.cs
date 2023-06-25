@@ -12,6 +12,7 @@ public class Item : ScriptableObject
     //    11: 가면
     //    12: 목 장식(목걸이, 스카프 등)
     //2: 무기
+    //3: 사진
     public string key;
     public string itemName;
     public int number=1;

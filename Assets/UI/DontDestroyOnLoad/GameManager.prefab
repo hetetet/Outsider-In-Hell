@@ -60,7 +60,7 @@ MonoBehaviour:
   EffectValueSlider: {fileID: 4683476508406497627}
   CussToggleGroup: {fileID: 5995879656813437439}
   langDropDown_: {fileID: 5386722178303677396}
-  Player: {fileID: 7843854658750775151, guid: f2641513849653e4d8e7f5957e2f7f7e, type: 3}
+  Player: {fileID: 7843854658750775151, guid: c147b6b0ad240ed45911c2c80a6e0c36, type: 3}
 --- !u!1001 &4259755249391814947
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,0 +1,88 @@
+﻿title: Succubus
+tags:
+---
+<<set_sprite CharImg Succubus 0>>
+서큐버스: 어 뭐야? 회사 안에도 인간이 돌아다니네? 이야~ 이 집 잘한다!
+<<set_sprite CharImg Soyeon 5>>
+소연: 누구세요?
+<<set_sprite CharImg Succubus 0>>
+서큐버스: 나로 말할 것 같으면 초엘리트 서큐버스...
+서큐버스: ...까지는 아니고 꽤 능력있는 서큐버스라고 할 수 있지!
+->소연: 서큐버스가 있으면 서큐택시, 서큐비행기도 있나요?
+    <<set_sprite CharImg Succubus 5>>
+    서큐버스: ...재밌냐?
+    <<set_sprite CharImg Soyeon 4>>
+    소연: ...아, 서... 서큐버스가 뭔지 몰라서 물어본 건데요?
+    <<set_sprite CharImg Succubus 3>>
+    서큐버스: 나는 교통수단이 아니라 인간 남자들의 정기를 빨아먹고 사는 악마야.
+    서큐버스: 만약 인간 남자가 저런 드립 쳤으면 정기고 뭐고 당장 도망간다...
+    <<set_sprite CharImg Soyeon 3>>
+    소연: 근데 그런 남자의 정기라도 빨아먹어야 할 판이라 헤드헌팅 업체 찾아온 거 아니에요?
+    <<set_sprite CharImg Succubus 2>>
+    서큐버스: 시끄러 인마!!!!
+->소연: 여기 직원이에요?
+    <<set_sprite CharImg Succubus 0>>
+    서큐버스: 아니, 정력 빨아먹을 남자 좀 찾아달라고 의뢰하러 왔지.
+    <<set_sprite CharImg Soyeon 3>>
+    소연: 능력 있는데 왜 헤드헌팅 업체에 의뢰해서 사람 찾아요?
+    <<set_sprite CharImg Succubus 2>>
+    서큐버스: 시끄러 인마!
+    <<set_sprite CharImg Succubus 3>>
+    서큐버스: 원래 진정 능력있는 악마는 부차적인 일들은 다른 사람에게 맡기고 더 중요한 일에 집중한다고.
+    <<set_sprite CharImg Soyeon 3>>
+    소연: 정력 빨아먹을 남자 찾는 것도 서큐버스 능력 아니에요?
+    <<set_sprite CharImg Succubus 2>>
+    서큐버스: 내가 시끄럽다고 했지!!!!
+<<set_sprite CharImg Succubus 3>>
+서큐버스: 크흠, 여튼... 
+서큐버스: 네가 남자 인간이 아니라 아쉽긴 하지만 몰골을 보아하니 남자였어도 그리 구미가 당기지는 않을 것 같구나.
+<<set_sprite CharImg Soyeon 0>>
+소연:...말이 너무 심한 거 아닌가요.
+<<set_sprite CharImg Succubus 3>>
+서큐버스: 그렇다고 인간 남자들을 소개시켜 줄 것 같지도 않고...
+<<set_sprite CharImg Soyeon 0>>
+소연:왜 저를 그런 식으로 보세요...?
+<<set_sprite CharImg Succubus 0>>
+서큐버스:뭐, 남자들한테 인기 많냐?
+<<set_sprite CharImg Soyeon 0>>
+소연:...아뇨.
+소연:친하게 지내던 남사친이 하나 있긴 한데, 지금은 군대가있어요.
+<<set_sprite CharImg Succubus 5>>
+서큐버스: ...솔직히 하나 있는 것도 기적이다.
+<<set_sprite CharImg Soyeon 1>>
+소연:...맞짱 뜰래요 진짜?
+<<set_sprite CharImg Succubus 0>>
+서큐버스: 근데 너는 여기 왜 데려와진거냐?
+<<set_sprite CharImg Soyeon 0>>
+소연: 고열로 쓰러졌다가 눈 떠보니까 여기더라고요.
+<<set_sprite CharImg Succubus 5>>
+서큐버스: 죽은 거냐?
+<<set_sprite CharImg Soyeon 0>>
+소연: ...설마... 설마요.
+<<set_sprite CharImg Succubus 0>>
+서큐버스: 농담이야 인마. 꼭 죽은 거 아니여도 악몽 꾸다가 여기 오는 인간들도 많으니까.
+<<set_sprite CharImg Succubus 5>>
+서큐버스: 잠깐, 그러면 헤드헌팅 업체에서 데려온 게 아니란 말이야?
+<<set_sprite CharImg Soyeon 0>>
+소연: 예전에 이 업체에서 저를 데려온 적이 있는데, 그 당시 클라이언트가 제 정보를 가지고 저를 마음대로 소환했다나 뭐라나.
+<<set_sprite CharImg Succubus 5>>
+서큐버스: 뭐야, 여기 개인정보 관리 겁나 별로네.
+<<set_sprite CharImg Succubus 4>>
+서큐버스: 뭐, 악마들 입장에서는 알 바 아니지만 말이야, 크하하핫!
+<<set_sprite CharImg Soyeon 1>>
+소연: ...너무하네 진짜.
+소연: 거기다가 데려올 인간이 목록이 적힌 장부까지 잃어버렸는데 그걸 저보고 찾아달라고 하지 뭐에요.
+<<set_sprite CharImg Succubus 5>>
+서큐버스: ...확실히 못 미더운 업체네.
+서큐버스: 안되겠다, 야, 이거 받아.
+<<give_pic Succubus>>
+서큐버스: 이거 내 사진이거든? 이거 보고 나 맘에 든다고 하는 인간 남자 한 명만 데려와주라.
+서큐버스: 그럼 내가 너 장부 찾는 것도 도와줄게.
+서큐버스: 난 날개가 있어도 날 수 있으니 꽤 도움될걸?
+<<set_sprite CharImg Soyeon 3>>
+소연: 오... 좋아요.
+<<set_sprite CharImg Succubus 0>>
+서큐버스: 그 지옥대학 실험체 수용소 가면 반이 남자 인간일테니 그 중에 하나 골라와주라.
+<<set_sprite CharImg Succubus 4>>
+서큐버스: 이왕이면 잘생긴 놈으로 말이야, 크하핫!
+===
