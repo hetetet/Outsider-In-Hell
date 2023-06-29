@@ -19,7 +19,8 @@ public class HPmanager : MonoBehaviour
     void Start()
     {
         HPfill=transform.Find("IconLayout/Fill").GetComponent<Image>();
-        hpValue=transform.Find("IconLayout/Value").GetComponent<TextMeshProUGUI>();
+        HPfill.transform.localScale = new Vector3((float)PlayerBehavior.currentHP / (float)PlayerBehavior.maxHP, HPfill.transform.localScale.y, HPfill.transform.localScale.z);
+        hpValue =transform.Find("IconLayout/Value").GetComponent<TextMeshProUGUI>();
         hpValue.text=PlayerBehavior.currentHP.ToString()+"/"+PlayerBehavior.maxHP.ToString();
         ExtraHP= transform.Find("IconLayout/ExtraHP").GetComponent<TextMeshProUGUI>();
         ExtraHP.color = new Color(col.r, col.g, col.b, 0);

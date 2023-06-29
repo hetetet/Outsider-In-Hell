@@ -3082,6 +3082,7 @@ MonoBehaviour:
   currentDialogName: Succubus
   pic: {fileID: 11400000, guid: 71a4c03df93fce146b146ee8fbf7e1ca, type: 2}
   findman: {fileID: 11400000, guid: 90e4ca32df09ced4f93d348839b1eed4, type: 2}
+  variableStorage: {fileID: 801559525}
 --- !u!61 &832266769
 BoxCollider2D:
   m_ObjectHideFlags: 0
