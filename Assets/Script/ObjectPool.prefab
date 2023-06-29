@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &533394551679203606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 123267457085066584}
+  - component: {fileID: 8052862738269644825}
+  m_Layer: 0
+  m_Name: ObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &123267457085066584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533394551679203606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 544.0326, y: 285.92212, z: -4.1464715}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8052862738269644825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533394551679203606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39632f6f27c8d224c94bccddada74fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Missions:
+    array:
+    - Key: mis01
+      Value: {fileID: 11400000, guid: e70ecafad4636284aad7b4f872cd3e22, type: 2}
+    - Key: mis02
+      Value: {fileID: 11400000, guid: bccef3d0e446d1c40ae3fda4c20de544, type: 2}
+    - Key: mis03
+      Value: {fileID: 11400000, guid: 377f75a8e92dc11468a566634b5f25d1, type: 2}
+    - Key: mis04
+      Value: {fileID: 11400000, guid: 47dc1875804cd5f4c9ec66216ce7329e, type: 2}
+    - Key: mis05
+      Value: {fileID: 11400000, guid: f10b134e4395efc428dbb3c80099d586, type: 2}
+    - Key: mis06
+      Value: {fileID: 11400000, guid: 90e4ca32df09ced4f93d348839b1eed4, type: 2}
+  Items:
+    array:
+    - Key: jacket
+      Value: {fileID: 11400000, guid: 67b2f0d693dcbea44a96f3c2ab56a053, type: 2}
+    - Key: monmask
+      Value: {fileID: 11400000, guid: 506a079849050274a9786f069596cdbf, type: 2}
+    - Key: pants
+      Value: {fileID: 11400000, guid: c4e45ddb80b9abd4093f0feb9bcc5062, type: 2}
+    - Key: phone
+      Value: {fileID: 11400000, guid: b4e47ceb426687c4b8b9584c803b1157, type: 2}
+    - Key: succubuspic
+      Value: {fileID: 11400000, guid: 71a4c03df93fce146b146ee8fbf7e1ca, type: 2}
+    - Key: wallet
+      Value: {fileID: 11400000, guid: feab99eaa8f32cf4ab4a167bb38cddbd, type: 2}

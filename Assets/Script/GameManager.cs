@@ -50,7 +50,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Dropdown langDropDown_;
     [SerializeField] GameObject Player;
 
-
     private void Awake()
     {
         if(Instance==null)
@@ -226,9 +225,12 @@ public class GameManager : MonoBehaviour
             cussFilterType = 2;
         try
         {
+            customLineView = FindObjectOfType<CustomLineView>();
             customLineView.showLineAgain();
         }
-        catch { }
+        catch {
+            Debug.Log("No customLineView in this scene");
+        }
     }
 
     public void changeLanguage()

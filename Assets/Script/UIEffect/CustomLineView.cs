@@ -647,6 +647,7 @@ namespace Yarn.Unity
 
         public void showLineAgain()
         {
+            Debug.Log("showLineAgain executed");
             if (!lineText.gameObject.activeSelf)
                 return;
 
@@ -670,7 +671,7 @@ namespace Yarn.Unity
             }
             catch
             {
-
+                Debug.Log("no lineprovider in this scene now");
             }                                      
         }
 
