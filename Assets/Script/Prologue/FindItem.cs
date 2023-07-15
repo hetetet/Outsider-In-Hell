@@ -62,7 +62,7 @@ public class FindItem : MonoBehaviour
             {
                 Debug.Log("itemsprite length: " + Items.Length.ToString() + "itemsprite 0th index: " + Items[0]);             
                 ItemHandler.Instance.setCanClickItem(false);
-                StartCoroutine(itemHandler.showFoundItem(Items[0], itemImg));               
+                StartCoroutine(itemHandler.showFoundItem(Items[0], itemImg));
             }
             return;
         }

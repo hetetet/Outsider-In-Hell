@@ -11,16 +11,9 @@ ScriptedImporter:
   sourceScripts:
   - {fileID: 6391573757903218779, guid: 9544112448e314242b900dda4e9f9270, type: 3}
   - {fileID: 6391573757903218779, guid: 382d4d5d44cb6a34d89665b6807c14a7, type: 3}
+  - {fileID: 6391573757903218779, guid: da1796ac20d182c408886f588ea55a10, type: 3}
   compileErrors: []
-  serializedDeclarations:
-  - name: $didranaway
-    typeName: Bool
-    defaultValueBool: 0
-    defaultValueNumber: 0
-    defaultValueString: 
-    description: 
-    isImplicit: 0
-    sourceYarnAsset: {fileID: 6391573757903218779, guid: 9544112448e314242b900dda4e9f9270, type: 3}
+  serializedDeclarations: []
   defaultLanguage: ko-KR
   languagesToSourceAssets: []
   useAddressableAssets: 0

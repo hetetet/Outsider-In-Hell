@@ -10,6 +10,7 @@ public class Map01Handler : MonoBehaviour
     [SerializeField] private Transform FromHellunivToHere;
     [SerializeField] Mission DoZeroTwo;
     [SerializeField] DialogueRunner dialogueRunner;
+    bool isMissionClear = false;
     private void Awake()
     {
         Player = GameObject.Find("Soyeon");
@@ -42,6 +43,11 @@ public class Map01Handler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(PlayerBehavior.Instance.getDodgeState() && !isMissionClear)
+        {
+            isMissionClear=true;
+            ToastManager.instance.GenerateToast(0, "미션 완료: "+DoZeroTwo.name);
+            Icon_Mission.Instance.deleteMission(DoZeroTwo);
+        }
     }
 }

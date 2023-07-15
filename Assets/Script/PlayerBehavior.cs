@@ -255,7 +255,7 @@ public class PlayerBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((collision.gameObject.tag == "Land" || collision.gameObject.tag == "Ladder") && collision.relativeVelocity.y > 0)
+        if (collision.gameObject.tag == "Land" && collision.relativeVelocity.y > 0)
         {
             anim.SetBool("isJumping", false);
             isJumping = false;
@@ -276,7 +276,10 @@ public class PlayerBehavior : MonoBehaviour
             onLadder = true;
             rigid.drag = 20f;
             rigid.gravityScale = 0f;
-        }else if (collision.gameObject.tag == "Lava") //나중에는 적 종류따라 데미지량을 달리 할 예정
+            anim.SetBool("isJumping", false);
+            isJumping = false;
+        }
+        else if (collision.gameObject.tag == "Lava") //나중에는 적 종류따라 데미지량을 달리 할 예정
         {
             Debug.Log("용암에 빠졌습니다");
             currentHP = 0;
@@ -317,5 +320,10 @@ public class PlayerBehavior : MonoBehaviour
         //정보 불러오는 -3000드
         GameManager.Instance.Revive();
         Destroy(gameObject);  
+    }
+
+    public bool getDodgeState()
+    {
+        return isDodging;
     }
 }

@@ -24,6 +24,8 @@ public class NpcBehavior : MonoBehaviour
             Debug.Log("start Dialog :: meetplayer: " + meetPlayer.ToString() + ", dr.IsDialogueRunning: " + dr.IsDialogueRunning);
             dr.StartDialogue(currentDialogName);
             PlayerBehavior.canmove = false;
+            //Q를 누르는 순간 onDialogueComplete에 붙은 리스너가 다 지워지기 때문에 대화 후에 별도로 리스너를 추가하려면 대화 도중에 함수를 실행시켜 추가해야
+            //예시: Jamsoon.give_mask() 30번째줄
             dr.onDialogueComplete.RemoveAllListeners();
             dr.onDialogueComplete.AddListener(() =>PlayerBehavior.canmove=true);
         }

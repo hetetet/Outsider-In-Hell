@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -76,9 +76,348 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bg_soyeonroom_beddir_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 668
+        width: 713
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47cf2fd09e05ff841a726bb3d0558bef
+      internalID: -990693403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_soyeonroom_beddir_1
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 864
+        width: 397
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5509ae65a00de1245b0463d11ea31b2d
+      internalID: -1316517437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_soyeonroom_beddir_2
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 864
+        width: 640
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5212a71e1483ef74cbc4083f729dbb4a
+      internalID: 342487883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_soyeonroom_beddir_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 648
+        width: 640
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 717cac2f2dc96a949b4ce33ad028a870
+      internalID: 1775970913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_soyeonroom_beddir_4
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 648
+        width: 387
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 828c0162b1828424c91a67326cb426a7
+      internalID: 632831401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_soyeonroom_beddir_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 648
+        width: 640
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d7cedf51becd047aeadae06a080f65
+      internalID: 748088843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_soyeonroom_beddir_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 309
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 937f397fdd5941f4ca4bbbb732da09af
+      internalID: 52555847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_soyeonroom_beddir_7
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 432
+        width: 287
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a56696f4edf8fa43806347695ebf2a0
+      internalID: 1836693507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_soyeonroom_beddir_8
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 432
+        width: 640
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6482ab484eb7ee44e91070a35e862ced
+      internalID: 750410793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_soyeonroom_beddir_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 218
+        width: 640
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6063ab779912c4f458c9f8b0b89ab839
+      internalID: -302414435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_soyeonroom_beddir_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 221
+        width: 253
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1985aa153e71a5b44837d5a365d2dbdc
+      internalID: 327116396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_soyeonroom_beddir_11
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 216
+        width: 640
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b517473921966294994708ae7674934a
+      internalID: 1340093591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_soyeonroom_beddir_12
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 3
+        width: 281
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a25d3e9bb2b21ad4c8a1b07fe554f534
+      internalID: -2143893765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_soyeonroom_beddir_13
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 203
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a5743536cfd5d54f8c4d9a0d2f72f32
+      internalID: -429163574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_soyeonroom_beddir_14
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 640
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba4bd7e6d1910745a4c4f835db1bd49
+      internalID: -1860564362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -89,7 +428,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bg_soyeonroom_beddir_10: 327116396
+      bg_soyeonroom_beddir_2: 342487883
+      bg_soyeonroom_beddir_9: -302414435
+      bg_soyeonroom_beddir_12: -2143893765
+      bg_soyeonroom_beddir_6: 52555847
+      bg_soyeonroom_beddir_0: -990693403
+      bg_soyeonroom_beddir_1: -1316517437
+      bg_soyeonroom_beddir_7: 1836693507
+      bg_soyeonroom_beddir_4: 632831401
+      bg_soyeonroom_beddir_11: 1340093591
+      bg_soyeonroom_beddir_14: -1860564362
+      bg_soyeonroom_beddir_5: 748088843
+      bg_soyeonroom_beddir_13: -429163574
+      bg_soyeonroom_beddir_8: 750410793
+      bg_soyeonroom_beddir_3: 1775970913
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -31,6 +31,7 @@ public class CussFilter : MonoBehaviour
         int previndex = 0;
         int cusslength = 0;
         bool startwithcuss = false;
+        int startcusslen = 0;
 
         bool foundbr = false;
 
@@ -45,6 +46,7 @@ public class CussFilter : MonoBehaviour
                 {
                     index_i = tempindex;
                     cusslength = cusslist[j].Length;
+                    startcusslen = index_i == 0 ? cusslist[j].Length : 0;
                     foundbr = false;
                 }
             }
@@ -62,14 +64,14 @@ public class CussFilter : MonoBehaviour
             {
                 if (type == 0 && previndex < ret.Length && startwithcuss)
                 {
-                    if (cusslength <= 2 && index_i - previndex > 1) //욕설의 길이가 2자 이하이거나, ret의 길이와 previndex의 차이가 2 미만일 때
+                    if (startcusslen <= 2 && index_i - previndex > 1) //욕설의 길이가 2자 이하이거나, ret의 길이와 previndex의 차이가 2 미만일 때
                     {
-                        int randomindex = Random.Range(previndex, index_i - 1); //ret.length는 실제 문자열 길이보다 1 크다. null문자 때문.
+                        int randomindex = Random.Range(previndex, Mathf.Min(previndex+4, index_i - 1)); //ret.length는 실제 문자열 길이보다 1 크다. null문자 때문.
                         linechars[randomindex] = cussHider;
                     }
-                    else if (cusslength > 2 && index_i - previndex > 2)
+                    else if (startcusslen > 2 && index_i - previndex > 2)
                     {
-                        int randomindex = Random.Range(previndex, index_i - 2);
+                        int randomindex = Random.Range(previndex, Mathf.Min(previndex + 4, index_i - 2));
                         linechars[randomindex] = linechars[randomindex + 1] = cussHider;
                     }
                 }
@@ -87,12 +89,12 @@ public class CussFilter : MonoBehaviour
                 {
                     if (cusslength <= 2 && index_i - previndex > 0)
                     {
-                        int randomindex = Random.Range(previndex, index_i);
+                        int randomindex = Random.Range(Mathf.Max(index_i-4, previndex), index_i); //index_i-4, previndex 중에서 더 앞에있는게 기준
                         linechars[randomindex] = cussHider;
                     }
                     else if (cusslength > 2 && index_i - previndex > 1)
                     {
-                        int randomindex = Random.Range(previndex, index_i - 1);
+                        int randomindex = Random.Range(Mathf.Max(index_i - 4, previndex), index_i - 1);
                         linechars[randomindex] = linechars[randomindex + 1] = cussHider;
                     }
                 }

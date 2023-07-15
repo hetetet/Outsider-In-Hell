@@ -43,7 +43,7 @@ public class PlayerBehaviorOnStart : MonoBehaviour
             Icon_Mission.Instance.deleteMission(ranaway);
             isChasing = false;
 
-            PlayerBehavior.Instance.GameOver();
+            GameOver();
         }
     }
 
@@ -63,5 +63,22 @@ public class PlayerBehaviorOnStart : MonoBehaviour
     public void Die()
     {
         Debug.Log("플레이어가 죽었습니다...");
+    }
+
+    public void GameOver()
+    {
+        StartCoroutine("CoGameOver");
+    }
+
+    IEnumerator CoGameOver()
+    {
+        PlayerBehavior.canmove = false;
+        UIEffect.Instance.enableCanvas(999);
+        UIEffect.Instance.setColor(0, 0, 0, 0);
+        UIEffect.Instance.Fade(1, 1);
+
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Main_starter");
+        UIEffect.Instance.Fade(1, 0);
     }
 }

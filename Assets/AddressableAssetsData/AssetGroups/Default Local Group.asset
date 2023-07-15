@@ -21,6 +21,14 @@ MonoBehaviour:
     m_Address: Assets/LocalizationAssets/Localization Settings.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 5c10d7380b5ee0f409c3205bfb998ed9
+    m_Address: Assets/Sprite/UI/helpArticle_kor.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 038c5d8f82bef5141bab93a5acb62bbb
+    m_Address: Assets/Sprite/UI/helpArticle_eng.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 3511668f317b6154cb4297d81489bcdd, type: 2}
   m_SchemaSet:

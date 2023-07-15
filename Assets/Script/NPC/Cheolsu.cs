@@ -9,7 +9,6 @@ public class Cheolsu : NpcBehavior
     GameObject Player;
     Rigidbody2D rigid;
     [SerializeField] Mission mainmission;
-    [SerializeField] TextMeshProUGUI timerTmp;
     [SerializeField] InMemoryVariableStorage variableStorage;
     Vector3 dir;
 
@@ -18,7 +17,7 @@ public class Cheolsu : NpcBehavior
     float maxspeed = 3;
     bool isChasing = false;
     int hadconvo = 0;
-
+    int meet;
     void Start()
     {
         //hadconvo = PlayerPrefs.GetInt("cheolsu_hadconvo", 0);
@@ -26,9 +25,11 @@ public class Cheolsu : NpcBehavior
         Sr = GetComponent<SpriteRenderer>();
         rigid= GetComponent<Rigidbody2D>();
         Player = GameObject.Find("Soyeon");
+        meet = PlayerPrefs.GetInt("meetnpc_cheolsu", 0);
         Dr.onDialogueComplete.AddListener(() =>
         {
             MissionAlarm.Instance.show_mission(mainmission);
+            PlayerPrefs.SetInt("meetnpc_cheolsu", 1);
         });
     }
 
@@ -43,7 +44,7 @@ public class Cheolsu : NpcBehavior
 
     protected override void Update()
     {
-        if(Vector3.Distance(Player.transform.position, transform.position) < 5f && hadconvo==0)
+        if((Vector3.Distance(Player.transform.position, transform.position) < 5f && hadconvo==0) && meet == 0)
         {
             if (!timer0n)
                 StartCoroutine("coNoticePlayer");
@@ -54,7 +55,6 @@ public class Cheolsu : NpcBehavior
         {
             //소연이에게 다가간다
             timer += Time.deltaTime;
-            timerTmp.text = "timer: "+timer.ToString()+", distance: "+ Vector3.Distance(Player.transform.position, transform.position).ToString();
             
             if (isChasing)
             {
@@ -76,7 +76,6 @@ public class Cheolsu : NpcBehavior
                 rigid.drag = 1972;
                 timer0n = false;
                 timer = 0;
-                timerTmp.text = timer.ToString()+", timer ended";
                 PlayerBehavior.Instance.DisableMove();
                 Debug.Log("소연이를 정상적으로 불러세움");
                 variableStorage.SetValue("$didranaway", false);
@@ -91,7 +90,6 @@ public class Cheolsu : NpcBehavior
                 rigid.drag = 1972;
                 timer0n =false;
                 timer=0;
-                timerTmp.text = timer.ToString() + ", timer ended after 5sec";
                 PlayerBehavior.Instance.DisableMove();
                 Debug.Log("소연이를 5초 후 겨우 불러세움");
                 variableStorage.SetValue("$didranaway", true);

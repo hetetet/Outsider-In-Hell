@@ -2,12 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Localization.Settings;
 public class TitleHandler : MonoBehaviour
 {
     [SerializeField] private Button startButton;
-    [SerializeField] private Button DeleteButton;
     [SerializeField] private Button SettingButton;
+    //delete data
+    public Button deleteDataBtn;
+    public Canvas deleteData;
+    public TextMeshProUGUI deleteTitle;
+    public Button deleteOk;
+    public Button deleteCancel;
+    public Animator Anim;
 
     void Awake()
     {
@@ -16,8 +24,9 @@ public class TitleHandler : MonoBehaviour
 
     private void Start()
     {
+        deleteDataBtn.onClick.AddListener(OpenDeleteDataPopup);
+        deleteData.gameObject.SetActive(false);
         startButton.onClick.AddListener(startGame);
-        DeleteButton.onClick.AddListener(DeleteGame);
         SettingButton.onClick.AddListener(GameManager.Instance.ShowSettings);
 
         GameManager.isSettingDisabled = false;
@@ -57,6 +66,11 @@ public class TitleHandler : MonoBehaviour
             {
                 //add missions and items
                 string[] items = itemarr.Split("#");
+                foreach(string item in items)
+                {
+                    string[] iteminfo = item.Split('_');
+                    //BackpackManager.Items.Add();
+                }
             };
         }
     }
@@ -64,6 +78,45 @@ public class TitleHandler : MonoBehaviour
     public void DeleteGame()
     {
         Debug.Log("Delete gay");
-        GameManager.Instance.DeleteData();
+        DeleteData();
+    }
+    public void DeleteData()
+    {
+        deleteOk.gameObject.SetActive(false);
+        deleteCancel.gameObject.SetActive(false);
+        Anim.SetTrigger("eat");
+        Debug.Log("Delete game data");
+        PlayerPrefs.DeleteAll();
+        StartCoroutine("CoDeleteData");
+    }
+
+    IEnumerator CoDeleteData()
+    {
+        yield return new WaitForSeconds(2f); //데이터 먹는 애니메이션 시간동안
+        deleteOk.gameObject.SetActive(true);
+        deleteOk.onClick.RemoveAllListeners();
+        deleteOk.onClick.AddListener(CloseDeleteDataPopup);
+        deleteTitle.text = LocalizationSettings.StringDatabase.GetLocalizedString("UI", "datadeleted");
+    }
+    public void OpenDeleteDataPopup()
+    {
+        Anim.SetTrigger("init");
+
+        deleteData.gameObject.SetActive(true);
+        deleteOk.gameObject.SetActive(true);
+        deleteCancel.gameObject.SetActive(true);
+
+        deleteTitle.text = LocalizationSettings.StringDatabase.GetLocalizedString("UI", "askdeletedata");
+       
+        deleteOk.onClick.RemoveAllListeners();
+        deleteCancel.onClick.RemoveAllListeners();
+        deleteCancel.onClick.AddListener(CloseDeleteDataPopup);
+        deleteOk.onClick.AddListener(DeleteData);
+    }
+    public void CloseDeleteDataPopup()
+    {
+        deleteData.gameObject.SetActive(false);
+        deleteOk.onClick.RemoveAllListeners();
+        deleteCancel.onClick.RemoveAllListeners();
     }
 }

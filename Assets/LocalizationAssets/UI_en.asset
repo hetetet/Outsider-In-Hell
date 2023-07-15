@@ -102,6 +102,18 @@ MonoBehaviour:
     m_Localized: Equip
     m_Metadata:
       m_Items: []
+  - m_Id: 55412164827463680
+    m_Localized: Delete game data
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55412164827463681
+    m_Localized: Are you sure to delete the game data?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55412164827463682
+    m_Localized: Game data is deleted.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
