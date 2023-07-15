@@ -14,13 +14,15 @@ public class ToastAlarm : MonoBehaviour
     {
         Bg = GetComponentsInChildren<Image>()[0];
         Img = GetComponentsInChildren<Image>()[1];
-        Message = GetComponentInChildren<TextMeshProUGUI>();
-        Img.sprite = Icons[1];
-        Bg.color = BgColors[1];
-        Message.text = "잘 작동하니?";
+        Message = GetComponentInChildren<TextMeshProUGUI>();        
     }
 
-    // Update is called once per frame
+    public void SetMessageLayout(int num, string message)
+    {
+        Img.sprite = Icons[num];
+        Bg.color = BgColors[num];
+        Message.text = message;
+    }
     void Update()
     {
         
