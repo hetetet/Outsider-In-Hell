@@ -27,9 +27,9 @@ public class TitleHandler : MonoBehaviour
         deleteDataBtn.onClick.AddListener(OpenDeleteDataPopup);
         deleteData.gameObject.SetActive(false);
         startButton.onClick.AddListener(startGame);
-        SettingButton.onClick.AddListener(GameManager.Instance.ShowSettings);
+        SettingButton.onClick.AddListener(SettingManager.Instance.ShowSettings);
 
-        GameManager.isSettingDisabled = false;
+        SettingManager.isSettingDisabled = false;
         Icon_Mission.Missions.Clear();
         BackpackManager.Items.Clear();
 

@@ -22,6 +22,6 @@ public class WholeIconHandler : MonoBehaviour
 
     public bool isIconActive()
     {
-        return ItemArea.activeSelf || HelpArea.activeSelf || GameManager.Instance.isSetAreaActive();
+        return ItemArea.activeSelf || HelpArea.activeSelf || SettingManager.Instance.isSetAreaActive();
     }
 }

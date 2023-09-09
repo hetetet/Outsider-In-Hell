@@ -528,7 +528,7 @@ namespace Yarn.Unity
                     // name in it, and show the rest of the text in our main
                     // text view.
                     characterNameText.text = dialogueLine.CharacterName;
-                    lineText.text = CussFilter.cussFilter(GameManager.cussFilterType, dialogueLine.TextWithoutCharacterName.Text);
+                    lineText.text = CussFilter.cussFilter(SettingManager.cussFilterType, dialogueLine.TextWithoutCharacterName.Text);
                     originalLine = dialogueLine;
                     originalLine.RawText = dialogueLine.TextWithoutCharacterName.Text;
                 }
@@ -539,13 +539,13 @@ namespace Yarn.Unity
                     if (showCharacterNameInLineView)
                     {
                         // Yep! Show the entire text.
-                        lineText.text = CussFilter.cussFilter(GameManager.cussFilterType, dialogueLine.Text.Text);
+                        lineText.text = CussFilter.cussFilter(SettingManager.cussFilterType, dialogueLine.Text.Text);
                         originalLine = dialogueLine;
                     }
                     else
                     {
                         // Nope! Show just the text without the character name.
-                        lineText.text = CussFilter.cussFilter(GameManager.cussFilterType, dialogueLine.TextWithoutCharacterName.Text);
+                        lineText.text = CussFilter.cussFilter(SettingManager.cussFilterType, dialogueLine.TextWithoutCharacterName.Text);
                         originalLine = dialogueLine;
                         originalLine.RawText = dialogueLine.TextWithoutCharacterName.Text;
                     }
@@ -661,12 +661,12 @@ namespace Yarn.Unity
                 string[] charAndLine = localizedText.Split(':');
                 if (charAndLine.Length == 1)
                 {
-                    lineText.text = CussFilter.cussFilter(GameManager.cussFilterType, charAndLine[0].Substring(1));
+                    lineText.text = CussFilter.cussFilter(SettingManager.cussFilterType, charAndLine[0].Substring(1));
                 }
                 else
                 {
                     characterNameText.text = charAndLine[0];
-                    lineText.text = CussFilter.cussFilter(GameManager.cussFilterType, charAndLine[1].Substring(1));
+                    lineText.text = CussFilter.cussFilter(SettingManager.cussFilterType, charAndLine[1].Substring(1));
                 }
             }
             catch

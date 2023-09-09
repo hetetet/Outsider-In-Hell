@@ -26,30 +26,30 @@ public class Icon_Settings : MonoBehaviour ,IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (GameManager.isSettingDisabled)
+        if (SettingManager.isSettingDisabled)
             return;
         img.transform.DOScale(new Vector3(1.2f, 1.2f, 1), 0.3f);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (GameManager.isSettingDisabled)
+        if (SettingManager.isSettingDisabled)
             return;
         img.transform.DOScale(new Vector3(1f, 1f, 1), 0.3f);
     }
     public void OnPointerUp(PointerEventData eventData)
     {
-        if(!GameManager.Instance.isSettingActive())
-            GameManager.Instance.ShowSettings();
+        if(!SettingManager.Instance.isSettingActive())
+            SettingManager.Instance.ShowSettings();
         else
-            GameManager.Instance.HideSettings();
+            SettingManager.Instance.HideSettings();
     }
 
     public void DisableSettingIcon()
     {
         Debug.Log("disable icon_settings");
-        GameManager.isSettingDisabled = true;
-        GameManager.Instance.SettingCanvas.gameObject.SetActive(false);
+        SettingManager.isSettingDisabled = true;
+        SettingManager.Instance.SettingCanvas.gameObject.SetActive(false);
         gameObject.GetComponent<ButtonBehavior>().enabled = false;
         img.color = new Color(0.5f, 0.5f, 0.5f);
     }
@@ -57,7 +57,7 @@ public class Icon_Settings : MonoBehaviour ,IPointerEnterHandler, IPointerExitHa
     public void EnableSettingIcon()
     {
         Debug.Log("enable icon_settings");
-        GameManager.isSettingDisabled = false;
+        SettingManager.isSettingDisabled = false;
         gameObject.GetComponent<ButtonBehavior>().enabled = true;
         img.color = Color.white;
     }

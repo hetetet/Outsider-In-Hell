@@ -36,7 +36,7 @@ public class FindItem : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (GameManager.Instance.isSetAreaActive())
+        if (SettingManager.Instance.isSetAreaActive())
             return;
 
         if (ItemHandler.canClickItem && !myDialogueRunner.IsDialogueRunning && !UIEffect.Instance.isEnabled())
@@ -44,7 +44,7 @@ public class FindItem : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        if (GameManager.Instance.isSetAreaActive())
+        if (SettingManager.Instance.isSetAreaActive())
             return;
 
         if (ItemHandler.canClickItem && !myDialogueRunner.IsDialogueRunning && !UIEffect.Instance.isEnabled()) //아이템 클릭 가능하고, 대화가 진행중이지 않고, uiEffect가 disabled 되었을 때
