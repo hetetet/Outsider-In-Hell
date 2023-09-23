@@ -46,7 +46,7 @@ public class Map01Handler : MonoBehaviour
         if(PlayerBehavior.Instance.getDodgeState() && !isMissionClear)
         {
             isMissionClear=true;
-            ToastManager.instance.GenerateToast(0, "미션 완료: "+DoZeroTwo.name);
+            ToastManager.Instance.GenerateToast(0, "미션 완료: "+DoZeroTwo.name);
             Icon_Mission.Instance.deleteMission(DoZeroTwo);
         }
     }

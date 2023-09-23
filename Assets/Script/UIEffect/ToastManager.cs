@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 public class ToastManager : MonoBehaviour
 {
-    public static ToastManager instance;
+    public static ToastManager Instance;
     [SerializeField] GameObject Toast;
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
     void Start()
     {
@@ -31,6 +31,7 @@ public class ToastManager : MonoBehaviour
 
     public IEnumerator CoGenerateToast(int num, string message)
     {
+        //번호 - 0:미션 1:가방 2:설정 3:도움말
         GameObject toast = Instantiate(Toast, transform); //토스트레이아웃의 자식으로 Toast
         toast.GetComponent<ToastAlarm>().SetMessageLayout(num,message);
         //1초후에 서서히 사라지게
