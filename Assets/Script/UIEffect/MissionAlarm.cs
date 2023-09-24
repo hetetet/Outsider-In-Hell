@@ -33,7 +33,7 @@ public class MissionAlarm : MonoBehaviour
 
     private void Update()
     {
-        if(missionShown && Input.GetButtonUp("Jump"))
+        if(Input.GetButtonUp("Jump"))
             hide_mission();
     }
 
@@ -65,6 +65,8 @@ public class MissionAlarm : MonoBehaviour
     }
     public void hide_mission()
     {
+        if (!missionShown)
+            return;
         Debug.Log("hide mission");
         missionShown = false;
         Mission.rectTransform.LeanMoveLocal(new Vector2(0, -110), 0.3f).setEaseInQuad()

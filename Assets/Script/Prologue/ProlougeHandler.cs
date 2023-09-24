@@ -5,38 +5,28 @@ using UnityEngine.UI;
 using Yarn.Unity;
 
 public class ProlougeHandler : MonoBehaviour
-{    
+{
     [SerializeField] public SerializableDictionary<string, Sprite[]> CharDict;
     [SerializeField] Sprite fadeBackgroudSprite;
-    [SerializeField] Button getOutBtn;
     [SerializeField] Mission finditems;
 
     [SerializeField] AudioClip[] clip;
-    
+
 
     DialogueRunner DialogueRunner;
 
     private void Awake()
     {
         GameManager.setCursorToArrow();
-        DialogueRunner=FindObjectOfType<DialogueRunner>();
+        DialogueRunner = FindObjectOfType<DialogueRunner>();
     }
     private void Start()
     {
-        int dialog_start=PlayerPrefs.GetInt("dialog_start", 0);
+        int dialog_start = PlayerPrefs.GetInt("dialog_start", 0);
         if (dialog_start == 0)
         {
             UIEffect.Instance.enableCanvas(999);
             UIEffect.Instance.setColor(0, 0, 0, 1);
-
-            RectTransform getoutRectTransform = getOutBtn.GetComponent<RectTransform>();
-            getoutRectTransform.anchoredPosition = new Vector2(0, 300);
-            getOutBtn.onClick.AddListener(() =>
-            {
-                UIEffect.Instance.enableCanvas(999);
-                UIEffect.Instance.setColor(0, 0, 0, 0);
-                UIEffect.Instance.Fade(1, 2, "Prologue2");
-            });
 
             float sceneChangeTime = 2f;
             SoundManager.Instance.playEffectSound(clip[0]);
@@ -63,7 +53,7 @@ public class ProlougeHandler : MonoBehaviour
         {
             PlayerPrefs.SetInt("dialog_start", 1);
             PlayerPrefs.Save();
-            MissionAlarm.Instance.show_mission(finditems);            
+            MissionAlarm.Instance.show_mission(finditems);
         });
     }
 }

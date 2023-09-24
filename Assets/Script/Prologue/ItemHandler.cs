@@ -38,6 +38,16 @@ public class ItemHandler : MonoBehaviour
         Instance = this;
         uiEffect = FindObjectOfType<UIEffect>();
     }
+
+    private void Start()
+    {
+        getOutBtn.onClick.AddListener(() =>
+        {
+            UIEffect.Instance.enableCanvas(999);
+            UIEffect.Instance.setColor(0, 0, 0, 0);
+            UIEffect.Instance.Fade(1, 2, "Prologue2");
+        });
+    }
     public IEnumerator showFoundItem(Item item, Image itemImg)
     {
         BackpackManager.add(item);

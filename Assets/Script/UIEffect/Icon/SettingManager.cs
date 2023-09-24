@@ -73,6 +73,8 @@ public class SettingManager : MonoBehaviour
 
         customLineView = FindObjectOfType<CustomLineView>();
 
+        langDropDown_.onValueChanged.AddListener(delegate { changeLanguage(); });
+
         Reverse = CussToggleGroup.transform.Find("Reverse").GetComponent<Toggle>();
         Reverse.onValueChanged.AddListener(delegate { changeFilterMode(); });
 

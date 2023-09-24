@@ -74,14 +74,10 @@ public class GameManager : MonoBehaviour
         return cursorState;
     }
 
-
     public void OnPointerUp(PointerEventData eventData)
     {
         //ShowSettings();
     }
-
-
-
 
     public void SaveData()
     {
@@ -125,5 +121,4 @@ public class GameManager : MonoBehaviour
         NewPlayer.transform.localScale = new Vector3(-NewPlayer.transform.localScale.x, NewPlayer.transform.localScale.y, NewPlayer.transform.localScale.z);
         PlayerBehavior.Instance.EnableMove();
     }
-
 }
