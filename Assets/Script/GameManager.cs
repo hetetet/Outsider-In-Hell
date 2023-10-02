@@ -119,6 +119,7 @@ public class GameManager : MonoBehaviour
         NewPlayer.gameObject.name = "Soyeon";
         NewPlayer.transform.position = GameObject.Find("FromStartToHere").transform.position;
         NewPlayer.transform.localScale = new Vector3(-NewPlayer.transform.localScale.x, NewPlayer.transform.localScale.y, NewPlayer.transform.localScale.z);
+        PlayerBehavior.currentHP = PlayerBehavior.maxHP;
         PlayerBehavior.Instance.EnableMove();
     }
 }

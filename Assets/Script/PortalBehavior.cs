@@ -28,7 +28,8 @@ public class PortalBehavior : MonoBehaviour
             if(Application.CanStreamedLevelBeLoaded(dest))//해당 씬 이름이 있는 경우에만 이동
             {
                 Debug.Log("load scene: " + dest);
-                SceneManager.LoadScene(dest); 
+                //StartCoroutine(SceneLoading());
+                SceneManager.LoadScene(dest);
             }
             else
             {
@@ -36,5 +37,13 @@ public class PortalBehavior : MonoBehaviour
                 Debug.Log("Cannot load the scene:" + dest);
             }
         }
+    }
+
+    IEnumerator SceneLoading()
+    {
+        var mAsyncOperation = SceneManager.LoadSceneAsync(dest, LoadSceneMode.Additive);
+        yield return mAsyncOperation;
+        mAsyncOperation = SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        yield return mAsyncOperation;
     }
 }

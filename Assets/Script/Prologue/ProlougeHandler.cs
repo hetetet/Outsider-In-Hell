@@ -22,7 +22,7 @@ public class ProlougeHandler : MonoBehaviour
     }
     private void Start()
     {
-        int dialog_start = PlayerPrefs.GetInt("dialog_start", 0);
+        int dialog_start = PlayerPrefs.GetInt("prologue_dialog_start", 0);
         if (dialog_start == 0)
         {
             UIEffect.Instance.enableCanvas(999);
@@ -51,7 +51,7 @@ public class ProlougeHandler : MonoBehaviour
         MissionAlarm.afterAlarmGone = delegate { ItemHandler.Instance.setCanClickItem(true); };
         DialogueRunner.onDialogueComplete.AddListener(() =>
         {
-            PlayerPrefs.SetInt("dialog_start", 1);
+            PlayerPrefs.SetInt("prologue_dialog_start", 1);
             PlayerPrefs.Save();
             MissionAlarm.Instance.show_mission(finditems);
         });

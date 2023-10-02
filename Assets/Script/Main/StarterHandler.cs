@@ -7,7 +7,7 @@ using DG.Tweening;
 using Yarn.Unity;
 public class StarterHandler : MonoBehaviour
 {
-    public static bool startAgain = true;
+    public static int startAgain;
     [SerializeField] TextMeshProUGUI howMuchHold;
     [SerializeField] Image GameLogo;
     [SerializeField] DialogueRunner dialogueRunner;
@@ -22,12 +22,17 @@ public class StarterHandler : MonoBehaviour
     [SerializeField] AudioClip StartBGM;
     void Start()
     {
+        startAgain = PlayerPrefs.GetInt("start_again", 0);
         if (GameManager.LanguageCode == "ko")
         {
             howMuchHold.text ="총 "+(PlayerBehavior.maxHP-100).ToString()+"초 동안 의식을 붙들었습니다.";
-        }else
+        }else if (GameManager.LanguageCode == "en")
         {
             howMuchHold.text = "You've been conscious for " + (PlayerBehavior.maxHP - 100).ToString() + " seconds.";
+        }
+        else
+        {
+            howMuchHold.text = "You've been conscious for " + (PlayerBehavior.maxHP - 100).ToString() + " seconds.(*LangCode not set correctly)";
         }
 
         TopUI.SetActive(false);
@@ -44,7 +49,7 @@ public class StarterHandler : MonoBehaviour
 
     IEnumerator StartMainGame()
     {
-        if (!startAgain)
+        if (startAgain==0)
         {
             UIEffect.Instance.enableCanvas(998);
             UIEffect.Instance.setColor(0, 0, 0, 1);
@@ -70,6 +75,7 @@ public class StarterHandler : MonoBehaviour
             dialogueRunner.StartDialogue("MeetWithGhost");
             dialogueRunner.onDialogueComplete.AddListener(() =>
             {
+                PlayerPrefs.SetInt("start_again", 1);
                 MissionAlarm.Instance.show_mission(ranaway);
                 MissionAlarm.afterAlarmGone = PlayerBehaviorOnStart.Instance.startChasing;
             });
@@ -91,18 +97,16 @@ public class StarterHandler : MonoBehaviour
         HPbar.SetActive(true);
         UIEffect.afterEffect = delegate
         {
-            if (startAgain)
+            if (startAgain==0)
+            {
+                HPmanager.Instance.showExtraHP();
+            }
+            else
             {
                 MissionAlarm.Instance.show_mission(ranaway);
                 MissionAlarm.afterAlarmGone = PlayerBehaviorOnStart.Instance.startChasing;
             }
-            else
-            {
-                HPmanager.Instance.showExtraHP();
-            }
         };
         UIEffect.Instance.Fade(0, 1);
     }
-
-
 }

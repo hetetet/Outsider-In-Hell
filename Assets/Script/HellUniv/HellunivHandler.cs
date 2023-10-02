@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HellunivHandler : MonoBehaviour
 {
-    [SerializeField] private Transform FromMap01toHere;
+    [SerializeField] private Transform HelluivExit;
     private GameObject Player;
     private void Awake()
     {
@@ -12,11 +12,11 @@ public class HellunivHandler : MonoBehaviour
     }
     void Start()
     {
-        //이전 씬에 따른 현재 씬 위치 조정
+        //이전 씬에 따른 현재 씬에서의 플레이어 위치 조정
         if (PortalBehavior.prevScenename == "Main_map01")
-            Player.transform.position = FromMap01toHere.position;
+            Player.transform.position = HelluivExit.position;
         else
-            Player.transform.position = FromMap01toHere.position;
+            Player.transform.position = HelluivExit.position; 
 
         PortalBehavior.prevScenename = "HellUniv";
     }

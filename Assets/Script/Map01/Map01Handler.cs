@@ -32,7 +32,7 @@ public class Map01Handler : MonoBehaviour
             PlayerPrefs.SetInt("dialog_map01", 1);
         }
         
-        //이전 씬에 따른 현재 씬 위치 조정
+        //이전 씬에 따른 현재 씬에서의 플레이어 위치 조정
         if (PortalBehavior.prevScenename == "HellUniv")
             Player.transform.position = FromHellunivToHere.position;
         else

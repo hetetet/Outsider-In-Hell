@@ -2794,7 +2794,7 @@ PrefabInstance:
     - target: {fileID: 4129357090156319491, guid: 0d922888554b6244e9f9526a61a1d4c5, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 7843854658750775151, guid: c147b6b0ad240ed45911c2c80a6e0c36, type: 3}
+      objectReference: {fileID: 7843854658750775151, guid: f2641513849653e4d8e7f5957e2f7f7e, type: 3}
     - target: {fileID: 4129357090156319491, guid: 0d922888554b6244e9f9526a61a1d4c5, type: 3}
       propertyPath: deleteOk
       value: 

@@ -25,7 +25,8 @@ public class Cheolsu : NpcBehavior
         Sr = GetComponent<SpriteRenderer>();
         rigid= GetComponent<Rigidbody2D>();
         Player = GameObject.Find("Soyeon");
-        meet = PlayerPrefs.GetInt("meetnpc_cheolsu", 0);
+        //meet = PlayerPrefs.GetInt("meetnpc_cheolsu", 0);
+        meet = 0;
         Dr.onDialogueComplete.AddListener(() =>
         {
             MissionAlarm.Instance.show_mission(mainmission);
@@ -72,7 +73,7 @@ public class Cheolsu : NpcBehavior
                 Anim.SetBool("IsWalking", false);
                 hadconvo = 1;
                 isChasing = false;
-                rigid.velocity = Vector2.zero;
+                dir.x = 0;
                 rigid.drag = 1972;
                 timer0n = false;
                 timer = 0;
@@ -86,7 +87,7 @@ public class Cheolsu : NpcBehavior
                 Anim.SetBool("IsWalking", false);
                 hadconvo = 1;
                 isChasing = false;
-                rigid.velocity = Vector2.zero;
+                dir.x = 0;
                 rigid.drag = 1972;
                 timer0n =false;
                 timer=0;
