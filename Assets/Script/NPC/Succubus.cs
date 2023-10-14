@@ -14,7 +14,7 @@ public class Succubus : NpcBehavior
     {
         Anim = GetComponent<Animator>();
         Sr = GetComponent<SpriteRenderer>();
-        meet = PlayerPrefs.GetInt("meetnpc_succubus", 0);
+        /*meet = PlayerPrefs.GetInt("meetnpc_succubus", 0);*/meet=0;
         variableStorage.SetValue("$meetnpc_succubus", meet);
     }
 

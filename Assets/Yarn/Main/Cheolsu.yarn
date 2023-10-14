@@ -1,107 +1,161 @@
-﻿title: Cheolsu
+title: Cheolsu
 tags:
 ---
 <<declare $didranaway=false as bool>>
+<<declare $meetnpc_cheolsu=0 as number>>
+<<declare $comingout=0 as number>>
+<<declare $explain_howto_invade=false as bool>>
 
-<<if $didranaway is false>>
-<<set_sprite CharImg Cheolsu 0>>
-철수: 어? 소연 학생 아니에요? 여기서 뭐해요?
-<<set_sprite CharImg Soyeon 5>>
-소연: 저를... 아세요?
+<<if $meetnpc_cheolsu==0>>
+    <<if $didranaway is false>>
+    <<set_sprite CharImg Cheolsu 0>>
+    철수: 어? 소연 학생 아니에요? 여기서 뭐해요?
+    <<set_sprite CharImg Soyeon 5>>
+    소연: 저를... 아세요?
+    <<else>>
+    <<set_sprite CharImg Cheolsu 5>>
+    철수: 헉....허억... 자...잠깐만요 소연 학생...!<br>왜 저를 피하는 거에요?
+    <<set_sprite CharImg Soyeon 2>>
+    소연: 그쪽이야말로 누구신데 저를 따라오세요?
+    소연: 아니 그보다도, 제 이름은 어떻게 아는 거에요?
+    <<endif>>
+
+    <<set_sprite CharImg Cheolsu 1>>
+    철수: 아 저는 인간 헤드헌터 김철수에요.
+    <<set_sprite CharImg Soyeon 5>>
+    소연: ...뭔 악마 이름이 그래요?
+    <<set_sprite CharImg Cheolsu 2>>
+    철수: 뭐 악마 이름은 이래야 한단 법이 있나요,<br>제가 아는 어떤 악마 이름은 박말자라던데.
+    <<set_sprite CharImg Soyeon 0>>
+    소연: ...이름을 그따구로 짓지 말자...
+    <<set_sprite CharImg Cheolsu 0>>
+    철수: 네...?
+    <<set_sprite CharImg Soyeon 4>>
+    소연:아, 아니에요.
+    <<set_sprite CharImg Soyeon 5>>
+    소연:그것보다 저를 어떻게 아세요...?
+    <<set_sprite CharImg Cheolsu 1>>
+    철수: 예전에 저희 회사가 지옥대학교랑 산학협력 관계에 있어서 대학에서 의뢰를 받아 인간 학생을 찾아주는 일을 했었어요. 제가 예전에 인간계에서 조별과제 무임승차에 소질이 있는 학생들을 초청강사로 선발해서 지옥대학 측과 연결해주는 일을 했었거든요.
+    <<set_sprite CharImg Soyeon 3>>
+    소연: 아, 그때 그 목긴귀신이...
+    <<set_sprite CharImg Cheolsu 2>>
+    철수: 아 맞아요! 그때 소연 학생이 도망가버려서 강의 제대로 못했다고 저희한테 어찌나 불평을 하던지...
+    <<set_sprite CharImg Soyeon 1>>
+    소연: 저한테 벌이라도 주려나 싶어 잽싸게 도망쳤죠... <br>뭐, 제가 강의를 했다 해도 딱히 할 말은 없었을 거 같네요.
+    <<set_sprite CharImg Cheolsu 1>>
+    철수: 제가 그 사업을 하면서 상당히 많은 학생들을 관찰했는데, 대부분 다 상습범이더라고요.<br>그런데 소연 학생은 그때 딱 한번만 짧고 굵고 악랄하게 무임승차를 했었고, 다른 때에는 착실하게 조별과제를 했더라고요?
+    <<set_sprite CharImg Soyeon 1>>
+    소연: 진짜 그때는 제가 미쳐가지고... 조별과제 버스운전한 썰은 많이 보이는데 버스탄 썰은 하나도 안 보이길래 버스를 타면 어디 끌려가거나 납치되기라도 하는가 싶었거든요.
+    <<set_sprite CharImg Cheolsu 1>>
+    철수: 하핫... 납치는 안 하고요...
+    철수: 대신 지옥에 적합한 인재라고 여겨지면 동의를 구하지 않고 데려올 수도 있겠죠?
+    <<set_sprite CharImg Soyeon 1>>
+    소연: 그게 납치 아닌가...
+    <<set_sprite CharImg Cheolsu 0>>
+    철수: 그런데 여긴 어쩌다 오게 된 거에요? 악몽이라도 꾸시는 중인 건가...
+    <<set_sprite CharImg Soyeon 1>>
+    소연: 열이 너무 많이 나서 기절했다가 눈을 떠보니 여기더라고요... 그 목긴귀신이 나를 자기 졸업논문 소재로 쓰겠다고 납치했다나 뭐라나.
+    <<set_sprite CharImg Cheolsu 4>>
+    철수: 아이고... 빠른 쾌유를 빌어요...
+    <<set_sprite CharImg Soyeon 11>>
+    소연: 쾌유를 비시려거든 저를 여기서 좀 꺼내 주실 수...
+    <<set_sprite CharImg Cheolsu 2>>
+    철수: 그건 소연 학생이 알아서 하셔야죠.
+    <<set_sprite CharImg Soyeon 0>>
+    소연: ...치사하네.
+    <<set_sprite CharImg Cheolsu 2>>
+    철수: 하아, 이런 식으로 우리가 소개해줬던 인간들을 마음대로 소환해대면 우리도 곤란해지는데...
+    철수: 인간계가 우리의 존재에 관심을 가지면 저희가 일하기도 굉장히 힘들어지거든요.
+    <<set_sprite CharImg Cheolsu 4>>
+    철수: 계약이 완료되면 소환권을 회수하던가 해야 하는데,<br>그러지 않았던 저희 책임도 있으니 일단 그 점에 대해서는 사과드리겠습니다.
+    철수: 일단 기절하셨다고 했죠?
+    <<set_sprite CharImg Soyeon 0>>
+    소연: ...네.
+    <<set_sprite CharImg Cheolsu 0>>
+    철수: 주변에 현실에 있는 소연 학생을 깨워줄 만한 사람이 있는 상황인가요?
+    <<set_sprite CharImg Soyeon 0>>
+    소연: 부모님은 여행 가셨고, 언니는 출근했고, 집에 저 혼자 있었어요.<br>조금 있다 언니가 퇴근하면 저를 깨워줄 것 같긴 한데 만약 야근이라도 한다면...
+    <<set_sprite CharImg Cheolsu 0>>
+    철수: 일단 언니분이 소연 학생을 깨워줄 때까지 저희 건물에서 지내게 해 드릴 수는 있어요.
+    철수: 근데 아무것도 없어서 엄청 심심할 거에요.
+    <<set_sprite CharImg Cheolsu 1>>
+    철수: 혹시 저희 일을 하나 도와주실 생각은 없으세요?
+    <<set_sprite CharImg Soyeon 1>>
+    소연: ...네?
+    <<set_sprite CharImg Cheolsu 1>>
+    철수: 저희가 최근에 조별과제 무임승차 학생들을 대상으로 지옥 장기체험 사업을 시작했거든요.
+    철수: 지옥 생활에 적합할 것으로 보이는 학생들을 장기간 지옥에 억류하여 여러 가지 교육사업에 투입시키는 프로그램이에요.
+    <<set_sprite CharImg Cheolsu 4>>
+    철수: 하아... 근데 하필이면 제가 그 명부를 얼마전에 잃어버려서 상관과 동료들한테 엄청 욕을 먹고 있거든요.
+    철수: 아무래도 지옥대학 지하에 있는 실험체 숙소에서 잃어버린 거 같아요.
+    철수: 저희 지옥대학 산학협력단 주관으로 지옥에 억류된 인간들은 지옥대학교 지하의 인간 실험체 숙소에 머무르고 있는데, 
+    철수: 정확한 물증은 없지만 아마 실험체 중 하나가 그 명부의 존재에 대해서 알고 훔쳐간 것 같아요.
+    <<set_sprite CharImg Soyeon 5>>
+    소연: 뭐 처형할 사람 명단 같은걸로 착각이라도 한 걸까요?
+    <<set_sprite CharImg Cheolsu 4>>
+    철수: 그럴 수도 있고요, 아무래도 자기들에게 불리한 일에 쓰이는 문서라고 생각해서 그런 것 같네요.
+    철수: 혹시 그 문서를 소연 학생이 찾아줄 수 있을까요?
+    철수: 저희 실수로 지옥에 오게 된 사람에게 염치없이 부탁까지 해서 너무 죄송하지만,
+    철수: 무임승차 빌런들을 지옥으로 인계하는 일이니 소연 학생도 관심이 있지 않을까 해서요.
+    철수: 아무래도 소연 학생은 거의 대부분 성실하게 조별과제에 참여하셨으니 이런 인간들을 지옥으로 데려오는 데 협조적일 것 같기도 하고요.
+    <<set_sprite CharImg Soyeon 11>>
+    소연: 어엄~청 협조적이죠!
+    소연: 지옥대학 지하에 있다고요? 당장 가서 찾아볼게요!
+    <<set_sprite CharImg Soyeon 0>>
+    소연: 그런데 저도 따지고 보면 무임승차한 일 때문에 여기 오게 된 건데, 그 사람들을 벌할 자격이 있기는 한 걸까 모르겠네요.
+    <<set_sprite CharImg Cheolsu 2>>
+    철수: 생각 외로 그런 자격을 만족하고 사는 사람도 악마도 잘 없어요.
+    철수: 그냥 도와주고 싶으시거든 도와주세요.
+    <<set_sprite CharImg Soyeon 0>>
+    소연: 하긴 이런 일을 해볼 기회가 흔한 것도 아니죠. 알았어요.
+<<elseif $meetnpc_cheolsu==1>>
+    <<set_sprite CharImg Cheolsu 0>>
+    철수: 무슨 일 있어요?
+    ->소연: 지옥대학 지하로는 어떻게 들어가나요?
+        <<set $explain_howto_invade to true>>
+    ->소연: (서큐버스 사진을 건넨다)이 분 어떻게 생각하세요?
+        <<set $explain_howto_invade to false>>
+        <<if $comingout==1>>
+            <<set_sprite CharImg Cheolsu 1>>
+            철수: 이 여자분은 누구죠?
+            철수: 제 스타일은 아니네요.
+            철수: 저는 남♂자 좋아해요.
+        <<else>>
+            <<set_sprite CharImg Cheolsu 1>>
+            철수: 어... 어음... 글래머러스하신 분이네요.
+            철수: 하지만 저는 그 크기에 딱히 연연하지 않는답니다.
+            철수: 제 취향 때문에요.
+            <<set_sprite CharImg Soyeon 11>>
+            소연: 그래도 한 번 만나보시는 건 어때요?
+            <<set_sprite CharImg Cheolsu 4>>
+            철수: 으...으음... 싫어요.
+            철수: 제 "취향"과는 상반되는 분이라니까요.
+        <<endif>>
+    ->소연: 똥마려워요.
+        <<set $explain_howto_invade to true>>
+        <<set_sprite CharImg Cheolsu 1>>
+        철수: 지옥대학에 화장실이 있어요.
+        철수: 모든 화장실에 비데가 설치된 최신식 화장실이죠.
+        <<set_sprite CharImg Cheolsu 4>>
+        철수: 하지만 인간계의 비데와는 다르게 불이 뿜어지는 비데라 사용하면 소연 학생의 엉덩이가 불탈 거에요.
+        <<set_sprite CharImg Cheolsu 1>>
+        철수: 지옥대학 지하의 인간 실험체 숙소 화장실은 인간들이 사용해야 하기 때문에
+        철수: 비데에서 불이 아니라 물이 뿜어져 나온답니다.
+    <<if $explain_howto_invade==true>>
+        <<set_sprite CharImg Cheolsu 1>>
+        철수: 지옥대학 화장실에 가려면 일단 이 드릴을 가지고 지하로 침범을 해야 해요.
+        <<give_drill Cheolsu>>
+        철수: 드릴은 사용하면 할수록 점점 내구도가 닳게 되는데,
+        철수: 약한 지반은 주변의 지반보다 내구도를 덜 닳게 하니까 되도록이면 약한 지반을 뜷으며 이동하는 게 좋을 거에요.
+        <<set_sprite CharImg Soyeon 5>>
+        소연: 아무데나 뜷으면 다 뜷어지나요?
+        철수: 아니요, 주변보다 색이 연한 데만 뜷을 수 있는데,<br>색이 연할수록 뜷을 때 내구도가 덜 닳는답니다!
+        철수: 드릴을 든 상태에서 방향키를 눌러서 주변을 뜷어보세요!
+        철수: 그리고 지옥대학 아래에 용암 강이 흐르는데, 용암에 방염날치가 정말 많이 살거든요?
+        철수: 이 날치들을 밟으면 지옥대학 지하로 침입하는데 도움이 좀 될 거에요.
+    <<endif>>
 <<else>>
-<<set_sprite CharImg Cheolsu 5>>
-철수: 헉....허억... 자...잠깐만요 소연 학생...!<br>왜 저를 피하는 거에요?
-<<set_sprite CharImg Soyeon 2>>
-소연: 그쪽이야말로 누구신데 저를 따라오세요?
-소연: 아니 그보다도, 제 이름은 어떻게 아는 거에요?
+    <<set_sprite CharImg Cheolsu 0>>
+    철수: 똥마려워요
 <<endif>>
-
-<<set_sprite CharImg Cheolsu 1>>
-철수: 아 저는 인간 헤드헌터 김철수에요.
-<<set_sprite CharImg Soyeon 5>>
-소연: ...뭔 악마 이름이 그래요?
-<<set_sprite CharImg Cheolsu 2>>
-철수: 뭐 악마 이름은 이래야 한단 법이 있나요,<br>제가 아는 어떤 악마 이름은 박말자라던데.
-<<set_sprite CharImg Soyeon 0>>
-소연: ...이름을 그따구로 짓지 말자...
-<<set_sprite CharImg Cheolsu 0>>
-철수: 네...?
-<<set_sprite CharImg Soyeon 4>>
-소연:아, 아니에요.
-<<set_sprite CharImg Soyeon 5>>
-소연:그것보다 저를 어떻게 아세요...?
-<<set_sprite CharImg Cheolsu 1>>
-철수: 예전에 저희 회사가 지옥대학교랑 산학협력 관계에 있어서 대학에서 의뢰를 받아 인간 학생을 찾아주는 일을 했었어요. 제가 예전에 인간계에서 조별과제 무임승차에 소질이 있는 학생들을 초청강사로 선발해서 지옥대학 측과 연결해주는 일을 했었거든요.
-<<set_sprite CharImg Soyeon 3>>
-소연: 아, 그때 그 목긴귀신이...
-<<set_sprite CharImg Cheolsu 2>>
-철수: 아 맞아요! 그때 소연 학생이 도망가버려서 강의 제대로 못했다고 저희한테 어찌나 불평을 하던지...
-<<set_sprite CharImg Soyeon 1>>
-소연: 저한테 벌이라도 주려나 싶어 잽싸게 도망쳤죠... <br>뭐, 제가 강의를 했다 해도 딱히 할 말은 없었을 거 같네요.
-<<set_sprite CharImg Cheolsu 1>>
-철수: 제가 그 사업을 하면서 상당히 많은 학생들을 관찰했는데, 대부분 다 상습범이더라고요.<br>그런데 소연 학생은 그때 딱 한번만 짧고 굵고 악랄하게 무임승차를 했었고, 다른 때에는 착실하게 조별과제를 했더라고요?
-<<set_sprite CharImg Soyeon 1>>
-소연: 진짜 그때는 제가 미쳐가지고... 조별과제 버스운전한 썰은 많이 보이는데 버스탄 썰은 하나도 안 보이길래 버스를 타면 어디 끌려가거나 납치되기라도 하는가 싶었거든요.
-<<set_sprite CharImg Cheolsu 1>>
-철수: 하핫... 납치는 안 하고요...
-철수: 대신 지옥에 적합한 인재라고 여겨지면 동의를 구하지 않고 데려올 수도 있겠죠?
-<<set_sprite CharImg Soyeon 1>>
-소연: 그게 납치 아닌가...
-<<set_sprite CharImg Cheolsu 0>>
-철수: 그런데 여긴 어쩌다 오게 된 거에요? 악몽이라도 꾸시는 중인 건가...
-<<set_sprite CharImg Soyeon 1>>
-소연: 열이 너무 많이 나서 기절했다가 눈을 떠보니 여기더라고요... 그 목긴귀신이 나를 자기 졸업논문 소재로 쓰겠다고 납치했다나 뭐라나.
-<<set_sprite CharImg Cheolsu 4>>
-철수: 아이고... 빠른 쾌유를 빌어요...
-<<set_sprite CharImg Soyeon 11>>
-소연: 쾌유를 비시려거든 저를 여기서 좀 꺼내 주실 수...
-<<set_sprite CharImg Cheolsu 2>>
-철수: 그건 소연 학생이 알아서 하셔야죠.
-<<set_sprite CharImg Soyeon 0>>
-소연: ...치사하네.
-<<set_sprite CharImg Cheolsu 2>>
-철수: 하아, 이런 식으로 우리가 소개해줬던 인간들을 마음대로 소환해대면 우리도 곤란해지는데...
-철수: 인간계가 우리의 존재에 관심을 가지면 저희가 일하기도 굉장히 힘들어지거든요.
-<<set_sprite CharImg Cheolsu 4>>
-철수: 계약이 완료되면 소환권을 회수하던가 해야 하는데,<br>그러지 않았던 저희 책임도 있으니 일단 그 점에 대해서는 사과드리겠습니다.
-철수: 일단 기절하셨다고 했죠?
-<<set_sprite CharImg Soyeon 0>>
-소연: ...네.
-<<set_sprite CharImg Cheolsu 0>>
-철수: 주변에 현실에 있는 소연 학생을 깨워줄 만한 사람이 있는 상황인가요?
-<<set_sprite CharImg Soyeon 0>>
-소연: 부모님은 여행 가셨고, 언니는 출근했고, 집에 저 혼자 있었어요.<br>조금 있다 언니가 퇴근하면 저를 깨워줄 것 같긴 한데 만약 야근이라도 한다면...
-<<set_sprite CharImg Cheolsu 0>>
-철수: 일단 언니분이 소연 학생을 깨워줄 때까지 저희 건물에서 지내게 해 드릴 수는 있어요.
-철수: 근데 아무것도 없어서 엄청 심심할 거에요.
-<<set_sprite CharImg Cheolsu 1>>
-철수: 혹시 저희 일을 하나 도와주실 생각은 없으세요?
-<<set_sprite CharImg Soyeon 1>>
-소연: ...네?
-<<set_sprite CharImg Cheolsu 1>>
-철수: 저희가 최근에 조별과제 무임승차 학생들을 대상으로 지옥 장기체험 사업을 시작했거든요.
-철수: 지옥 생활에 적합할 것으로 보이는 학생들을 장기간 지옥에 억류하여 여러 가지 교육사업에 투입시키는 프로그램이에요.
-<<set_sprite CharImg Cheolsu 4>>
-철수: 하아... 근데 하필이면 제가 그 명부를 얼마전에 잃어버려서 상관과 동료들한테 엄청 욕을 먹고 있거든요.
-철수: 아무래도 지옥대학 지하에 있는 실험체 숙소에서 잃어버린 거 같아요.
-철수: 저희 지옥대학 산학협력단 주관으로 지옥에 억류된 인간들은 지옥대학교 지하의 인간 실험체 숙소에 머무르고 있는데, 
-철수: 정확한 물증은 없지만 아마 실험체 중 하나가 그 명부의 존재에 대해서 알고 훔쳐간 것 같아요.
-<<set_sprite CharImg Soyeon 5>>
-소연: 뭐 처형할 사람 명단 같은걸로 착각이라도 한 걸까요?
-<<set_sprite CharImg Cheolsu 4>>
-철수: 그럴 수도 있고요, 아무래도 자기들에게 불리한 일에 쓰이는 문서라고 생각해서 그런 것 같네요.
-철수: 혹시 그 문서를 소연 학생이 찾아줄 수 있을까요?
-철수: 저희 실수로 지옥에 오게 된 사람에게 염치없이 부탁까지 해서 너무 죄송하지만,
-철수: 무임승차 빌런들을 지옥으로 인계하는 일이니 소연 학생도 관심이 있지 않을까 해서요.
-철수: 아무래도 소연 학생은 거의 대부분 성실하게 조별과제에 참여하셨으니 이런 인간들을 지옥으로 데려오는 데 협조적일 것 같기도 하고요.
-<<set_sprite CharImg Soyeon 11>>
-소연: 어엄~청 협조적이죠!
-소연: 지옥대학 지하에 있다고요? 당장 가서 찾아볼게요!
-<<set_sprite CharImg Soyeon 0>>
-소연: 그런데 저도 따지고 보면 무임승차한 일 때문에 여기 오게 된 건데, 그 사람들을 벌할 자격이 있기는 한 걸까 모르겠네요.
-<<set_sprite CharImg Cheolsu 2>>
-철수: 생각 외로 그런 자격을 만족하고 사는 사람도 악마도 잘 없어요.
-철수: 그냥 도와주고 싶으시거든 도와주세요.
-<<set_sprite CharImg Soyeon 0>>
-소연: 하긴 이런 일을 해볼 기회가 흔한 것도 아니죠. 알았어요.
 ===

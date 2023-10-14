@@ -10,6 +10,7 @@ public class Cheolsu : NpcBehavior
     Rigidbody2D rigid;
     [SerializeField] Mission mainmission;
     [SerializeField] InMemoryVariableStorage variableStorage;
+    [SerializeField] Item drill;
     Vector3 dir;
 
     bool timer0n=false;
@@ -25,13 +26,20 @@ public class Cheolsu : NpcBehavior
         Sr = GetComponent<SpriteRenderer>();
         rigid= GetComponent<Rigidbody2D>();
         Player = GameObject.Find("Soyeon");
-        //meet = PlayerPrefs.GetInt("meetnpc_cheolsu", 0);
-        meet = 0;
+        meet = PlayerPrefs.GetInt("meetnpc_cheolsu", 0);
+        meet = 1;
+        variableStorage.SetValue("$meetnpc_cheolsu", meet);
+        
         Dr.onDialogueComplete.AddListener(() =>
         {
             MissionAlarm.Instance.show_mission(mainmission);
             PlayerPrefs.SetInt("meetnpc_cheolsu", 1);
+            variableStorage.SetValue("$meetnpc_cheolsu", meet);
         });
+
+        int comingout = Random.Range(0, 2);
+        Debug.Log("comingout: " + comingout.ToString());
+        variableStorage.SetValue("$comingout", comingout);
     }
 
     private void FixedUpdate()
@@ -96,7 +104,13 @@ public class Cheolsu : NpcBehavior
                 variableStorage.SetValue("$didranaway", true);
                 Dr.StartDialogue("Cheolsu");
             }
-        }   
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q) && meet > 0)
+        {
+            Dr.onDialogueComplete.RemoveAllListeners();
+            Dr.StartDialogue("Cheolsu");
+        }
     }
     IEnumerator coNoticePlayer()
     {
@@ -104,5 +118,10 @@ public class Cheolsu : NpcBehavior
         yield return new WaitForSeconds(1);
         Anim.SetBool("IsWalking", true);
         isChasing = true;
+    }
+    [YarnCommand("give_drill")]
+    public void give_drill()
+    {
+        BackpackManager.add(drill); 
     }
 }

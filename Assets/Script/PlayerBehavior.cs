@@ -8,6 +8,7 @@ public class PlayerBehavior : MonoBehaviour
     public static PlayerBehavior Instance;
     [SerializeField] Collider2D FistArea;
     public Transform MaskArea;
+    public Transform ToolWeaponArea;
     public float SIZE=0.4f;
     //movement
     private float maxspeed=3;

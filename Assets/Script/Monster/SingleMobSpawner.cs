@@ -30,7 +30,7 @@ public class SingleMobSpawner : MonoBehaviour
     {
         IsMobDead = true;
         Debug.Log("enemy is dead");
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(60f);
         spawn();
         yield return new WaitForSeconds(0.1f);
     }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a7c4e5afe7d0c4a9206e0eea1e2d3f, type: 3}
   m_Name: SuccubusPic
   m_EditorClassIdentifier: 
-  type: 3
+  type: 10
   key: succubuspic
   itemName: "\uC11C\uD050\uBC84\uC2A4\uC0AC\uC9C4"
   number: 0

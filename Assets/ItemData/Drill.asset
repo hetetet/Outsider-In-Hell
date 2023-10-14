@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a7c4e5afe7d0c4a9206e0eea1e2d3f, type: 3}
+  m_Name: Drill
+  m_EditorClassIdentifier: 
+  type: 30
+  key: drill
+  itemName: "\uB4DC\uB9B4"
+  number: 1
+  isUsing: 0
+  picture: {fileID: 21300000, guid: 57416d11a073c2e4e87730ce3e94aa43, type: 3}
+  itemobj: {fileID: 5840966108450870216, guid: 467fa927272fe9c46991205084905db1, type: 3}

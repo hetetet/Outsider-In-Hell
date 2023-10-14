@@ -149,7 +149,7 @@ public class Icon_Backpack : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                 isUsing.gameObject.SetActive(false);
 
             itemBtn.onClick.AddListener(()=> {
-                Debug.Log("itemName: " + item.name + ", itemType:" + item.type + ", itemCount" + item.number);
+                Debug.Log("itemName: " + item.name + ", itemType:" + item.type + ", itemCount: " + item.number);
 
                 if (item.type == 0)
                     return;
@@ -176,9 +176,25 @@ public class Icon_Backpack : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                         ListItems();
                     }                      
                 }
-                else if (20 <= item.type && item.type <= 29)
+                else if (20 <= item.type && item.type <= 39)
                 {
-
+                    //아무것도 안 들고 있는 경우
+                    //이미 해당 연장/무기를 들고 있는 경우                     
+                    if (Weapon != null)
+                    {
+                        Transform PrevTool = PlayerBehavior.Instance.ToolWeaponArea.transform.GetChild(0);
+                        Destroy(PrevTool.gameObject);
+                        if (PrevTool.name == item.name)
+                        {
+                            Weapon = null;
+                            ListItems();
+                            return;
+                        }
+                    }
+                    Weapon = item;
+                    var NewTool = Instantiate(item.itemobj, PlayerBehavior.Instance.ToolWeaponArea);
+                    NewTool.name = item.name;
+                    ListItems();                    
                 }
             });
         }

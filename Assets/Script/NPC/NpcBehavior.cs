@@ -40,7 +40,7 @@ public class NpcBehavior : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             meetPlayer = true;
-            Debug.Log("meetplayer is true");
+            //Debug.Log("meetplayer is true");
         }
     }
 
@@ -49,7 +49,7 @@ public class NpcBehavior : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             meetPlayer = false;
-            Debug.Log("meetplayer is false");
+            //Debug.Log("meetplayer is false");
         }
     }
 }
