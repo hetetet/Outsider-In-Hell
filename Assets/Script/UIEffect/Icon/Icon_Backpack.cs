@@ -187,6 +187,8 @@ public class Icon_Backpack : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                         if (PrevTool.name == item.name)
                         {
                             Weapon = null;
+                            PlayerBehavior.Instance.ToolWeaponCollider.name = "none";
+                            Debug.Log("PlayerBehavior.Instance.ToolWeaponCollider.name = \"none\"");
                             ListItems();
                             return;
                         }
@@ -194,6 +196,8 @@ public class Icon_Backpack : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                     Weapon = item;
                     var NewTool = Instantiate(item.itemobj, PlayerBehavior.Instance.ToolWeaponArea);
                     NewTool.name = item.name;
+                    PlayerBehavior.Instance.ToolWeaponCollider.name = item.key;
+                    Debug.Log("PlayerBehavior.Instance.ToolWeaponCollider.name = "+ item.key);
                     ListItems();                    
                 }
             });

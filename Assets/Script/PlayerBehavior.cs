@@ -9,6 +9,7 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] Collider2D FistArea;
     public Transform MaskArea;
     public Transform ToolWeaponArea;
+    public Collider2D ToolWeaponCollider;
     public float SIZE=0.4f;
     //movement
     private float maxspeed=3;
@@ -59,6 +60,8 @@ public class PlayerBehavior : MonoBehaviour
         currentHP = maxHP;
         HPmanager.Instance.showHpBar(maxHP);
         FistArea.gameObject.SetActive(false);
+        ToolWeaponCollider = ToolWeaponArea.GetComponent<Collider2D>();
+        ToolWeaponCollider.enabled = false;
     }
 
     private void FixedUpdate()
@@ -185,6 +188,44 @@ public class PlayerBehavior : MonoBehaviour
         }
         if(currentHP<=0 && !isDead)
             GameOver();
+
+        if (Icon_Backpack.Weapon!=null && Icon_Backpack.Weapon.key == "drill" && !isWalking) //드릴을 들고 가만히 서 있을 때
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+                StartExcavate("UpperDrill");
+            else if (Input.GetKeyUp(KeyCode.UpArrow))
+                StopExcavate("UpperDrill");
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                StartExcavate("FrontDrill");
+                transform.localScale = new Vector3(SIZE, SIZE, 1);
+            }
+            else if (Input.GetKeyUp(KeyCode.RightArrow))
+                StopExcavate("FrontDrill");
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                StartExcavate("FrontDrill");
+                transform.localScale = new Vector3(-SIZE, SIZE, 1);
+            }
+            else if (Input.GetKeyUp(KeyCode.LeftArrow))
+                StopExcavate("FrontDrill");
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+                StartExcavate("UnderDrill");
+            else if (Input.GetKeyUp(KeyCode.DownArrow))
+                StopExcavate("UnderDrill");
+        }
+    }
+
+    public void StartExcavate(string TriggerName)
+    {
+        anim.SetBool(TriggerName, true);
+        ToolWeaponCollider.enabled = true;
+    }
+
+    public void StopExcavate(string TriggerName)
+    {
+        anim.SetBool(TriggerName, false);
+        ToolWeaponCollider.enabled = false;
     }
 
     public void OnDamaged(int damage)
