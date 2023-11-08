@@ -189,7 +189,7 @@ public class PlayerBehavior : MonoBehaviour
         if(currentHP<=0 && !isDead)
             GameOver();
 
-        if (Icon_Backpack.Weapon!=null && Icon_Backpack.Weapon.key == "drill" && !isWalking) //드릴을 들고 가만히 서 있을 때
+        if (Icon_Backpack.Weapon!=null && Icon_Backpack.Weapon.key == "drill") //드릴을 들고 가만히 서 있을 때
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
                 StartExcavate("UpperDrill");
@@ -267,10 +267,10 @@ public class PlayerBehavior : MonoBehaviour
         if (isDodging)
             return;
             
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKey(KeyCode.A) && !(Icon_Backpack.Weapon != null && Input.GetKey(KeyCode.RightArrow)))//무기를 들고 있으면서 무기를 반대 방향으로 사용하는 경우는 제외
             transform.localScale = new Vector3(-SIZE, SIZE, 1);
             
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKey(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKey(KeyCode.D) && !(Icon_Backpack.Weapon != null && Input.GetKey(KeyCode.LeftArrow)))
             transform.localScale = new Vector3(SIZE, SIZE, 1);                   
     }
 
