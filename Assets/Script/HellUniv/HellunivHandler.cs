@@ -16,7 +16,7 @@ public class HellunivHandler : MonoBehaviour
         if (PortalBehavior.prevScenename == "Main_map01")
             Player.transform.position = HelluivExit.position;
         else
-            Player.transform.position = HelluivExit.position; 
+            Player.transform.position = new Vector3(42.4f, -8.6f, 0.06f); 
 
         PortalBehavior.prevScenename = "HellUniv";
     }
