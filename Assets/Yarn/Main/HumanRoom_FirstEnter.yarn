@@ -6,13 +6,18 @@ tags:
 <<set_sprite CharImg Soyeon 2>>
 소연: 으악! 제가 더 놀랐잖아요!
 <<set_sprite CharImg GirlKnight 0>>
-여기사: 여긴 어떻게 뜷고 들어온 거야?
+여기사: 여긴 어떻게 뚫고 들어온 거야?
+<<set_sprite CharImg GirlKnight 1>>
 여기사: 나를 구하러 왔다기엔 왕국에서 보낸 기사 같지는 않고...
 여기사: 기사치고는 너무 비실비실하게 생겼단 말이지.
 <<set_sprite CharImg Soyeon 0>>
 소연: 너무하네 진짜...
+<<set_sprite CharImg Chulgeun 3>>
 황출근: 그럼 날 구하러 온 사람인가 보지!
+<<set_sprite CharImg Chulgeun 4>>
 황출근: ...라기엔 나도 모르는 사람인데?
 <<set_sprite CharImg Soyeon 0>>
-소연: 저는 지옥대학교에 들어가려다가 
+소연: ...지옥대학에 침입하려고 했는데 이 방으로 들어와 버렸네요.
+<<set_sprite CharImg Soyeon 1>>
+소연: 여긴 어디죠? 지옥대학 기숙사인가요?
 ===

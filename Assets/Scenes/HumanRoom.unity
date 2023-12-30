@@ -247,11 +247,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4045536419982361460, guid: dda80b455bb06444d9e97fcb7f11c307, type: 3}
       propertyPath: CharDict.array.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4045536419982361460, guid: dda80b455bb06444d9e97fcb7f11c307, type: 3}
       propertyPath: CharDict.array.Array.data[1].Key
       value: GirlKnight
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045536419982361460, guid: dda80b455bb06444d9e97fcb7f11c307, type: 3}
+      propertyPath: CharDict.array.Array.data[2].Key
+      value: Chulgeun
       objectReference: {fileID: 0}
     - target: {fileID: 4045536419982361460, guid: dda80b455bb06444d9e97fcb7f11c307, type: 3}
       propertyPath: CharDict.array.Array.data[0].Value.Array.size
@@ -259,7 +263,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4045536419982361460, guid: dda80b455bb06444d9e97fcb7f11c307, type: 3}
       propertyPath: CharDict.array.Array.data[1].Value.Array.size
-      value: 1
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045536419982361460, guid: dda80b455bb06444d9e97fcb7f11c307, type: 3}
+      propertyPath: CharDict.array.Array.data[2].Value.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4045536419982361460, guid: dda80b455bb06444d9e97fcb7f11c307, type: 3}
       propertyPath: CharDict.array.Array.data[0].Value.Array.data[0]
@@ -308,15 +316,39 @@ PrefabInstance:
     - target: {fileID: 4045536419982361460, guid: dda80b455bb06444d9e97fcb7f11c307, type: 3}
       propertyPath: CharDict.array.Array.data[1].Value.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: b579af00afe00124b8cdc1e8e0b2e7de, type: 3}
+      objectReference: {fileID: 21300000, guid: c74907f922dfb80439c61a30fd97f286, type: 3}
     - target: {fileID: 4045536419982361460, guid: dda80b455bb06444d9e97fcb7f11c307, type: 3}
       propertyPath: CharDict.array.Array.data[1].Value.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: 1687185a9a77a2c45b6dbb20ff2e8828, type: 3}
+      objectReference: {fileID: 21300000, guid: c4d7a093e540f2c469a80e1c9fb63f91, type: 3}
     - target: {fileID: 4045536419982361460, guid: dda80b455bb06444d9e97fcb7f11c307, type: 3}
       propertyPath: CharDict.array.Array.data[1].Value.Array.data[3]
       value: 
-      objectReference: {fileID: 21300000, guid: d488a64284948854281caf48157b7e60, type: 3}
+      objectReference: {fileID: 21300000, guid: 3a68abe5e3e074749ab92c72ab4b13f9, type: 3}
+    - target: {fileID: 4045536419982361460, guid: dda80b455bb06444d9e97fcb7f11c307, type: 3}
+      propertyPath: CharDict.array.Array.data[1].Value.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: b8d5b46d155fee043ac31eca7428d9b9, type: 3}
+    - target: {fileID: 4045536419982361460, guid: dda80b455bb06444d9e97fcb7f11c307, type: 3}
+      propertyPath: CharDict.array.Array.data[2].Value.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2f01ec9a177686a46ae7f9eef62bf22b, type: 3}
+    - target: {fileID: 4045536419982361460, guid: dda80b455bb06444d9e97fcb7f11c307, type: 3}
+      propertyPath: CharDict.array.Array.data[2].Value.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: d12ded9f2d10fb04e8238965b5b90c5e, type: 3}
+    - target: {fileID: 4045536419982361460, guid: dda80b455bb06444d9e97fcb7f11c307, type: 3}
+      propertyPath: CharDict.array.Array.data[2].Value.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 81bc1f352f2efdf45af86facace1ff6f, type: 3}
+    - target: {fileID: 4045536419982361460, guid: dda80b455bb06444d9e97fcb7f11c307, type: 3}
+      propertyPath: CharDict.array.Array.data[2].Value.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7135d80be478fb84f978d05dba07a60e, type: 3}
+    - target: {fileID: 4045536419982361460, guid: dda80b455bb06444d9e97fcb7f11c307, type: 3}
+      propertyPath: CharDict.array.Array.data[2].Value.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0dc2a477669098949aaee61bed0fb776, type: 3}
     - target: {fileID: 4045536419982361460, guid: dda80b455bb06444d9e97fcb7f11c307, type: 3}
       propertyPath: CharDict.array.Array.data[0].Value.Array.data[10]
       value: 
