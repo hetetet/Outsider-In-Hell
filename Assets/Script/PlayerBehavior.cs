@@ -262,6 +262,12 @@ public class PlayerBehavior : MonoBehaviour
         canmove = false;
     }
 
+    public void InitState()
+    {
+        anim.SetBool("isWalking", false);
+        anim.SetBool("isJumping", false);
+    }
+
     public void DetectDir()
     {
         if (isDodging)

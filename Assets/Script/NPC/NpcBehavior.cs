@@ -13,7 +13,7 @@ public class NpcBehavior : MonoBehaviour
     public SpriteRenderer Sr { get { return sr; } protected set { sr = value; } }
     [SerializeField] string currentDialogName;
     public string CurrentDialogName { get { return CurrentDialogName; } protected set { CurrentDialogName = value; } }
-    private bool meetPlayer;
+    protected bool meetPlayer;
 
     // 대화의 진행 정도, 사라졌는지
    protected virtual void Update()
@@ -40,7 +40,7 @@ public class NpcBehavior : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             meetPlayer = true;
-            //Debug.Log("meetplayer is true");
+            Debug.Log("meetplayer is true");
         }
     }
 
@@ -49,7 +49,7 @@ public class NpcBehavior : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             meetPlayer = false;
-            //Debug.Log("meetplayer is false");
+            Debug.Log("meetplayer is false");
         }
     }
 }

@@ -9,7 +9,7 @@ public class Map01Handler : MonoBehaviour
     [SerializeField] private Transform FromStarterToHere;
     [SerializeField] private Transform FromHellunivToHere;
     [SerializeField] Mission DoZeroTwo;
-    [SerializeField] DialogueRunner dialogueRunner;
+    [SerializeField] DialogueRunner DialogueRunner;
     bool isMissionClear = false;
     private void Awake()
     {
@@ -23,15 +23,17 @@ public class Map01Handler : MonoBehaviour
         if (dialog_start == 0)
         {
             PlayerBehavior.Instance.DisableMove();
-            dialogueRunner.StartDialogue("MainMap01Enter");
-            dialogueRunner.onDialogueComplete.AddListener(() =>
+            DialogueRunner.StartDialogue("MainMap01Enter");
+            DialogueRunner.onDialogueComplete.AddListener(() =>
             {
                 PlayerBehavior.Instance.EnableMove();
                 MissionAlarm.Instance.show_mission(DoZeroTwo);
             });
             PlayerPrefs.SetInt("dialog_map01", 1);
         }
-        
+        else
+            PlayerBehavior.Instance.InitState();
+
         //이전 씬에 따른 현재 씬에서의 플레이어 위치 조정
         if (PortalBehavior.prevScenename == "HellUniv")
             Player.transform.position = FromHellunivToHere.position;

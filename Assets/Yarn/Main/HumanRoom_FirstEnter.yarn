@@ -2,7 +2,7 @@
 tags:
 ---
 <<set_sprite CharImg GirlKnight 0>>
-여기사: 어? 어? 어!! 으아 어떡해 저거!!!
+여기사: 씨발 어? 어? 어!! 으아 어떡해 저거!!!
 <<set_sprite CharImg Soyeon 2>>
 소연: 으악! 제가 더 놀랐잖아요!
 <<set_sprite CharImg GirlKnight 0>>
@@ -20,4 +20,44 @@ tags:
 소연: ...지옥대학에 침입하려고 했는데 이 방으로 들어와 버렸네요.
 <<set_sprite CharImg Soyeon 1>>
 소연: 여긴 어디죠? 지옥대학 기숙사인가요?
+<<set_sprite CharImg GirlKnight 1>>
+여기사: 우린 학생이 아니라 실험체야.
+여기사: 지옥대학 교수 놈들이 우릴 가지고 뭔가 관찰을 하겠다나 뭐라나.
+<<set_sprite CharImg Chulgeun 4>>
+황출근: 조만간 인간의 죄에 관한 연구? 한답시고 한명 더 잡아온다던데.
+<<set_sprite CharImg Chulgeun 1>>
+황출근: 그래서 한명 더 잡아넣었나본데?
+<<set_sprite CharImg Chulgeun 3>>
+황출근: 지옥대학교 지하의 인간 실험체 숙소에 온 걸 환영한다 아쎄이!
+황출근: 네가 선택한 숙소니 악으로 깡으로 버텨라!
+<<set_sprite CharImg Soyeon 5>>
+소연: 아 그... 저는 여기 머무를 게 아니구요...
+<<set_sprite CharImg Chulgeun 1>>
+황출근: 그래... 하긴 이 방은 2인실인데 사람이 더 올만하지는 않지.
+<<set_sprite CharImg Soyeon 5>>
+소연: 혹시...그...장부 같은거 못 보셨나요?
+<<set_sprite CharImg Chulgeun 2>>
+황출근: 선임한테 질문을 할 땐 중첩의문문을 써야 한단 것 모르나!!!!!!!!
+<<set_sprite CharImg Soyeon 2>>
+소연: 아으 그게 뭔데 씹덕아!!!!!
+<<set_sprite CharImg Chulgeun 5>>
+황출근: 악! 황출근 병장님께서 장부 같은 것을 보셨는지에 대한 여부를 본 해병이 인지하게 해 주실 수 있는지에 대해 심판해주실 수 있는지에 대해 궁금증을 가져도 되겠습니까?
+황출근: 라고 하는 거다! 다시 질문한다! 실시!
+<<set_sprite CharImg GirlKnight 4>>
+여기사: 지랄 똥을 싼다...
+여기사: 쟤 무시해. 전역한 지가 언젠데 아직도 지가 해병인 줄 알고 있어.
+여기사: 실제 전투도 안해본 게 까불고 있길래,<br>내가 오크랑 즐♥길 때 썼던 기술을 좀 써 줬더니 그 뒤로는 이상한 소리 안하더라고.
+<<set_sprite CharImg Soyeon 11>>
+소연: 아, 감사합니다...
+<<set_sprite CharImg Soyeon 1>>
+소연: 잠깐... 오크랑 뭐라구요?
+<<set_sprite CharImg GirlKnight 2>>
+여기사: 아, 내가 오크가 이상형이거든, 좀 특이하지?
+<<set_sprite CharImg Soyeon 5>>
+소연: 아, 오크 같이 덩치가 큰 남자가 이상형이신 거죠?<br>뭐 그렇게 특이한 취향은 아닌...
+<<set_sprite CharImg GirlKnight 2>>
+여기사: 아니, 오크 같은 사람이 아니라 '진짜 오크'가 취향이야.
+여기사: 아~ 오크 이야기 하니까 오크 야짤 보고싶다~
+<<set_sprite CharImg Soyeon 0>>
+소연: 여기서 나가고 싶어...
 ===

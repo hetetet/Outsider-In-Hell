@@ -13,11 +13,14 @@ public class HellunivHandler : MonoBehaviour
     }
     void Start()
     {
+        Debug.Log("prevscenename: "+PortalBehavior.prevScenename);
         //이전 씬에 따른 현재 씬에서의 플레이어 위치 조정
         if (PortalBehavior.prevScenename == "Main_map01")
             Player.transform.position = HelluivExit.position;
+        else if(PortalBehavior.prevScenename == "Starter")
+            Player.transform.position = HelluivExit.position;
         else
-            Player.transform.position = new Vector3(70f, -8.6f, 0.06f); 
+            Player.transform.position = new Vector3(65f, -8.6f, 0.06f); 
 
         PortalBehavior.prevScenename = "HellUniv";
     }

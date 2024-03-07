@@ -106,7 +106,7 @@ public class Cheolsu : NpcBehavior
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && meet > 0)
+        if (Input.GetKeyDown(KeyCode.Q) && meet > 0 && Mathf.Abs(Vector3.Distance(Player.transform.position, transform.position)) <= 2f)
         {
             Dr.onDialogueComplete.RemoveAllListeners();
             Dr.StartDialogue("Cheolsu");
