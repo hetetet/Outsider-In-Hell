@@ -42,7 +42,6 @@ public class Prologue2Handler : MonoBehaviour
         LeftArrow = Guide.transform.Find("LeftArrow").GetComponent<Image>();
         RightArrow = Guide.transform.Find("RightArrow").GetComponent<Image>();
 
-
         MissionAlarm.whenAlarmShown = () => {
             Guide.SetActive(true);
 

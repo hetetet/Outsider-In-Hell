@@ -1,0 +1,28 @@
+﻿title: Doorkeeper
+tags:
+---
+<<declare $wearmonmask=false as bool>>
+<<if $wearmonmask is false>>
+문지기: 여기는 지옥대학 학생이거나 허가받은 외부인만 들어올 수 있다.
+문지기: 출입 허가증 있나?
+<<set_sprite CharImg Soyeon 4>>
+소연: 이 하필이면... 없어요!
+문지기: 그럼 돌아가.
+<<else>>
+문지기: 지옥 대학 학생이시네요. 어서 들어가세요!
+문지기: 라고 할 줄 알았냐?
+문지기: 내가 이런 허술한 가면에 속을 빙다리 핫바지로 보이냐?
+문지기: 이거 내놔.
+<<deprive_mask Doorkeeper>>
+<<set_sprite CharImg Soyeon 6>>
+소연: 어...어엇..?
+소연: 그거... 잼순이가 준건데...
+<<set_sprite CharImg Soyeon 8>>
+소연: 그거 돌려줘!
+문지기: 나랑 맞짱떠서 이기면 돌려준다.
+<<set_sprite CharImg Soyeon 4>>
+소연:새...생각해 보니 그렇게 필요한 거 같지도 않고...
+소연:너 하든가...
+<<set $wearmonmask to false>>
+<<endif>>
+===

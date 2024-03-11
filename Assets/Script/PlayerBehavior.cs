@@ -266,6 +266,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         anim.SetBool("isWalking", false);
         anim.SetBool("isJumping", false);
+        canmove = true;
     }
 
     public void DetectDir()

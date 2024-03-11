@@ -27,7 +27,6 @@ public class Cheolsu : NpcBehavior
         rigid= GetComponent<Rigidbody2D>();
         Player = GameObject.Find("Soyeon");
         meet = PlayerPrefs.GetInt("meetnpc_cheolsu", 0);
-        meet = 1;
         variableStorage.SetValue("$meetnpc_cheolsu", meet);
         
         Dr.onDialogueComplete.AddListener(() =>

@@ -9,6 +9,9 @@ public class PortalBehavior : MonoBehaviour
     private bool isReadyToMove;
     [SerializeField] string dest;
     [SerializeField] bool automove;
+    [SerializeField] Color fadeColor;
+    [SerializeField] float end=0;
+    [SerializeField] float fadetime=0;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -18,8 +21,10 @@ public class PortalBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if(automove)
+            if (automove)
+            {
                 MoveScene(dest);
+            }                
             isReadyToMove = true;
         }           
     }
@@ -41,7 +46,9 @@ public class PortalBehavior : MonoBehaviour
         {
             Debug.Log("load scene: " + dest);
             //StartCoroutine(SceneLoading());
-            SceneManager.LoadScene(dest);
+            UIEffect.Instance.enableCanvas(998);
+            UIEffect.Instance.setColor(fadeColor.r, fadeColor.g, fadeColor.b, fadeColor.a);
+            UIEffect.Instance.Fade(end, fadetime, dest);
         }
         else
         {

@@ -44,4 +44,14 @@ public class BackpackManager : MonoBehaviour
         Items.Remove(item);
         return;
     }
+
+    public static bool DoHave(Item item)
+    {
+        for (int i = 0; i < Items.Count; i++)
+        {
+            if (Items[i].itemName == item.itemName)
+                return true;
+        }
+        return false;
+    }
 }
